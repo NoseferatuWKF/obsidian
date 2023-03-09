@@ -1,0 +1,4 @@
+stow
+ripgrep
+tmux
+tree

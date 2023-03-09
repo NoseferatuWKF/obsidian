@@ -4,18 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "4d02085f402ac92e",
+        "id": "5fcd2fb7bc496b83",
         "type": "tabs",
         "children": [
           {
-            "id": "a7a1ae704b60574b",
+            "id": "6dd03cc4e9ac876a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "integration/discord.md",
-                "mode": "source",
-                "source": false
+                "file": "private/pasted-images/Pasted image 20230308212054.png"
               }
             }
           }
@@ -85,13 +83,13 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "integration/discord.md",
+                "file": "private/pasted-images/Pasted image 20230308212054.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": false,
+                "backlinkCollapsed": true,
                 "unlinkedCollapsed": true
               }
             }
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "integration/discord.md",
+                "file": "private/pasted-images/Pasted image 20230308212054.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "integration/discord.md"
+                "file": "private/pasted-images/Pasted image 20230308212054.png"
               }
             }
           }
@@ -148,15 +146,48 @@
   },
   "active": "9eb9152afc875ddc",
   "lastOpenFiles": [
-    "automation/ansible.md",
-    "automation/terraform.md",
-    "integration/discord.md",
-    "integration/google.md",
-    "integration/linkedin.md",
+    "pasted-images/Pasted image 20230304032424.png",
+    "pasted-images/Pasted image 20230304032400.png",
+    "private/pasted-images/Pasted image 20230302161920.png",
+    "private/pasted-images/Pasted image 20230302161956.png",
+    "private/pasted-images",
+    "private/pasted-images/Pasted image 20230308212054.png",
+    "cheat-sheets/nvim.md",
+    "coding/rust.md",
+    "private/setel/api-iam.md",
+    "cheat-sheets/shell.md",
+    "coding/yaml.md",
+    "coding/js.md",
+    "coding/java.md",
+    "coding/go.md",
+    "coding/csharp.md",
+    "technical/terms.md",
+    "private/setel/api-connect.md",
+    "algorithms/searching.md",
+    "algorithms/fundamentals.md",
+    "cheat-sheets/git.md",
+    "devtools/git.md",
+    "devtools/binaries.md",
+    "devtools/nvim.md",
+    "devtools/references.md",
+    "technical/oauth-2.0.md",
+    "README.md",
+    "algorithms",
+    "technical",
+    "cheat-sheets/ansible.md",
     "integration/meta.md",
-    "integration/telegram.md",
-    "networking/docker.md",
-    "networking/kubernetes.md",
-    "README.md"
+    "link.md",
+    "Untitled.canvas",
+    "2023-03-04.md",
+    "cheat-sheets/docker.md",
+    "pasted-images",
+    "Pasted image 20230304025918.png",
+    "private/setel/Pasted image 20230303181747.png",
+    "private",
+    "cloud/gcp",
+    "cloud/azure",
+    "cloud/aws",
+    "cloud",
+    "monitoring"
   ]
 }
