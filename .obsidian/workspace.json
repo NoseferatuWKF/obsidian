@@ -8,12 +8,14 @@
         "type": "tabs",
         "children": [
           {
-            "id": "6dd03cc4e9ac876a",
+            "id": "0c291794f06dafdf",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "private/pasted-images/Pasted image 20230308212054.png"
+                "file": "coding/js.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "private/pasted-images/Pasted image 20230308212054.png",
+                "file": "coding/js.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "private/pasted-images/Pasted image 20230308212054.png",
+                "file": "coding/js.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "private/pasted-images/Pasted image 20230308212054.png"
+                "file": "coding/js.md"
               }
             }
           }
@@ -144,50 +146,51 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9eb9152afc875ddc",
+  "active": "0c291794f06dafdf",
   "lastOpenFiles": [
+    "cheat-sheets/git.md",
+    "coding/rust.md",
+    "automation/ansible.md",
+    "coding/yaml.md",
+    "coding/csharp.md",
+    "cheat-sheets/nvim.md",
+    "automation/jenkins.md",
+    "automation/github-actions.md",
+    "automation/puppet.md",
+    "automation/terraform.md",
+    "coding/js.md",
+    "coding/lua.md",
+    "coding/java.md",
+    "coding/go.md",
+    "README.md",
+    "monitoring/PLG.md",
+    "monitoring/ELK.md",
+    "networking/docker.md",
+    "networking/kubernetes.md",
+    "private/setel/api-connect.md",
+    "private/setel/api-iam.md",
+    "technical/oauth-2.0.md",
+    "technical/terms.md",
+    "algorithms/searching.md",
+    "algorithms/fundamentals.md",
+    "cheat-sheets/ansible.md",
+    "private/setel 1",
+    "private/setel",
+    "technical",
     "pasted-images/Pasted image 20230304032424.png",
     "pasted-images/Pasted image 20230304032400.png",
+    "pasted-images",
+    "monitoring",
+    "devtools",
+    "coding",
+    "cheat-sheets",
+    "algorithms",
+    "private/pasted-images/Pasted image 20230308212054.png",
     "private/pasted-images/Pasted image 20230302161920.png",
     "private/pasted-images/Pasted image 20230302161956.png",
     "private/pasted-images",
-    "private/pasted-images/Pasted image 20230308212054.png",
-    "cheat-sheets/nvim.md",
-    "coding/rust.md",
-    "private/setel/api-iam.md",
-    "cheat-sheets/shell.md",
-    "coding/yaml.md",
-    "coding/js.md",
-    "coding/java.md",
-    "coding/go.md",
-    "coding/csharp.md",
-    "technical/terms.md",
-    "private/setel/api-connect.md",
-    "algorithms/searching.md",
-    "algorithms/fundamentals.md",
-    "cheat-sheets/git.md",
-    "devtools/git.md",
-    "devtools/binaries.md",
-    "devtools/nvim.md",
-    "devtools/references.md",
-    "technical/oauth-2.0.md",
-    "README.md",
-    "algorithms",
-    "technical",
-    "cheat-sheets/ansible.md",
-    "integration/meta.md",
-    "link.md",
     "Untitled.canvas",
-    "2023-03-04.md",
-    "cheat-sheets/docker.md",
-    "pasted-images",
     "Pasted image 20230304025918.png",
-    "private/setel/Pasted image 20230303181747.png",
-    "private",
-    "cloud/gcp",
-    "cloud/azure",
-    "cloud/aws",
-    "cloud",
-    "monitoring"
+    "private/setel/Pasted image 20230303181747.png"
   ]
 }

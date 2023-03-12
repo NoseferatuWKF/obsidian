@@ -9,6 +9,14 @@ const b = 3;
 // short-circuit evaluation
 const c = a > 3 && b // first condition evalutates to true, so c = b = 3;
 const d = a < b && 5 // first condition evaluates to false, so d = a < b = false;
+
+// object
+const val = true;
+const val2 = 123;
+const obj = {
+...(typeof val === 'boolean' && {val}), // will add {val: true}
+...(typeof val2 === 'boolean' && {val2}), // will do nothing
+}
 ```
 
 Use [structuredClone()](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone) to do deep copy
@@ -90,4 +98,22 @@ for (let i = 0; i < 5; i++) {
 console.log(str);
 // Expected output: "0234"
 ```
+
+` for...in` loops through the properties in the prototype chain, therefore we need to add to do a check using `hasOwnProperty()`. Better yet, we can use `Object.keys`
+>use loops when mutating data and higher order array functions when not
+```js
+// need to do checking
+for (const key in user) {
+	if (user.hasOwnProperty(key)) {
+		console.log(`${key}: ${user[key]}`);
+	} 
+}
+
+// with Object.values()
+for (const key of Object.keys(user)) {
+	// no checking here
+}
+```
+
+
 

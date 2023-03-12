@@ -10,4 +10,10 @@ submodule
 ```bash
 git submodule add /path/to/file git@github.com:user/path.git # setup submodule
 git submodule update --init --recursive # install all submodules
+
+# removing submodules
+git submodule deinit /path/to/file # may require to use -f
+git rm /path/to/file # may require to use -f
 ```
+
+

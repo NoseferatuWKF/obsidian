@@ -1,0 +1,1 @@
+>run pipelines in localhost or docker which a lot other automation tools cannot do
