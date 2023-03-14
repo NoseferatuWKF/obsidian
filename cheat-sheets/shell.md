@@ -77,7 +77,7 @@ stow --adopt -nv $HOME <stowed-dir> # dry-run and verbose
 stow --adopt -v * && git restore . #adopt and sync everything with repo
 ```
 
-ssh-add
+ssh-add (use this with [[git]])
 ```bash
 # in case the ssh-add agent instance is not running
 eval $(ssh-agent)

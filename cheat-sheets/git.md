@@ -25,7 +25,6 @@ git remote get-url <remote> # get the path for a remote
 ```
 
 working with multiple keys
-
 ```bash
 #~/.ssh/config
 Host github.com-userA

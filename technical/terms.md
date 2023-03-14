@@ -14,9 +14,9 @@
 
 **CGI** - [C]ommon [G]ateway [I]interface, ===takes stdin as the body, env as headers, cli args as query params and prints the response using stdout===
 
-**OAuth** - is an open-standard authorization protocol or framework that provides applications secured access. It does not handle authentication (while some applications try to hack their way to do this) only authorization
+**OAuth** - is an open-standard ===authorization protocol or framework ===that provides applications secured access. ===It does not handle authentication=== (while some applications try to hack their way to do this) only authorization
 
-**oidc** - open id connect is a small layer/extension on top of oauth, in order to handle authentication. It provides the client/application with identity
+**oidc** - open id connect is a ===small layer/extension on top of oauth===, in order to handle ===authentication===. It provides the client/application with identity
 
 **sentinel value** - a special value in the context of an algorithm to signify termination
 

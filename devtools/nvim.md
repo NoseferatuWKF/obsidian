@@ -7,6 +7,8 @@
 
 ### Productivity boosters
 - nvim-tmux-navigator
+- autopairs
+- autotag
 - vim-surround
 - null-ls
 - mason-null-ls
@@ -16,3 +18,5 @@
 - zenmode
 
 ### Aesthetics
+- sunbather
+- lua-line
