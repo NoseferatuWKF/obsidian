@@ -77,6 +77,21 @@ stow --adopt -nv $HOME <stowed-dir> # dry-run and verbose
 stow --adopt -v * && git restore . #adopt and sync everything with repo
 ```
 
+ssh
+```bash
+sudo apt install openssh-server
+sudo service ssh start # can use systemctl as well
+```
+
+scp / rsync
+```bash
+# host to remote
+rsync /host/file/path remote@hostname:path/to/file # can use relative paths
+
+# remote to host
+scp remote@hostname:path/to/file /host/file/path
+```
+
 ssh-add (use this with [[git]])
 ```bash
 # in case the ssh-add agent instance is not running

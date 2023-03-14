@@ -11,3 +11,4 @@ ansible
 fzf
 htop
 nvim
+i3

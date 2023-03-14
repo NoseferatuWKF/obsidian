@@ -5,6 +5,7 @@
 ## TOGODDAMNDO
 - [ ] translate all notes taken before into .md
 - [ ] move private notes to sub modules
+- [ ] FOMO stuff
 
 ## [MARKDOWN CHEAT-SHEET](https://www.markdownguide.org/cheat-sheet/#extended-syntax)
 

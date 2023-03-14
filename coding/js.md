@@ -1,5 +1,23 @@
+[[cheat-sheets/js|cheat-sheets]] 
+[best-practices](https://github.com/goldbergyoni/nodebestpractices) - good shit for a bad language
+
+## Guideline
+- use loops when mutating data and higher order array functions when not  - airbnb
+- In general, it's good practice to always use block statements
+- Use maps over objects when keys are unknown until run time, and when all keys are the same type and all values are the same type
+- Use objects when there is logic that operates on individual elements
+- Currently, all modern engines ship a mark-and-sweep garbage collector
+
+## When you don't need JS
+- multi-threaded application
+- strict and verbose control-flow
+- bitwise operations - [IEEE 754](https://en.wikipedia.org/wiki/Double-precision_floating-point_format)
+- precision math
+
 ## Videos
 - [Promises explained exceptionally well](https://www.youtube.com/watch?v=bAlczbDUXx8&ab_channel=StevieJay)
+
+## Basics
 
 [Logical AND (&&)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND)
 ```js
@@ -66,8 +84,8 @@ console.log(a.speed);
 // Expected output: 25
 ```
 
-[function*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*)
-Generators are functions that can be exited and later re-entered. Their context (variable bindings) will be saved across re-entrances.
+[Generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*)
+>Generators are functions that can be exited and later re-entered. Their context (variable bindings) will be saved across re-entrances.
 ```js
 function* generator(i) {
   yield i;
@@ -81,6 +99,22 @@ console.log(gen.next().value);
 
 console.log(gen.next().value);
 // Expected output: 20
+```
+
+[yield*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield*)
+```js
+function* func1() {
+  yield 42;
+}
+
+function* func2() {
+  yield* func1();
+}
+
+const iterator = func2();
+
+console.log(iterator.next().value);
+// Expected output: 42
 ```
 
 [label](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label)
@@ -99,21 +133,91 @@ console.log(str);
 // Expected output: "0234"
 ```
 
-` for...in` loops through the properties in the prototype chain, therefore we need to add to do a check using `hasOwnProperty()`. Better yet, we can use `Object.keys`
->use loops when mutating data and higher order array functions when not
+[BigInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 ```js
-// need to do checking
-for (const key in user) {
-	if (user.hasOwnProperty(key)) {
-		console.log(`${key}: ${user[key]}`);
-	} 
-}
+const previouslyMaxSafeInteger = 9007199254740991n
 
-// with Object.values()
-for (const key of Object.keys(user)) {
-	// no checking here
+const alsoHuge = BigInt(9007199254740991)
+// 9007199254740991n
+
+const hugeString = BigInt("9007199254740991")
+// 9007199254740991n
+
+const hugeHex = BigInt("0x1fffffffffffff")
+// 9007199254740991n
+
+const hugeOctal = BigInt("0o377777777777777777")
+// 9007199254740991n
+
+const hugeBin = BigInt("0b11111111111111111111111111111111111111111111111111111")
+// 9007199254740991n
+
+// When tested against `typeof`, a BigInt value (`bigint` primitive) will give `"bigint"`:
+typeof 1n === 'bigint'           // true
+typeof BigInt('1') === 'bigint'  // true
+
+// Most operators that can be used between numbers can be used between BigInt values as well.
+// BigInt addition
+const a = 1n + 2n; // 3n
+// Division with BigInts round towards zero
+const b = 1n / 2n; // 0n
+// Bitwise operations with BigInts do not truncate either side
+const c = 40000000000000000n >> 2n; // 10000000000000000n
+```
+
+## Advanced
+
+Configuring memory
+```bash
+node --max-old-space-size=6000 index.js # heap allocation
+node --expose-gc --inspect index.js # exposing gc to debug memory
+```
+
+Javascript typed arrays
+```js
+const buffer = new ArrayBuffer(16);
+const int32View = new Int32Array(buffer); // creating a 32-bits view into the buffer
+// now can access like a normal array
+// This fills out the 4 entries in the array (4 entries at 4 bytes each makes 16 total bytes) with the values 0, 2, 4, and 6.
+for (let i = 0; i < int32View.length; i++) {
+  int32View[i] = i * 2;
+}
+const int16View = new Int16Array(buffer); // create another view but now its 16-bits
+for (let i = 0; i < int16View.length; i++) {
+  console.log(`Entry ${i}: ${int16View[i]}`); // 0, 0, 2, 0, 4, 0, 6, 0
 }
 ```
+
+[zlib](https://nodejs.dev/en/api/v19/zlib/)
+
+[stream](https://nodejs.dev/en/api/v19/stream/)
+
+[child process](https://nodejs.dev/en/api/v19/child_process/)
+
+[events](https://nodejs.dev/en/api/v19/events/) - I love this
+
+Event loop
+```
+   ┌───────────────────────────┐
+┌─>│           timers          │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+│  │     pending callbacks     │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+│  │       idle, prepare       │
+│  └─────────────┬─────────────┘      ┌───────────────┐
+│  ┌─────────────┴─────────────┐      │   incoming:   │
+│  │           poll            │<─────┤  connections, │
+│  └─────────────┬─────────────┘      │   data, etc.  │
+│  ┌─────────────┴─────────────┐      └───────────────┘
+│  │           check           │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+└──┤      close callbacks      │
+   └───────────────────────────┘
+```
+
 
 
 
