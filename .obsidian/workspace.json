@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "coding/js.md",
+                "file": "cheat-sheets/git.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "coding/js.md",
+                "file": "cheat-sheets/git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "coding/js.md",
+                "file": "cheat-sheets/git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "coding/js.md"
+                "file": "cheat-sheets/git.md"
               }
             }
           }
@@ -148,17 +148,18 @@
   },
   "active": "0c291794f06dafdf",
   "lastOpenFiles": [
+    "cheat-sheets/shell.md",
     "cheat-sheets/git.md",
+    "cheat-sheets/nvim.md",
+    "coding/js.md",
     "coding/rust.md",
     "automation/ansible.md",
     "coding/yaml.md",
     "coding/csharp.md",
-    "cheat-sheets/nvim.md",
     "automation/jenkins.md",
     "automation/github-actions.md",
     "automation/puppet.md",
     "automation/terraform.md",
-    "coding/js.md",
     "coding/lua.md",
     "coding/java.md",
     "coding/go.md",
@@ -173,7 +174,6 @@
     "technical/terms.md",
     "algorithms/searching.md",
     "algorithms/fundamentals.md",
-    "cheat-sheets/ansible.md",
     "private/setel 1",
     "private/setel",
     "technical",

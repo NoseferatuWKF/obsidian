@@ -1,4 +1,5 @@
 ## Programming
+
 arrays
 ```bash
 indexedArray=(one two three)
@@ -34,7 +35,36 @@ case $COUNTRY in
 esac
 ```
 
+## Basics
+
+eval
+```bash
+# eval "translates" a value buried inside a variable, and then runs the command that was buried in there
+for i in 1 2 3
+do
+   eval myvar="$i"
+   echo "$myvar"
+done
+# this gives 
+1
+2
+3
+# why? because there is no metavalue or special meaning to 1 or 2 or 3
+```
+
+exec
+```bash
+# exec starts another process - BUT - it exits the current process when you do this kind of thing
+exec echo "leaving this script forever  $0"   # Exit from script here.
+
+# ----------------------------------
+# The following line never happens
+
+echo "This echo will never echo."
+```
+
 ## Utils
+
 yes
 ```bash
 yes | some-shell-script.sh # will pass Y to all stdin
@@ -47,7 +77,29 @@ stow --adopt -nv $HOME <stowed-dir> # dry-run and verbose
 stow --adopt -v * && git restore . #adopt and sync everything with repo
 ```
 
+ssh-add
+```bash
+# in case the ssh-add agent instance is not running
+eval $(ssh-agent)
+# if that doesn't work
+exec ssh-agent
+
+# maybe need to remove cached keys first
+ssh-add -D
+
+# adding ssh keys
+ssh-add ~/.ssh/id_rsa
+ssh-add ~/.ssh/another_acc
+
+# check for keys
+ssh-add -l
+
+# removing keys
+ssh-add -d ~/.ssh/another_acc
+```
+
 ## zsh
+
 hash
 ```bash
 hash -d # Display all hash directories
