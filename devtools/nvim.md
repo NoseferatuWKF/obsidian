@@ -16,6 +16,7 @@
 ### Good to have
 - nvim-dap
 - zenmode
+- [nathon/filetype.nvim](https://github.com/nathom/filetype.nvim)
 
 ### Aesthetics
 - sunbather

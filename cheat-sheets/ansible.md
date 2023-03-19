@@ -1,9 +1,16 @@
 run playbook
 ```bash
-ansible-playbook --ask-vault-pass -t tag --skip-tags skip playbook.yml
+# linux
+ansible-playbook --ask-become-pass --ask-vault-pass -t docker --skip-tags brew local.yml
+# mac
+ansible-playbook --ask-become-pass --ask-vault-pass -t "mac, docker" local.yml
 ```
 
 run playbook on remote git repo
 ```bash
-ansible-pull -U git@github.com:userA/ansible.git --vault-pass-file password-file -t tag --skip-tags skip playbook.yml
+# have to use vault-pass-file because ansible team decided to deprecate --ask-vault-pass on ansible-pull
+# linux
+ansible-pull -U git@github.com:NoseferatuWKF/ansible.git --ask-become-pass --vault-pass-file password --skip-tags brew
+# mac
+ansible-pull -U git@github.com:NoseferatuWKF/ansible.git --ask-become-pass --vault-pass-file password -t mac
 ```

@@ -63,6 +63,11 @@ exec echo "leaving this script forever  $0"   # Exit from script here.
 echo "This echo will never echo."
 ```
 
+chwon
+```bash
+chown <user> /path/to/file
+```
+
 ## Utils
 
 yes
@@ -120,4 +125,20 @@ hash
 hash -d # Display all hash directories
 hash -d  shortcut=/path/to/dir  # Create a new hash
 ~shortcut # Voila :)
+```
+
+keybinds
+```
+<C-u> delete all words before cursor and put into buffer
+<C-k> delete all words after cursor and put into buffer
+<C-w> delete word before cursor and put into buffer
+<C-y> paste words from buffer
+```
+
+## sh
+
+source
+```bash
+# so sh does not have source it uses . instead
+. /path/to/env # not source /path/to/env
 ```

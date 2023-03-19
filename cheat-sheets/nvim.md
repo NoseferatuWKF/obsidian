@@ -1,10 +1,17 @@
 ## vim-surround
-- N[c s " '] to change "text" into 'text'
-- N[d s "] to change "text" into text
-- V[S "] to change text into "text"
+
+```lua
+vim.keymap.set("n", "c s <input> <output>") -- 'text' -> "text"
+vim.keymap.set("n", "d s <input> <output>") -- "text" -> text
+vim.keymap.set("v", "S <output>"] -- text -> "text"
+```
 
 ## vanilla keybinds
+
 ```lua
+-- in netrw
+t -- to add cursor to tab
+
 -- tabs
 vim.keymap.set("n", "<C-w> T") -- open new tab
 vim.keymap.set("n", "gt") -- go to next tab
@@ -17,9 +24,22 @@ vim.keymap.set("n", "<C-x>") -- decrement number
 vim.keymap.set("n", "yp") -- yank paragraph
 vim.keymap.set("n", "yy") -- yank line
 vim.keymap.set("n", "Y") -- yank line after cursor
+
+-- buffers
+{count}CTRL-G  -- print buffer absolute file path
+```
+
+## commands
+
+```
+:echo @%                |" directory/name of file
+:echo expand('%:t')     |" name of file ('tail')
+:echo expand('%:p')     |" full path
+:echo expand('%:p:h')   |" directory containing file ('head')
 ```
 
 ## some of ThePrimeagen keybinds
+
 ```lua
 -- Notorious keybinds from ThePrimeagen
 -- Netrw
@@ -42,6 +62,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 ```
 
 ## nvim-lspconfig
+
 ```lua
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
@@ -50,6 +71,7 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 ```
 
 ## lsp
+
 ```lua
   local nmap = function(keys, func, desc)
     if desc then
@@ -90,6 +112,7 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
 ## [trouble](https://github.com/folke/trouble.nvim)
 >not sure should install or not, currently on lua diagnostics and working well so far
+
 ```lua
 vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
   {silent = true, noremap = true}

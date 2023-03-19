@@ -21,3 +21,5 @@
 **sentinel value** - a special value in the context of an algorithm to signify termination
 
 **exponential backoff** - an algorithm that uses feedback to multiplicatively decrease the rate of some process, in order to gradually find an acceptable rate.
+
+**DSL** - [D]omain [S]pecific [L]anguage

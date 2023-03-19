@@ -3,6 +3,10 @@
 [the-book](https://doc.rust-lang.org/book/)
 [rust-by-example](https://doc.rust-lang.org/rust-by-example/index.html)
 
+## Installation
+
+
+
 ## Guidelines
 
 - by default every variable is immutable
@@ -81,7 +85,7 @@ match speed_limit { // must include all possible values
 ? operator
 ```rust
 // without ? operator
-fn main() -> Result<(), Box<dyn Error>> {
+fn main() -> Result<(), Box<dyn Error>> { // Handling Result type
     let greeting_file = match File::open("hello.txt") {
 	    OK(),
 	    Err(),
@@ -90,14 +94,13 @@ fn main() -> Result<(), Box<dyn Error>> {
 // ? operator can be used to astract result and option types
 fn main() -> Result<(), Box<dyn Error>> {
     let greeting_file = File::open("hello.txt")?;
-
     Ok(())
 }
 ```
 
 arrays
 ```rust
-let arr: [i32, 3] = [1,2,3]; // default to i32
+let arr: [i32; 3] = [1,2,3]; // default to i32
 // this is one way to do a loop
 let mut i: usize = 0; // default to usize
 loop {
@@ -509,6 +512,17 @@ fn consume_fuel(tank: &Arc<Mutex<Tank>>, amt: usize, piston: i32) {
     tank.fuel -= amt;
     println!("Consumed by Piston: {}, Fuel left: {}", piston, tank.fuel);
 }
+```
 
+## Cases
+
+comparing stdin to a string
+```rust
+#[test]
+fn compare_two_strings() {
+	let mut input = String::new();
+	std::io::stdin()::read_line(&mut input).unwrap();
+	assert!(input.trim().eq("string_to_be_compared")) // need to trim trailing newline
+}
 ```
 

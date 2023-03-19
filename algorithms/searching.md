@@ -16,7 +16,7 @@ bool needleInHaystack(vector<int> *haystack, int needle)
 ```
 
 Binary searching (O(logN))
->Binary here means it can only be two outcomes, so no need to 'scan' the whole input
+>Binary here means it is between two outcomes, so no need to 'scan' the whole input
 ```cpp
 bool needleInHaystack(vector<int> *haystack, int needle)
 {

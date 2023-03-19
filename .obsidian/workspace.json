@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "8e3e386b3e0bc405",
+        "id": "d0d69d2927e8b17a",
         "type": "tabs",
         "children": [
           {
-            "id": "462db9062da4e2fe",
+            "id": "b43b3bf2540e9b40",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "devtools/binaries.md",
+                "file": "cheat-sheets/ansible.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "devtools/binaries.md",
+                "file": "cheat-sheets/ansible.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "devtools/binaries.md",
+                "file": "cheat-sheets/ansible.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "devtools/binaries.md"
+                "file": "cheat-sheets/ansible.md"
               }
             }
           }
@@ -146,9 +146,35 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "462db9062da4e2fe",
+  "active": "b43b3bf2540e9b40",
   "lastOpenFiles": [
+    "automation/ansible.md",
+    "cheat-sheets/ansible.md",
+    "technical/oauth-2.0.md",
+    "life-hack/onboarding.md",
+    "cheat-sheets/tmux.md",
+    "cheat-sheets/docker.md",
     "cheat-sheets/shell.md",
+    "cheat-sheets/nvim.md",
+    "cheat-sheets/js.md",
+    "cheat-sheets/git.md",
+    "automation/github-actions.md",
+    "automation/terraform.md",
+    "automation/puppet.md",
+    "automation/jenkins.md",
+    "algorithms/searching.md",
+    "algorithms/fundamentals.md",
+    "technical/terms.md",
+    "life-hack",
+    "README.md",
+    "headlines/svb-bank-run.md",
+    "devtools/nvim.md",
+    "coding/java.md",
+    "coding/go.md",
+    "coding/csharp.md",
+    "coding/js.md",
+    "coding/lua.md",
+    "coding/rust.md",
     "cheat-sheets/4913"
   ]
 }

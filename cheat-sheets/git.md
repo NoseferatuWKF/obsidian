@@ -1,4 +1,3 @@
-
 cherry-pick
 ```bash
 git checkout feature
@@ -43,5 +42,8 @@ Host bitbucket.org-userB
 	url = git@github.com-user-A:userA/repo.git # add id next to hostname
 	fetch = +refs/heads/*:refs/remotes/origin/*
 ```
+
+rebase
+>DO NOT REBASE MASTER
 
 
