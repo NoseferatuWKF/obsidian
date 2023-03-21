@@ -2,5 +2,5 @@
 
 ```bash
 # no hassle installation
-sudo apt install -y default-java default-jdk
+sudo apt install -y default-jre default-jdk
 ```

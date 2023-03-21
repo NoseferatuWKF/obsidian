@@ -35,6 +35,14 @@ case $COUNTRY in
 esac
 ```
 
+check if a command exists
+```bash
+if ! command -v <command> &> /dev/null
+then
+	echo "missing command"
+fi
+```
+
 ## Basics
 
 eval
@@ -68,6 +76,15 @@ chwon
 chown <user> /path/to/file
 ```
 
+curl
+```bash
+# usually there is a command like this
+curl --proto="https" -Ssf <url> -0 <output> 
+# silent do not show progess meter or error message
+# show error, when used with -s makes curl show and error message if it fails
+# fail silently (no output at all) on server errors
+```
+
 ## Utils
 
 yes
@@ -95,6 +112,16 @@ rsync /host/file/path remote@hostname:path/to/file # can use relative paths
 
 # remote to host
 scp remote@hostname:path/to/file /host/file/path
+```
+
+add-apt-repository
+```bash
+# add repository to /etc/apt/sources.list.d
+sudo add-apt-repository -S deb https://path/to/source component
+# listing repository
+sudo add-apt-repository -L
+# removing repository
+sudo add-apt-repository -r /path/to/
 ```
 
 ssh-add (use this with [[git]])

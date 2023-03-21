@@ -1,3 +1,18 @@
+config
+```bash
+git config --global \
+user.name "NoseferatuWKF" \
+user.email "wkf2584@gmail.com" \ 
+core.editor "/usr/local/bin/nvim" 
+```
+
+remote
+```bash
+git remote add /path/to/remote # add new remote
+git remote set-url <remote> /new/path # set new path for a remote
+git remote get-url <remote> # get the path for a remote
+```
+
 cherry-pick
 ```bash
 git checkout feature
@@ -8,19 +23,13 @@ git cherry-pick 123abc7 -m 1 # if it is a merge commit need to specify mainline
 
 submodule
 ```bash
+# adding submodule
 git submodule add /path/to/file git@github.com:user/path.git # setup submodule
 git submodule update --init --recursive # install all submodules
 
 # removing submodules
 git submodule deinit /path/to/file # may require to use -f
 git rm /path/to/file # may require to use -f
-```
-
-remote
-```bash
-git remote add /path/to/remote # add new remote
-git remote set-url <remote> /new/path # set new path for a remote
-git remote get-url <remote> # get the path for a remote
 ```
 
 working with multiple keys
@@ -44,6 +53,12 @@ Host bitbucket.org-userB
 ```
 
 rebase
->DO NOT REBASE MASTER
+>NEVER REBASE MASTER (unless it's my own repo :p)
+```bash
+git rebase -i @~1 # interactive relative to HEAD~1
+git commit --amend # if want to amend kinda optional
+git rebase --continue # finishing up
+git rebase --abort # fuck this start over
+```
 
 

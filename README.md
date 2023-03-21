@@ -2,6 +2,8 @@
 
 >chatGPT basically
 
+>Why Athena? Because she's hot
+
 ## TOGODDAMNDO
 - [ ] translate all notes taken before into .md
 - [ ] move private notes to sub modules

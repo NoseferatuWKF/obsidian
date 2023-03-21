@@ -370,6 +370,9 @@ fn main() {
 }
 ```
 
+lifetimes
+[video](https://www.youtube.com/watch?v=juIINGuZyBc&ab_channel=Let%27sGetRusty)
+
 ## Modules
 
 `mod.rs` is the entrypoint for a mod directory, similar to `index.js` or `init.lua`

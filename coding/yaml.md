@@ -19,6 +19,11 @@ alias_key:
 	<<: *fruit
 	name: Strawberry
 		unique_characteristics: Has tiny holes with tiny hairs
+
+# for arrays
+tags: &anchored_tags ["a", "b", "c"]
+
+tags: [*anchored_tags, "d", "e", "f"]
 ```
 
 multiline

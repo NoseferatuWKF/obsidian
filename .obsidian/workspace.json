@@ -4,22 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "d0d69d2927e8b17a",
+        "id": "f79504ec37faaf21",
         "type": "tabs",
         "children": [
           {
-            "id": "b43b3bf2540e9b40",
+            "id": "54aceefbe306254d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cheat-sheets/ansible.md",
+                "file": "private/setel/web-connect.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "45a50e2b0d724958",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cheat-sheets/shell.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "cheat-sheets/ansible.md",
+                "file": "cheat-sheets/shell.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "cheat-sheets/ansible.md",
+                "file": "cheat-sheets/shell.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "cheat-sheets/ansible.md"
+                "file": "cheat-sheets/shell.md"
               }
             }
           }
@@ -146,35 +159,42 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b43b3bf2540e9b40",
+  "active": "45a50e2b0d724958",
   "lastOpenFiles": [
-    "automation/ansible.md",
-    "cheat-sheets/ansible.md",
-    "technical/oauth-2.0.md",
-    "life-hack/onboarding.md",
-    "cheat-sheets/tmux.md",
+    "cheat-sheets/kubernetes.md",
     "cheat-sheets/docker.md",
-    "cheat-sheets/shell.md",
-    "cheat-sheets/nvim.md",
     "cheat-sheets/js.md",
-    "cheat-sheets/git.md",
-    "automation/github-actions.md",
-    "automation/terraform.md",
-    "automation/puppet.md",
-    "automation/jenkins.md",
-    "algorithms/searching.md",
-    "algorithms/fundamentals.md",
-    "technical/terms.md",
-    "life-hack",
-    "README.md",
-    "headlines/svb-bank-run.md",
-    "devtools/nvim.md",
-    "coding/java.md",
-    "coding/go.md",
-    "coding/csharp.md",
+    "private/setel/web-connect.md",
     "coding/js.md",
     "coding/lua.md",
+    "private/setel/api-iam.md",
+    "private/setel/api-connect.md",
+    "private/setel/api-auth.md",
+    "README.md",
+    "coding/yaml.md",
     "coding/rust.md",
+    "coding/go.md",
+    "coding/java.md",
+    "coding/csharp.md",
+    "technical/terms.md",
+    "technical/oauth-2.0.md",
+    "life-hack/onboarding.md",
+    "private/pasted-images/Pasted image 20230302161920.png",
+    "automation/ansible.md",
+    "cheat-sheets/ansible.md",
+    "cheat-sheets/shell.md",
+    "devtools/binaries.md",
+    "Pasted image 20230316145308.png.md",
+    "private/pasted-images/Pasted image 20230316145308.png",
+    "cheat-sheets/tmux.md",
+    "private/setel",
+    "private/pasted-images/Pasted image 20230308212054.png",
+    "private/pasted-images/Pasted image 20230302161956.png",
+    "private/pasted-images",
+    "devtools/nvim.md",
+    "devtools/references.md",
+    "pasted-images/Pasted image 20230304032400.png",
+    "life-hack",
     "cheat-sheets/4913"
   ]
 }

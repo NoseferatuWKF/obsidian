@@ -1,3 +1,6 @@
 {
-  "accentColor": ""
+  "accentColor": "",
+  "cssTheme": "Everblush",
+  "interfaceFontFamily": "Hack Nerd Font",
+  "theme": "obsidian"
 }
