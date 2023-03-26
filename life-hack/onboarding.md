@@ -16,4 +16,4 @@
  7. Write a website from scratch, and host it on a server somewhere.
  8. Read [The Go Book](https://www.gopl.io/)
  9. Research functional programming, and write a program
- 10. [Leetcode](https://leetcode.com/)
+ 10. [Leetcode](https://leetcode.com/) (just do around 20)

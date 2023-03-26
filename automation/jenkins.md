@@ -1,4 +1,4 @@
-[Jenkins](https://www.jenkins.io/)
+# [Jenkins](https://www.jenkins.io/)
 >run remote pipelines from localhost that other CI/CD tools can't do
 
 ## Jenkins vs. Jenkins X
@@ -38,7 +38,7 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 4. Make sure the script path is set correctly
 
 ### Enabling ssh
-1. First generate a ssh keypair and add it to the ssh-agent [[shell | ssh-add]]
+1. First generate a ssh keypair and add it to the ssh-agent [[cheat-sheets/shell | ssh-add]]
 2. Do a test connection with `ssh -T git@github.com` to add github to known hosts or any other way is fine as well
 3. Go to github repo and add click on settings and add a deploy key which is the pubkey
 4. Now go to Jenkins dashboard and go to Manage Jenkins > Manage Credentials
@@ -51,4 +51,5 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 ## Working with rust
 >Just use something else
 1. Install rust
-2. Instal build-essential (requires sudo)
+2. Install build-essential (requires sudo)
+sdsd

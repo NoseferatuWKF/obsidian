@@ -1,13 +1,13 @@
-[[shell|cheat-sheets]]
+[[cheat-sheets/shell|cheat-sheets]]
 
 ## Initial setup
 
-ansible
 git
 curl
 ssh
+ansible
 
-## Automation setup
+## From Automation
 
 stow
 ripgrep
@@ -19,6 +19,7 @@ fzf
 htop
 nvim
 i3
+entr
 
 ## Scripts
 
@@ -27,6 +28,7 @@ battery
 
 ### general
 checkout
+teamocil
 
 
 ```

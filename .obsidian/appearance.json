@@ -1,6 +1,8 @@
 {
-  "accentColor": "",
-  "cssTheme": "Everblush",
+  "accentColor": "#6bdcef",
+  "cssTheme": "custom",
   "interfaceFontFamily": "Hack Nerd Font",
-  "theme": "obsidian"
+  "theme": "obsidian",
+  "nativeMenus": false,
+  "showViewHeader": true
 }

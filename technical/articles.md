@@ -1,0 +1,1 @@
+[react is holding me hostage](https://emnudge.dev/blog/react-hostage)

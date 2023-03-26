@@ -61,4 +61,9 @@ git rebase --continue # finishing up
 git rebase --abort # fuck this start over
 ```
 
+co-author trailer
+```bash
+Co-authored-by: AUTHOR-NAME <ANOTHER-NAME@EXAMPLE.COM>
+```
+
 

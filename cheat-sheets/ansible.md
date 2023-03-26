@@ -3,7 +3,7 @@ run playbook
 # linux
 ansible-playbook --ask-become-pass --ask-vault-pass -t docker --skip-tags brew local.yml
 # mac
-ansible-playbook --ask-become-pass --ask-vault-pass -t "mac, docker" local.yml
+ansible-playbook --ask-become-pass --ask-vault-pass -t mac local.yml
 ```
 
 run playbook on remote git repo

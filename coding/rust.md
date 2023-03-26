@@ -2,24 +2,30 @@
 
 [the-book](https://doc.rust-lang.org/book/)
 [rust-by-example](https://doc.rust-lang.org/rust-by-example/index.html)
+[rust-blog](https://github.com/pretzelhammer/rust-blog/tree/master)
 
 ## Installation
 
-
+rustup
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+```
 
 ## Guidelines
 
 - by default every variable is immutable
 - try not to use unwraps and clones
-- instead of void, rust uses (), which is known as a unit
+- instead of void, rust uses an empty tuple (), which is known as a unit
 - by default the items in a module are private
 
-## Basics
+## When not to use rust?
 
->every function with a ! is a macro
-```rust
-println!("Hello");
-```
+- when you want to use unsafe operations (performance purposes)
+- do not like the expressiveness of rust
+- want to collect garbage 
+- want to have production issues that is hard to debug
+
+## Basics
 
 >by default rust compiler will throw an error for unused variables, use underscore to bypass this
 ```rust
@@ -30,22 +36,42 @@ let _another_var = "this will not throw an error even when unused";
 
 >`usize` is the largest unsigned int depends on the machine
 ```rust
-let max: usize = usize::MAX; // can produce different results on different machines
+let max: usize = usize::MAX; // can different results on different machines
 ```
 
->you can put underscores for large numbers
+>you can put underscores for large numbers to make it more readable
 ```rust
 let big_num: u32 = 1_000_000;
 ```
 
-value and borrow/reference
+using crates
+```rust
+// use::<crate>::<mod>::<Item>
+use::std::collections::Hashmap;
+// use only certain items
+use::sync::{Arc, Mutex};
+// use all items within mod
+use::std::collections::*;
+```
+
+macro and attribute macro
+```rust
+#[allow(unused)] // this is a attribute macro
+fn main() {
+	println!("Hello"); // this is a macro
+}
+```
+
+value and borrow
 ```rust
 let mut x = 5; // this is value
 let y = &x; // this is a borrow / read-only reference
 let z = &mut x; // this is a mutable borrow / read and write reference
+let new_x = x; // now new_x has the value of x and x no longer owns a value
 ```
 
-**shadowing** - variable with the same name and different data types can be set
+**shadowing**
+>Variable with the same name and different data types can be set
 ```rust
 let age: &str = 29;
 let mut age: u32 = age.trim().parse().expect("Whoops");
@@ -54,10 +80,11 @@ let mut age: u32 = age.trim().parse().expect("Whoops");
 [let vs const](https://doc.rust-lang.org/std/keyword.const.html)
 >Sometimes a certain value is used many times throughout a program, and it can become inconvenient to copy it over and over. What’s more, it’s not always possible or desirable to make it a variable that gets carried around to each function that needs it. In these cases, the `const` keyword provides a convenient alternative to code duplication:
 ```rust
-const THING: u32 = 0xABAD1DEA; // must be explicitly typed!
+const THING: u32 = 0xABAD1DEA; // global constant and must be explicit!
 let foo = 123 + THING;
-const WORDS: &'static str = "hello rust!"; // 'static is the only allowed const lifetime
-// thanks to static lifetime elision, you usually don’t have to explicitly use 'static
+// the only lifetime allowed for const is 'static
+const WORDS: &'static str = "hello rust!";
+// due to static lifetime elision, 'static can be ignored
 const WORDS: &str = "hello convenience!"; 
 ```
 
@@ -72,7 +99,7 @@ let ternary = if condition == true {
 };
 ```
 
-match statement
+pattern matching
 ```rust
 let speed_limit: u32 = 60;
 match speed_limit { // must include all possible values
@@ -83,9 +110,10 @@ match speed_limit { // must include all possible values
 ```
 
 ? operator
+>can only be used with Result types
 ```rust
 // without ? operator
-fn main() -> Result<(), Box<dyn Error>> { // Handling Result type
+fn main() -> Result<(), Box<dyn Error>> { 
     let greeting_file = match File::open("hello.txt") {
 	    OK(),
 	    Err(),
@@ -101,12 +129,13 @@ fn main() -> Result<(), Box<dyn Error>> {
 arrays
 ```rust
 let arr: [i32; 3] = [1,2,3]; // default to i32
+let mut i = 0; // if a type is not specified this will be usize
 // this is one way to do a loop
-let mut i: usize = 0; // default to usize
 loop {
 	println!("value is {} for index {}", arr[i], i);
 	i += 1;
-	break; // to get out of loop
+	// to get out of loop
+	break; 
 }
 // while loop
 while i < arr.len() {
@@ -120,6 +149,30 @@ for val: &32 in arr.iter() { // make sure the type is referencing correctly
 }
 ```
 
+vectors
+>Vectors are smart pointers
+```rust
+    let mut foo: Vec<&str> = Vec::new(); // instantiate an empty vector
+    let bar: Vec<u32> = vec![1, 2, 3]; // another way of instantiating a vector
+    let baz = Vec::from([1, 2, 3]); // yet another way to instantiate a vector
+    foo.push("Pushed");
+    foo.pop();
+    let _bar2 = bar[0]; // what if index does not have any value?
+    let bar3 = baz.get(0); // this is a safer way to access value
+    match bar3 {
+        Some(value) => println!("value exists: {}", value),
+        None => println!("value doesn't exist"),
+    };
+    for b in baz.iter() { // looping vectors
+	    println!("{}", b);
+    }
+    // infer from iterator
+	let infer: Vec<_> = vec![1, 2, 3] // the _ is telling rust to infer from map
+		.iter()
+		.map(|x| x + 1) // the || is a closure
+		.collect();
+```
+
 tuples
 ```rust
 let tuple: (u32, String, f32) = (29, "John".to_string(), 10_000.00); 
@@ -127,11 +180,15 @@ let tuple: (u32, String, f32) = (29, "John".to_string(), 10_000.00);
 println!("{} is {}, his salary is {}", tuple.1, tuple.0, tuple.2);
 // pattern matching kinda like destructring
 let (t1: u32, t2: String, t3: f32) = tuple;
-println!("{} is {}, his salary is {}", t2, t1, t3); // will print same thing as above
+// will print same thing as above
+println!("{} is {}, his salary is {}", t2, t1, t3); 
 ```
 
-String
+String and &str
 >a String is mutable and stored in the heap, &str is immutable and commonly known as a slice, also has a UTF-8 encoding
+
+>String is a smart pointer
+
 ```rust
     let mut foo: String = String::new(); // instantiate a new mutable String
     let _bar: &str = "Hello Rust"; // create a new &str
@@ -187,7 +244,6 @@ impl Shapes {
 }
 
 fn main() {
-// can also declare enums within functions
     let shape = Shapes::Circle;
     match shape {
         Shapes::Square => println!("I am a Square, I have 4 sides"),
@@ -197,29 +253,6 @@ fn main() {
     }
     println!("is this shape a polygon? {}", shape.is_polygon());
 }
-```
-
-vectors
-```rust
-    let mut foo: Vec<&str> = Vec::new(); // instantiate an empty vector
-    let bar: Vec<u32> = vec![1, 2, 3]; // another way of instantiating a vector
-    let baz = Vec::from([1, 2, 3]); // yet another way to instantiate a vector
-    foo.push("Pushed");
-    foo.pop();
-    let _bar2 = bar[0]; // what if index does not have any value?
-    let bar3 = baz.get(0); // this is a safer way to access value
-    match bar3 {
-        Some(value) => println!("value exists: {}", value),
-        None => println!("value doesn't exist"),
-    };
-    for b in baz.iter() { // looping vectors
-	    println!("{}", b);
-    }
-    // infer from iterator
-	let infer: Vec<_> = vec![1, 2, 3] // the _ is telling rust to infer from map
-		.iter()
-		.map(|x| x + 1) // the || is a closure
-		.collect();
 ```
 
 closures
@@ -243,14 +276,14 @@ fn main() {
 }
 
 fn foo(x: u32) -> u32 { 
-    x // return is optional
+    x // will return value if no semicolon
 }
 
 fn bar(x: u32, y: u32) -> (i64, i64) {
     ((x as i64), (y as i64)) // returning two values 
 }
 
-fn ref_fn(x: &Vec<u32>) -> &u32 { // referencing instead of borrow
+fn ref_fn(x: &Vec<u32>) -> &u32 {
     match x.get(0) {
         Some(v) => v,
         None => &0,
@@ -345,7 +378,9 @@ fn main() {
 }
 ```
 
-smart-pointers
+[smart-pointers](https://doc.rust-lang.org/book/ch15-00-smart-pointers.html)
+>smart pointers can own the data they point to and allows manipulation of said data. It also has extra metadata and capabilities
+
 ```rust
 struct Node<T> {
     _val: T,
@@ -372,10 +407,51 @@ fn main() {
 
 lifetimes
 [video](https://www.youtube.com/watch?v=juIINGuZyBc&ab_channel=Let%27sGetRusty)
+```rust
+// &'a str - this is a borrow with an explicit lifetime
+// &'a mut str - this is a mutable borrow with an explicit lifetime
+// &'static - this is a lifetime that will last for the whole program
+// T: 'static - static bound lifetime not to be confused with &'static
+
+fn main() {
+    const A: i32 = -10;
+    let b: i32 = 10;
+    life_time(&A, &b);
+}
+
+// function with a generic lifetime annotation
+// this creates a relationship of the variable lifetimes
+fn life_time<'z>(a: &'z i32, b: &'z i32) -> &'z i32 {
+    // a.to_string is ephemeral so need to bind it to a variable
+    let binding = a.to_string();
+    let life_time = LifeTime {
+        life: binding.as_str(), // can also pass it as &binding
+        time: a
+    };
+
+    // aviator operator?
+    println!("{}:{}", life_time.life, life_time.time);
+
+    return match a > b {
+        true => a,
+        false => b,
+    };
+}
+
+// struct with a generic lifetime annotation
+// need to specify a generic lifetime annotation if a field is a referenced type
+struct LifeTime<'a, 'b> {
+	life: &'a i32,
+	time: &'b str,
+	stand_alone: String,
+}
+```
 
 ## Modules
 
-`mod.rs` is the entrypoint for a mod directory, similar to `index.js` or `init.lua`
+>`mod.rs` is the entrypoint for a mod directory, similar to `index.js` or `init.lua`
+
+folder structure
 ```
 ├── car
 │   ├── engine.rs
@@ -489,6 +565,8 @@ fn job(who: &str) {
 }
 ```
 
+> If a single piece of data must be accessible from more than one task concurrently, then it must be shared using synchronization primitives such as Arc.
+
 [arc](https://doc.rust-lang.org/std/sync/struct.Arc.html) (atomically reference counted) and [mutex](https://doc.rust-lang.org/std/sync/struct.Mutex.html) (mutual exclusion)
 ```rust
 use std::{sync::{Arc, Mutex}, thread};
@@ -500,7 +578,10 @@ struct Tank {
 fn main() {
     let fuel_tank = Arc::new(Mutex::new(Tank {fuel: 5000}));
     let pistons = (1..5).map(|x| {
-        let fuel_tank_ref = fuel_tank.clone(); // add another ref
+		// clone is adding an atomic reference count to this variabel
+		// it is a fancy way of saying that it is creating a shallow copy
+		// this is also different than how Rc(reference count) clone
+        let fuel_tank_ref = fuel_tank.clone(); 
         thread::spawn(move || { // moving ownership of x
             consume_fuel(&fuel_tank_ref, 5, x); // let main fn keep ownership
         })
@@ -525,7 +606,7 @@ comparing stdin to a string
 fn compare_two_strings() {
 	let mut input = String::new();
 	std::io::stdin()::read_line(&mut input).unwrap();
-	assert!(input.trim().eq("string_to_be_compared")) // need to trim trailing newline
+	assert!(input.trim().eq("string_to_be_compared")) // trim trailing newline
 }
 ```
 

@@ -13,10 +13,20 @@ for (const key of Object.keys(user)) {
 }
 ```
 
-Converting set to array and vice versa
+converting set to array and vice versa
 ```js
 Array.from(mySet);
 [...mySet2];
 
 mySet2 = new Set([1, 2, 3, 4]);
+```
+
+getting swagger json from nestjs
+```bash
+http://path/to/swagger-json # add json at the end
+```
+
+get server timezone
+```js
+Intl.DateTimeFormat().resolvedOptions().timeZone
 ```

@@ -21,3 +21,5 @@
 ### Aesthetics
 - sunbather
 - lua-line
+- nvim-dev-web-icons
+

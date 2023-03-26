@@ -9,13 +9,24 @@
 - Currently, all modern engines ship a mark-and-sweep garbage collector
 
 ## When you don't need JS
-- multi-threaded application
+- multi-threaded operations / parallel computing
 - strict and verbose control-flow
 - bitwise operations - [IEEE 754](https://en.wikipedia.org/wiki/Double-precision_floating-point_format)
 - precision math
 
 ## Videos
 - [Promises explained exceptionally well](https://www.youtube.com/watch?v=bAlczbDUXx8&ab_channel=StevieJay)
+
+## Installation
+
+>because installing it without a version manager sucks
+
+fnm
+```bash
+fnm install --lts 
+# or this
+fnm use lts/latest
+```
 
 ## Basics
 
@@ -195,6 +206,12 @@ for (let i = 0; i < int16View.length; i++) {
 [child process](https://nodejs.dev/en/api/v19/child_process/)
 
 [events](https://nodejs.dev/en/api/v19/events/) - I love this
+
+[promisify](https://nodejs.org/docs/latest-v14.x/api/util.html#util_util_promisify_original)
+
+[pipeline](https://nodejs.org/docs/latest-v14.x/api/stream.html#stream_stream_pipeline_streams_callback)
+
+[isDeepStrictEqual](https://nodejs.org/docs/latest-v14.x/api/util.html#util_util_isdeepstrictequal_val1_val2)
 
 Event loop
 ```

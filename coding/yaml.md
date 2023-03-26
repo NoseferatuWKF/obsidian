@@ -1,4 +1,4 @@
-yaml is superset of json, so valid json is valid yaml
+>yaml is superset of json, so valid json is valid yaml
 
 anchors and aliases
 ```yaml
@@ -18,12 +18,13 @@ anchored_key: &fruit
 alias_key:
 	<<: *fruit
 	name: Strawberry
-		unique_characteristics: Has tiny holes with tiny hairs
+	taste: Sour
+	unique_characteristics: Has tiny holes with tiny hairs
 
 # for arrays
 tags: &anchored_tags ["a", "b", "c"]
 
-tags: [*anchored_tags, "d", "e", "f"]
+tags: [*anchored_tags, "d", "e", "f"] # [a, b, c, d, e, f]
 ```
 
 multiline

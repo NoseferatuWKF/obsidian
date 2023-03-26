@@ -43,6 +43,12 @@ then
 fi
 ```
 
+check if file exist
+```bash
+# super short pro syntax
+[[ ! -f /path/to/file ]] || source /path/to/file
+```
+
 ## Basics
 
 eval
@@ -80,12 +86,10 @@ curl
 ```bash
 # usually there is a command like this
 curl --proto="https" -Ssf <url> -0 <output> 
-# silent do not show progess meter or error message
-# show error, when used with -s makes curl show and error message if it fails
-# fail silently (no output at all) on server errors
+# -s: silent do not show progess meter or error message
+# -S: show error, when used with -s makes curl show and error message if it fails
+# -f: fail silently (no output at all) on server errors
 ```
-
-## Utils
 
 yes
 ```bash
@@ -93,13 +97,15 @@ yes | some-shell-script.sh # will pass Y to all stdin
 yes -A | some-shell-script.sh # will pass A to all stdin
 ```
 
+## Utils
+
 stow
 ```bash
 stow --adopt -nv $HOME <stowed-dir> # dry-run and verbose
 stow --adopt -v * && git restore . #adopt and sync everything with repo
 ```
 
-ssh
+ssh-server
 ```bash
 sudo apt install openssh-server
 sudo service ssh start # can use systemctl as well
@@ -162,10 +168,10 @@ keybinds
 <C-y> paste words from buffer
 ```
 
-## sh
+## bash
 
 source
 ```bash
-# so sh does not have source it uses . instead
+# so bash does not have source it uses . instead
 . /path/to/env # not source /path/to/env
 ```

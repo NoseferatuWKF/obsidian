@@ -1,8 +1,6 @@
-## useful
-
 run a pod in an interactive shell
 ```bash
-kubectl run -i --tty busybox --image=busybox:1.28 -- sh
+kubectl run -it busybox --image=busybox:1.28 -- sh
 ```
 
 run a cronjob manually

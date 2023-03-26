@@ -14,5 +14,10 @@ remove all unused containers, networks, images (both dangling and unreferenced)
 docker system prune
 ```
 
+run multiple commands within docker
+```bash
+docker run --rm ubuntu bash -c "whoami && pwd"
+```
+
 ## more cheat-sheets:
 - https://dockercheatsheet.com/

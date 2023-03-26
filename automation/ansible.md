@@ -1,7 +1,7 @@
 # [Ansible](https://docs.ansible.com/)
 *push based automation*
 
->Great for automating setting up local machine
+>Agentless which makes it great for automating setting up local machine
 
 [[cheat-sheets/ansible|cheat-sheets]]
 

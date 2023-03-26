@@ -31,11 +31,15 @@ vim.keymap.set("n", "Y") -- yank line after cursor
 
 ## commands
 
-```
-:echo @%                |" directory/name of file
-:echo expand('%:t')     |" name of file ('tail')
-:echo expand('%:p')     |" full path
-:echo expand('%:p:h')   |" directory containing file ('head')
+```lua
+:echo @%                -- directory/name of file
+:echo expand('%:t')     -- name of file ('tail')
+:echo expand('%:p')     -- full path
+:echo expand('%:p:h')   -- directory containing file ('head')
+:cd %:p:h               -- change working directory for current window
+:lcd %:p:h              -- change working directory for all windows
+:%s/abc/def/g           -- replace all strings within file
+:0, 10 s/abc/def/g      -- replace line 0 - 10 strings
 ```
 
 ## some of ThePrimeagen keybinds

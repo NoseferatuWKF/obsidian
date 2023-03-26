@@ -6,8 +6,9 @@
 
 ## TOGODDAMNDO
 - [ ] translate all notes taken before into .md
-- [ ] move private notes to sub modules
-- [ ] FOMO stuff
+- [x] move private notes to sub modules
+- [x] FOMO stuff
+- [ ] maybe use obsidian canvas instead of excalidraw
 
 ## [MARKDOWN CHEAT-SHEET](https://www.markdownguide.org/cheat-sheet/#extended-syntax)
 
