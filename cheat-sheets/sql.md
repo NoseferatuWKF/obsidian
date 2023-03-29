@@ -16,6 +16,6 @@ psql commands
 UPDATE
 ```SQL
 UPDATE table
-SET column = "value"
-WHERE column like "%value%"
+SET column = 'value'
+WHERE column like '%value%'
 ```

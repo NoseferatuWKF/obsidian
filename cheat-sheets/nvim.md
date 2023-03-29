@@ -12,6 +12,10 @@ vim.keymap.set("v", "S <output>"] -- text -> "text"
 -- in netrw
 t -- to add cursor to tab
 
+--motions
+f -- find next letter occurence
+F -- find prev letter occurence
+
 -- tabs
 vim.keymap.set("n", "<C-w> T") -- open new tab
 vim.keymap.set("n", "gt") -- go to next tab
@@ -30,6 +34,7 @@ vim.keymap.set("n", "Y") -- yank line after cursor
 ```
 
 ## commands
+>marks are set with 'm'. lower case are in file only while upper case are global
 
 ```lua
 :echo @%                -- directory/name of file
@@ -40,6 +45,7 @@ vim.keymap.set("n", "Y") -- yank line after cursor
 :lcd %:p:h              -- change working directory for all windows
 :%s/abc/def/g           -- replace all strings within file
 :0, 10 s/abc/def/g      -- replace line 0 - 10 strings
+:checkhealth            -- check nvim config
 ```
 
 ## some of ThePrimeagen keybinds
@@ -136,6 +142,33 @@ vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
 vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>",
   {silent = true, noremap = true}
 )
+```
+
+## [nvim-dap](https://github.com/mfussenegger/nvim-dap/tree/master)
+```lua
+vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
+vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
+vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)
+vim.keymap.set('n', '<F12>', function() require('dap').step_out() end)
+vim.keymap.set('n', '<Leader>b', function() require('dap').toggle_breakpoint() end)
+vim.keymap.set('n', '<Leader>B', function() require('dap').set_breakpoint() end)
+vim.keymap.set('n', '<Leader>lp', function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
+vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.open() end)
+vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end)
+vim.keymap.set({'n', 'v'}, '<Leader>dh', function()
+  require('dap.ui.widgets').hover()
+end)
+vim.keymap.set({'n', 'v'}, '<Leader>dp', function()
+  require('dap.ui.widgets').preview()
+end)
+vim.keymap.set('n', '<Leader>df', function()
+  local widgets = require('dap.ui.widgets')
+  widgets.centered_float(widgets.frames)
+end)
+vim.keymap.set('n', '<Leader>ds', function()
+  local widgets = require('dap.ui.widgets')
+  widgets.centered_float(widgets.scopes)
+end)
 ```
 
 ## [telescope](https://github.com/nvim-telescope/telescope.nvim)

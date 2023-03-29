@@ -13,25 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cheat-sheets/shell.md",
+                "file": "life-hack/onboarding.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "6812edafa1e39c48",
+            "id": "bb3899dcadbef15a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "coding/go.md",
+                "file": "life-hack/onboarding.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -97,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "cheat-sheets/shell.md",
+                "file": "life-hack/onboarding.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "cheat-sheets/shell.md",
+                "file": "life-hack/onboarding.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "cheat-sheets/shell.md"
+                "file": "life-hack/onboarding.md"
               }
             }
           }
@@ -158,45 +159,47 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "865320617108d7f5",
+  "active": "bb3899dcadbef15a",
   "lastOpenFiles": [
-    "coding/go.md",
-    "coding/rust.md",
+    "life-hack/software-speedrun.md",
     "life-hack/onboarding.md",
-    "cheat-sheets/tmux.md",
-    "cheat-sheets/docker.md",
-    "technical/terms.md",
+    "pasted-images/Pasted image 20230329205356.png",
+    "private/setel/api-iam.md",
+    "cheat-sheets/shell.md",
+    "devtools/shell.md",
     "devtools/references.md",
+    "private/setel/api-auth.md",
     "private/setel/web-connect.md",
-    "private/pasted-images/Pasted image 20230324164058.png",
-    "cheat-sheets/git.md",
-    "technical/tokio.md",
-    "coding/js.md",
-    "technical/articles.md",
-    "technical/casbin.md",
+    "cheat-sheets/docker.md",
+    "private/setel/api-connect.md",
     "technical/fundamentals.md",
     "technical/oauth-2.0.md",
-    "cheat-sheets/js.md",
-    "cheat-sheets/ansible.md",
-    "coding/java.md",
+    "technical/terms.md",
+    "technical/tokio.md",
+    "technical/casbin.md",
+    "technical/articles.md",
+    "private/pasted-images/Pasted image 20230328073557.png",
+    "coding/js.md",
+    "cheat-sheets/git.md",
     "cheat-sheets/sql.md",
-    "private/setel/api-iam.md",
-    "private/setel/api-connect.md",
-    "private/setel/api-auth.md",
-    "private/pasted-images/Pasted image 20230323153545.png",
     "cheat-sheets/nvim.md",
     "devtools/nvim.md",
-    "private/setel/casbin.canvas",
-    "README.md",
-    "monitoring/PLG.md",
-    "pasted-images/Pasted image 20230304032400.png",
-    "pasted-images/Pasted image 20230304032424.png",
-    "private/pasted-images/Pasted image 20230302161920.png",
-    "private/pasted-images/Pasted image 20230302161956.png",
+    "private/pasted-images/Pasted image 20230328063205.png",
+    "private/pasted-images/Pasted image 20230328055552.png",
+    "private/pasted-images/Pasted image 20230328061500.png",
+    "cheat-sheets/tmux.md",
+    "cheat-sheets/i3.md",
+    "coding/go.md",
     "private/pasted-images/Pasted image 20230308212054.png",
+    "private/pasted-images/Pasted image 20230302161956.png",
+    "private/pasted-images/Pasted image 20230302161920.png",
     "private/pasted-images/Pasted image 20230316145308.png",
     "private/setel",
     "private/pasted-images",
+    "coding/rust.md",
+    "private/pasted-images/Pasted image 20230324164058.png",
+    "cheat-sheets/js.md",
+    "private/setel/casbin.canvas",
     "life-hack",
     "cheat-sheets/4913"
   ]

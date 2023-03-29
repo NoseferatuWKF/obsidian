@@ -19,5 +19,10 @@ run multiple commands within docker
 docker run --rm ubuntu bash -c "whoami && pwd"
 ```
 
+cache busting
+```Dockerfile
+ARG CACHE_BUST=1
+```
+
 ## more cheat-sheets:
 - https://dockercheatsheet.com/

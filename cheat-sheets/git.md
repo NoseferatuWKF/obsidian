@@ -66,4 +66,8 @@ co-author trailer
 Co-authored-by: AUTHOR-NAME <ANOTHER-NAME@EXAMPLE.COM>
 ```
 
+copy branch
+```bash
+git checkout -b new-branch old-branch # or @
+```
 

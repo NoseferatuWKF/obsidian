@@ -29,8 +29,3 @@ battery
 ### general
 checkout
 teamocil
-
-
-```
-.zshrc > .zshenv > .zprofile (requires login shell)
-```

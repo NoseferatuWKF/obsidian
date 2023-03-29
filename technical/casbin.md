@@ -47,3 +47,19 @@ example policy for ACL models
 p, alice, data1, read # alice can read data1
 p, bob, data2, write # bob can write data2
 ```
+
+## [Enforcers](https://casbin.org/docs/enforcers)
+
+>Enforcer is the main structure in Casbin. It acts as an interface for users to make operations on policy rules and models.
+
+## [Adapters](https://casbin.org/docs/adapters)
+
+>In Casbin, the policy storage is implemented as an adapter (aka middleware for Casbin). A Casbin user can use an adapter to load policy rules from a storage (aka LoadPolicy()), or save policy rules to it (aka SavePolicy()).
+
+1. If casbin.NewEnforcer() is called with an explicit or implicit adapter, the policy will be loaded automatically.
+2. You can call e.LoadPolicy() to reload the policy rules from the storage.
+3. If the adapter does not support the Auto-Save feature, The policy rules cannot be automatically saved back to the storage when you add or remove policies. You have to call SavePolicy() manually to save all policy rules.
+
+## [Watchers](https://casbin.org/docs/watchers)
+
+## [Dispatchers](https://casbin.org/docs/dispatchers)
