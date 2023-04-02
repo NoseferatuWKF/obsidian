@@ -138,7 +138,12 @@ sudo add-apt-repository -S deb https://path/to/source component
 # listing repository
 sudo add-apt-repository -L
 # removing repository
-sudo add-apt-repository -r /path/to/
+sudo add-apt-repository -r /path/to/repository # usually /etc/apt/sources.list.d
+```
+
+cleaning apt
+```shell
+sudo apt autoremove && sudo apt clean autoclean
 ```
 
 ssh-add (use this with [[git]])
@@ -160,6 +165,18 @@ ssh-add -l
 
 # removing keys
 ssh-add -d ~/.ssh/another_acc
+```
+
+dunst
+```bash
+dunstcl set-paused toggle # enable/disable dunst
+dunstify "some-message" # push mesagge to dunst
+```
+
+tar
+```bash
+# go to path and then untar
+tar -C /usr/local -xzf /path/to/file.tar.gz
 ```
 
 ## zsh

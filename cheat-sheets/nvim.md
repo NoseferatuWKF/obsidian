@@ -1,59 +1,145 @@
-## vim-surround
-
-```lua
-vim.keymap.set("n", "c s <input> <output>") -- 'text' -> "text"
-vim.keymap.set("n", "d s <input> <output>") -- "text" -> text
-vim.keymap.set("v", "S <output>"] -- text -> "text"
-```
-
 ## vanilla keybinds
 
+general
 ```lua
--- in netrw
-t -- to add cursor to tab
-
---motions
-f -- find next letter occurence
-F -- find prev letter occurence
-
--- tabs
-vim.keymap.set("n", "<C-w> T") -- open new tab
-vim.keymap.set("n", "gt") -- go to next tab
+-- modes
+a -- append after cursor (insert)
+i -- insert on cursor (insert)
+I -- insert in the beginning of the line (insert)
+A -- append in the end of the line (insert)
+s -- remove on cursor and edit (insert)
+S -- edit whole line (insert)
+C -- edit line after cursor (insert)
+o -- insert line below (insert)
+O -- insert line above (insert)
+r -- replace one on cursor (replace)
+R -- replace until quit on cursor (replace)
+v -- visual (visual)
+V -- v-line (visual)
+<C-v> -- v-block (visual)
 
 -- numbers
-vim.keymap.set("n", "<C-a>") -- increment number
-vim.keymap.set("n", "<C-x>") -- decrement number
-
--- yank
-vim.keymap.set("n", "yp") -- yank paragraph
-vim.keymap.set("n", "yy") -- yank line
-vim.keymap.set("n", "Y") -- yank line after cursor
+<C-a> -- increment number
+<C-x> -- decrement number
 
 -- buffers
 {count}CTRL-G  -- print buffer absolute file path
 ```
 
-## commands
->marks are set with 'm'. lower case are in file only while upper case are global
-
+netrw
 ```lua
-:echo @%                -- directory/name of file
-:echo expand('%:t')     -- name of file ('tail')
-:echo expand('%:p')     -- full path
-:echo expand('%:p:h')   -- directory containing file ('head')
+t -- to add cursor to tab
+% -- add new file
+D -- delete file/dir
+d -- add new dir
+R -- rename/move file/dir
+I -- show/hide banner
+```
+
+navigations
+```lua
+gg -- go top of file
+gj -- go down one line, good for wrapped lines, works with k,$,0 as well 
+gv -- go to previous highlighted
+gf -- go to file on cursor
+gx -- go to url on cursor
+G -- go bottom of file
+H -- go top of window (limited by vim scrolloff)
+M -- go middle of window (limited by vim scrolloff)
+L -- go bottom of window (limited by vim scrolloff)
+f -- forward first occurence
+F -- prev first occurence
+{ -- prev blank line
+} -- next blank line
+<C-d> -- half page down
+<C-u> -- half page up
+/keyword -- search for keyword
+* -- next occurence of word under cursor
+# -- prev occurence of word under cursor
+```
+
+motions
+>applies to other operations not just yanking
+```lua
+yap -- yank paragraph
+yy -- yank line
+Y -- yank after cursor
+yiw -- yank word on cursor
+yi( -- yank inside () work with other wrappers except {}
+ya( -- yank around(includes wrapper) () work with other wrappers except {}
+~ -- reverse case on cursor
+guu -- lowercase all in line
+gUU -- uppercase all in line
+g~~ -- reverse case all in line
+gUfw -- uppercase until first 'w'
+gqq -- make wrapped lines into proper lines
+g& -- apply prev substitutions to whole file
+ctw -- change line before 'w'
+```
+
+tabs
+>doesn't work with buftabline
+```lua
+-- tabs
+<C-w> T -- open new tab with current buffer
+gt -- go to next tab
+```
+
+window
+```lua
+<C-w> v -- vertical split
+<C-w> s -- horizontal split
+<C-w> x -- swap window with next
+<C-w> q -- close a window
+<C-w> o -- close all windows except current
+<C-w> = -- make all windows equal size
+```
+
+marks
+>local marks are lowercase and global marks are caps
+```lua
+ma -- create a new local mark 'a'
+mA -- create a new global mark 'A'
+`a -- jump to 'a' mark
+```
+
+registers and macros
+```lua
+qa -- record macro into register 'a'
+@a -- replay macro in register 'a'
+10@a -- replay macro in register 'a' 10 times
++ -- system clipboard
+* -- selection clipboard
+```
+
+## commands
+```lua
+:e file                 -- edit file
+:!echo @%               -- directory/name of file
+:!echo expand('%:t')    -- name of file ('tail')
+:!echo expand('%:p')    -- full path
+:!echo expand('%:p:h')  -- directory containing file ('head')
 :cd %:p:h               -- change working directory for current window
 :lcd %:p:h              -- change working directory for all windows
 :%s/abc/def/g           -- replace all strings within file
-:0, 10 s/abc/def/g      -- replace line 0 - 10 strings
+:0,10 s/abc/def/g       -- replace line 0 - 10 strings
+:-5,-10co.              -- copy relative line from -5 to -10
 :checkhealth            -- check nvim config
+:'<,'>!sort | uniq      -- sort and dedup selected lines
+:X                      -- encrypt/decrypt file
+```
+
+## mah keybinds
+
+```lua
+-- Netrw
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 ```
 
 ## some of ThePrimeagen keybinds
 
 ```lua
 -- Notorious keybinds from ThePrimeagen
--- Netrw
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 -- moving lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -171,4 +257,23 @@ vim.keymap.set('n', '<Leader>ds', function()
 end)
 ```
 
+## vim-surround
+
+```lua
+cs '" -- 'text' -> "text" 
+ds " -- "text" -> text
+(visual) S" -- text -> "text"
+```
+
 ## [telescope](https://github.com/nvim-telescope/telescope.nvim)
+
+## vim-fugitive
+
+```lua
+s -- stage
+u -- unstage
+U -- unstage all
+= -- toggle diff
+
+cc -- create a commit
+```

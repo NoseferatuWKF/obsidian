@@ -451,6 +451,15 @@ struct LifeTime<'a, 'b> {
 
 >`mod.rs` is the entrypoint for a mod directory, similar to `index.js` or `init.lua`
 
+>use snake case when naming files and directories, to make kebab case work need to add the path attribute macro
+
+path attribute macro
+```rust
+#[path="./path/to/some-file.rs"]
+mod some_file;
+use crate::some_file::some_function; // or some_file::some_function
+```
+
 folder structure
 ```
 ├── car
@@ -607,6 +616,56 @@ fn compare_two_strings() {
 	let mut input = String::new();
 	std::io::stdin()::read_line(&mut input).unwrap();
 	assert!(input.trim().eq("string_to_be_compared")) // trim trailing newline
+}
+```
+
+iter() vs into_iter()
+```rust
+let arr = vec![1, 2, 3 ];
+
+for each in arr.iter() { // returns a reference to the element
+	println!("{each}");
+}
+
+println!("{:?}", arr)
+
+for each in arr.into_iter() { // consumes the element
+	println!("{each}")
+}
+
+println!("{:?}", arr) // error here
+```
+
+match vs matches!
+```rust
+enum Something {
+	First,
+	Second,
+	Third,
+}
+
+fn lets_match() {
+	// match is good for multiple match arms
+	match Something {
+		Something::First => todo!(),
+		Something::Second => todo!(),
+		Something::Third => todo!(),
+	}
+	// matches! is good for binary matches
+	matches!(Something::First, true | false);
+}
+```
+
+Rc vs Box
+```rust
+struct ImmutableNode {
+	// Rc is shared ownership no immutable
+	node: Rc<ImmutableNode>,
+}
+
+struct MutableNode {
+	// Box is exclusive ownership and mutable
+	node: Box<MutableNode>,
 }
 ```
 

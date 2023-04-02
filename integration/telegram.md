@@ -1,1 +1,1 @@
-## [Telegram](https://core.telegram.org/)
+# [Telegram](https://core.telegram.org/)

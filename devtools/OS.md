@@ -1,5 +1,7 @@
 [[cheat-sheets/shell|cheat-sheets]]
 
+>mostly linux stuff
+
 ## Initial setup
 
 git

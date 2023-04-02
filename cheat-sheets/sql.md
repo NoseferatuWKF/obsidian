@@ -1,21 +1,33 @@
 ## psql
 
-connect to db within network
+connect to db
 ```bash
 psql postgresql://[user[:password]@][host][:port][,...][/dbname][?param1=value1&...]
 ```
 
-psql commands
+commands
 ```bash
+\l # list dbs
 \c # connect to db
+\d # list tables
 \q # quit
+\x on # expanded display use \x auto for both table and expanded
+\watch [SEC] # execute query every SEC seconds
 ```
 
 ## SQL
+
+>double quotes for column names, single quotes for values
 
 UPDATE
 ```SQL
 UPDATE table
 SET column = 'value'
 WHERE column like '%value%'
+```
+
+INSERT INTO
+```SQL
+INSERT INTO table (column1, column2)
+VALUES ('a', 'b')
 ```

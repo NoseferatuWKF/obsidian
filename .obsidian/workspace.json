@@ -4,35 +4,34 @@
     "type": "split",
     "children": [
       {
-        "id": "f79504ec37faaf21",
+        "id": "503987f3b95178f2",
         "type": "tabs",
         "children": [
           {
-            "id": "865320617108d7f5",
+            "id": "5f26240f24b5d1e1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "life-hack/onboarding.md",
+                "file": "cheat-sheets/shell.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "bb3899dcadbef15a",
+            "id": "f91d1e8108b7fd6a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "life-hack/onboarding.md",
+                "file": "coding/rust.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "life-hack/onboarding.md",
+                "file": "cheat-sheets/shell.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "life-hack/onboarding.md",
+                "file": "cheat-sheets/shell.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "life-hack/onboarding.md"
+                "file": "cheat-sheets/shell.md"
               }
             }
           }
@@ -159,46 +158,46 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "bb3899dcadbef15a",
+  "active": "5f26240f24b5d1e1",
   "lastOpenFiles": [
+    "coding/rust.md",
+    "cheat-sheets/nvim.md",
+    "cheat-sheets/shell.md",
+    "devtools/OS.md",
+    "algorithms/searching.md",
     "life-hack/software-speedrun.md",
     "life-hack/onboarding.md",
-    "pasted-images/Pasted image 20230329205356.png",
-    "private/setel/api-iam.md",
-    "cheat-sheets/shell.md",
-    "devtools/shell.md",
-    "devtools/references.md",
-    "private/setel/api-auth.md",
-    "private/setel/web-connect.md",
-    "cheat-sheets/docker.md",
-    "private/setel/api-connect.md",
-    "technical/fundamentals.md",
-    "technical/oauth-2.0.md",
-    "technical/terms.md",
-    "technical/tokio.md",
-    "technical/casbin.md",
-    "technical/articles.md",
-    "private/pasted-images/Pasted image 20230328073557.png",
-    "coding/js.md",
-    "cheat-sheets/git.md",
+    "cheat-sheets/regex.md",
     "cheat-sheets/sql.md",
-    "cheat-sheets/nvim.md",
-    "devtools/nvim.md",
+    "technical/terms.md",
+    "cheat-sheets/js.md",
+    "coding/js.md",
+    "cheat-sheets/i3.md",
+    "cheat-sheets/git.md",
+    "cheat-sheets/docker.md",
+    "cheat-sheets/ansible.md",
+    "cheat-sheets/tmux.md",
+    "cheat-sheets/redis.md",
+    "technical/tokio.md",
+    "technical/oauth-2.0.md",
+    "integration/meta.md",
+    "integration/google.md",
+    "integration/discord.md",
+    "integration/telegram.md",
+    "integration/slack.md",
+    "pasted-images/Pasted image 20230331031407.png",
+    "pasted-images/Pasted image 20230331031040.png",
+    "coding/go.md",
+    "pasted-images/Pasted image 20230329205356.png",
+    "private/pasted-images/Pasted image 20230328073557.png",
     "private/pasted-images/Pasted image 20230328063205.png",
     "private/pasted-images/Pasted image 20230328055552.png",
     "private/pasted-images/Pasted image 20230328061500.png",
-    "cheat-sheets/tmux.md",
-    "cheat-sheets/i3.md",
-    "coding/go.md",
     "private/pasted-images/Pasted image 20230308212054.png",
     "private/pasted-images/Pasted image 20230302161956.png",
     "private/pasted-images/Pasted image 20230302161920.png",
-    "private/pasted-images/Pasted image 20230316145308.png",
     "private/setel",
     "private/pasted-images",
-    "coding/rust.md",
-    "private/pasted-images/Pasted image 20230324164058.png",
-    "cheat-sheets/js.md",
     "private/setel/casbin.canvas",
     "life-hack",
     "cheat-sheets/4913"

@@ -15,4 +15,5 @@ bind N run-shell "nvim_note"
 ```
 
 ## more cheat-sheets:
+
 [tmux](https://tmuxcheatsheet.com/)

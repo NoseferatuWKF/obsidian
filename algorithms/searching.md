@@ -2,7 +2,7 @@
 
 Linear searching (O(N))
 ```cpp
-bool needleInHaystack(vector<int> *haystack, int needle)
+bool needleInHaystack(vector<int> &haystack, int needle)
 {
 	for (int i = 0; i < haystack.size(); ++i)
 	{
@@ -18,7 +18,7 @@ bool needleInHaystack(vector<int> *haystack, int needle)
 Binary searching (O(logN))
 >Binary here means it is between two outcomes, so no need to 'scan' the whole input
 ```cpp
-bool needleInHaystack(vector<int> *haystack, int needle)
+bool needleInHaystack(vector<int> &haystack, int needle)
 {
 	int low = 0;
 	int high = haystack.size();
@@ -33,7 +33,7 @@ bool needleInHaystack(vector<int> *haystack, int needle)
 			high = middle;
 		} else
 		{
-			low = middle;
+			low = middle + 1; // high is exclusive low is inclusive
 		}
 	} while (low < high)
 	return false;
