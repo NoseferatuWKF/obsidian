@@ -1,5 +1,8 @@
 # [Ansible](https://docs.ansible.com/)
-*push based automation*
+
+>python based
+
+>push based automation
 
 >Agentless which makes it great for automating setting up local machine
 

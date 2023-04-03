@@ -11,6 +11,7 @@ remote
 git remote add /path/to/remote # add new remote
 git remote set-url <remote> /new/path # set new path for a remote
 git remote get-url <remote> # get the path for a remote
+git remote -v # get all remote push/pull
 ```
 
 cherry-pick

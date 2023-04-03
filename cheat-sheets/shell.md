@@ -108,6 +108,29 @@ echo 2> file # stderr to file
 echo > file 2> &1 # stdout to file and stderr to where stdout goes
 ```
 
+cleaning apt
+```shell
+sudo apt autoremove && sudo apt clean autoclean
+```
+
+tar
+```bash
+# go to path and then untar
+tar -C /usr/local -xzvf /path/to/file.tar.gz
+```
+
+getting system information
+```bash
+lsb_release -cs # distro
+dpkg --print-architecture # arch
+```
+
+creating a new sudoer
+```bash
+adduser someone # can use useradd but this allows creation of home folders
+usermod -aG sudo someone
+```
+
 ## Utils
 
 stow
@@ -141,11 +164,6 @@ sudo add-apt-repository -L
 sudo add-apt-repository -r /path/to/repository # usually /etc/apt/sources.list.d
 ```
 
-cleaning apt
-```shell
-sudo apt autoremove && sudo apt clean autoclean
-```
-
 ssh-add (use this with [[git]])
 ```bash
 # in case the ssh-add agent instance is not running
@@ -171,12 +189,6 @@ dunst
 ```bash
 dunstcl set-paused toggle # enable/disable dunst
 dunstify "some-message" # push mesagge to dunst
-```
-
-tar
-```bash
-# go to path and then untar
-tar -C /usr/local -xzf /path/to/file.tar.gz
 ```
 
 ## zsh
