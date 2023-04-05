@@ -4,47 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "503987f3b95178f2",
+        "id": "8e3e386b3e0bc405",
         "type": "tabs",
         "children": [
           {
-            "id": "5f26240f24b5d1e1",
+            "id": "462db9062da4e2fe",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "automation/puppet.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f91d1e8108b7fd6a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "private/setel/api-iam.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "0d9105e65bdb5694",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cheat-sheets/docker.md",
+                "file": "private/setel/web-identity.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "cheat-sheets/docker.md",
+                "file": "private/setel/web-identity.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "cheat-sheets/docker.md",
+                "file": "private/setel/web-identity.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "cheat-sheets/docker.md"
+                "file": "private/setel/web-identity.md"
               }
             }
           }
@@ -171,48 +146,39 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0d9105e65bdb5694",
+  "active": "462db9062da4e2fe",
   "lastOpenFiles": [
-    "coding/js.md",
+    "private/setel/access-control-config.md",
     "private/setel/web-identity.md",
-    "private/setel/api-iam.md",
-    "private/setel/api-connect.md",
-    "private/setel/web-connect.md",
-    "cheat-sheets/shell.md",
-    "cheat-sheets/git.md",
-    "automation/puppet.md",
-    "automation/ansible.md",
-    "coding/rust.md",
-    "cheat-sheets/ansible.md",
-    "automation/github-actions.md",
-    "cheat-sheets/nvim.md",
-    "devtools/OS.md",
-    "algorithms/searching.md",
-    "life-hack/software-speedrun.md",
-    "life-hack/onboarding.md",
-    "cheat-sheets/regex.md",
     "cheat-sheets/sql.md",
-    "technical/terms.md",
-    "cheat-sheets/js.md",
-    "cheat-sheets/i3.md",
-    "cheat-sheets/docker.md",
-    "cheat-sheets/tmux.md",
-    "cheat-sheets/redis.md",
+    "private/setel/api-iam.md",
+    "private/setel/api-auth.md",
+    "private/setel/web-connect.md",
+    "private/setel/api-connect.md",
+    "private/pasted-images/Pasted image 20230328073557.png",
+    "private/pasted-images/Pasted image 20230328061500.png",
     "technical/tokio.md",
+    "technical/fundamentals.md",
+    "technical/casbin.md",
+    "technical/articles.md",
     "pasted-images/Pasted image 20230331031407.png",
     "pasted-images/Pasted image 20230331031040.png",
     "pasted-images/Pasted image 20230329205356.png",
-    "private/pasted-images/Pasted image 20230328073557.png",
-    "private/pasted-images/Pasted image 20230328063205.png",
-    "private/pasted-images/Pasted image 20230328055552.png",
-    "private/pasted-images/Pasted image 20230328061500.png",
+    "life-hack/software-speedrun.md",
+    "life-hack/onboarding.md",
+    "life-hack",
+    "devtools/OS.md",
+    "cheat-sheets/regex.md",
+    "cheat-sheets/redis.md",
+    "cheat-sheets/kubernetes.md",
+    "cheat-sheets/i3.md",
+    "private/pasted-images/Pasted image 20230316145308.png",
+    "technical/oauth-2.0.md",
     "private/pasted-images/Pasted image 20230308212054.png",
     "private/pasted-images/Pasted image 20230302161956.png",
     "private/pasted-images/Pasted image 20230302161920.png",
-    "private/setel",
-    "private/pasted-images",
-    "private/setel/casbin.canvas",
-    "life-hack",
+    "devtools/binaries.md",
+    "cheat-sheets/shell.md",
     "cheat-sheets/4913"
   ]
 }
