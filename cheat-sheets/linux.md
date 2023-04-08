@@ -1,4 +1,4 @@
-## Scripting
+## Shell Scripting
 
 arrays
 ```bash
@@ -63,9 +63,9 @@ do
    echo "$myvar"
 done
 # this gives 
-1
-2
-3
+# 1
+# 2
+# 3
 # why? because there is no metavalue or special meaning to 1 or 2 or 3
 ```
 
@@ -108,7 +108,7 @@ echo 2> file # stderr to file
 echo > file 2> &1 # stdout to file and stderr to where stdout goes
 ```
 
-cleaning apt
+apt housekeeping
 ```shell
 sudo apt autoremove && sudo apt clean autoclean
 ```
@@ -185,10 +185,18 @@ ssh-add -l
 ssh-add -d ~/.ssh/another_acc
 ```
 
+## GUI
+
 dunst
 ```bash
 dunstcl set-paused toggle # enable/disable dunst
 dunstify "some-message" # push mesagge to dunst
+```
+
+google-chrome
+```bash
+# custom user + url
+exec google-chrome --user-data-dir=<path> --new-window <url>
 ```
 
 ## zsh
@@ -332,7 +340,7 @@ file sourcing step
 "\M-^@"-"\M-^?" self-insert
 ```
 
-## bash
+## bash/sh
 
 source
 ```bash

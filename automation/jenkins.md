@@ -38,7 +38,7 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 4. Make sure the script path is set correctly
 
 ### Enabling ssh
-1. First generate a ssh keypair and add it to the ssh-agent [[cheat-sheets/shell | ssh-add]]
+1. First generate a ssh keypair and add it to the ssh-agent [[linux | ssh-add]]
 2. Do a test connection with `ssh -T git@github.com` to add github to known hosts or any other way is fine as well
 3. Go to github repo and add click on settings and add a deploy key which is the pubkey
 4. Now go to Jenkins dashboard and go to Manage Jenkins > Manage Credentials

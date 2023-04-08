@@ -1,4 +1,4 @@
-[[cheat-sheets/shell|cheat-sheets]]
+[[linux|cheat-sheets]]
 
 >mostly linux stuff
 

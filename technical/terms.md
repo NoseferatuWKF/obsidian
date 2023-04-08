@@ -48,3 +48,6 @@
 
 **resource contention** 
 > conflict over a shared resource between several components
+
+**BSD**
+> [B]erkeley [S]oftware [D]istribution

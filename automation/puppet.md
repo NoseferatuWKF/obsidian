@@ -4,14 +4,13 @@
 
 >pull based automation
 
->need to setup agents unless using bolt
-
 >prefer to use ansible to setup up local machine as it has faster support for different OS. https://www.puppet.com/docs/bolt/latest/bolt_installing.html
-
 
 ## Bolt
 
->It has a cool ASCII art
+>puppet agentless solution
+
+>it has a cool ASCII art
 
 ### Getting started
 
@@ -138,5 +137,4 @@ plan my_project::zsh::utils (
   $command_result = run_command('whoami', $targets)
   return $command_result
 }
-
 ```

@@ -11,7 +11,9 @@
 ## Installation
 
 ### Debian/Ubuntu
-> automate this with a shell script to reduce overhead
+
+>automate this with a shell script to reduce overhead
+
 ```bash
 sudo apt update && \
 sudo apt install -y software-properties-common && \
@@ -20,6 +22,7 @@ sudo apt install ansible -y
 ```
 
 ### Mac
+
 ```bash
 brew install ansible
 ```
@@ -30,7 +33,8 @@ brew install ansible
 3. [ansible builtin](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html#plugin-index) (usually you don't need to install depends on the ansible version you have)
 4. check [[yaml]] for advanced syntax
 
-## How to
+## Getting Started
+
 create an inventory
 ```yaml
 nodes: # group of managed nodes/remotes
@@ -61,4 +65,13 @@ create a task
   become: true # sudo
   apt: name=ripgrep # can change it into an array to install multiple stuff
   tags: ripgrep # can also be an array
+```
+
+## Working with secrets
+
+encrypt/decrypt
+>has a bunch of useful options to organize secrets
+```bash
+ansible-vault encrypt <file|stdin|var>
+ansible-vault decrypt <file|stdin|var>
 ```

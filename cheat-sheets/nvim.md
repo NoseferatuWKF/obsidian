@@ -22,8 +22,9 @@ V -- v-line (visual)
 <C-a> -- increment number
 <C-x> -- decrement number
 
--- buffers
-{count}CTRL-G  -- print buffer absolute file path
+-- 
+{count}<C-G>  -- print buffer absolute file path
+<C-z> -- suspend vim, resume with fg
 ```
 
 netrw
