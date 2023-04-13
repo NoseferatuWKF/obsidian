@@ -4,52 +4,28 @@
     "type": "split",
     "children": [
       {
-        "id": "503987f3b95178f2",
+        "id": "9e686f069d992cf6",
         "type": "tabs",
         "children": [
           {
-            "id": "5f26240f24b5d1e1",
+            "id": "cf74d30e3d6a3173",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "monitoring/PLG.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "22c3e5e6163a91c2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "coding/js.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "95819af419d15ad4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "coding/c.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f91d1e8108b7fd6a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cheat-sheets/nvim.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "0d9105e65bdb5694",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cheat-sheets/sql.md",
                 "mode": "source",
                 "source": false
               }
@@ -122,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "coding/c.md",
+                "file": "coding/js.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "coding/c.md",
+                "file": "coding/js.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "coding/c.md"
+                "file": "coding/js.md"
               }
             }
           }
@@ -183,44 +159,44 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "95819af419d15ad4",
+  "active": "22c3e5e6163a91c2",
   "lastOpenFiles": [
+    "private/setel/api-iam.md",
+    "cheat-sheets/nvim.md",
+    "cheat-sheets/tmux.md",
+    "cheat-sheets/linux.md",
+    "cheat-sheets/git.md",
+    "technical/casbin.md",
+    "private/setel/access-control-config.md",
+    "private/setel/api-connect.md",
+    "private/setel/api-auth.md",
+    "private/setel/web-identity.md",
+    "cheat-sheets/sql.md",
+    "integration/grafana.md",
+    "Untitled.md",
+    "monitoring/PLG.md",
+    "monitoring/ELK.md",
+    "coding/js.md",
+    "life-hack/onboarding.md",
+    "pasted-images/Pasted image 20230410120138.png",
+    "pasted-images/Pasted image 20230410120825.png",
+    "pasted-images/Pasted image 20230410120516.png",
+    "coding/c.md",
     "coding/yaml.md",
     "coding/lua.md",
     "coding/go.md",
     "coding/csharp.md",
-    "coding/c.md",
-    "coding/js.md",
     "automation/terraform.md",
     "private/setel/web-connect.md",
-    "private/setel/web-identity.md",
-    "cheat-sheets/nvim.md",
     "devtools/nvim.md",
-    "cheat-sheets/linux.md",
     "automation/puppet.md",
-    "cheat-sheets/i3.md",
-    "devtools/OS.md",
-    "cheat-sheets/regex.md",
     "private/pasted-images/Pasted image 20230328073557.png",
-    "automation/ansible.md",
-    "cheat-sheets/sql.md",
-    "private/setel/api-iam.md",
-    "private/setel/api-connect.md",
-    "private/setel/api-auth.md",
-    "private/setel/access-control-config.md",
-    "technical/articles.md",
-    "technical/terms.md",
-    "cheat-sheets/docker.md",
-    "cheat-sheets/git.md",
     "pasted-images/Pasted image 20230331031407.png",
     "pasted-images/Pasted image 20230331031040.png",
     "pasted-images/Pasted image 20230329205356.png",
     "private/pasted-images/Pasted image 20230328063205.png",
     "private/pasted-images/Pasted image 20230328055552.png",
     "private/pasted-images/Pasted image 20230328061500.png",
-    "private/pasted-images/Pasted image 20230308212054.png",
-    "private/pasted-images/Pasted image 20230302161956.png",
-    "private/pasted-images/Pasted image 20230302161920.png",
     "private/setel",
     "private/pasted-images",
     "private/setel/casbin.canvas",

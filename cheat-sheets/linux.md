@@ -131,6 +131,13 @@ adduser someone # can use useradd but this allows creation of home folders
 usermod -aG sudo someone
 ```
 
+x
+```bash
+xprop # get gui information
+xclip -selection c # copy to system clipboard
+xev # capture keyboard events
+```
+
 ## Utils
 
 stow

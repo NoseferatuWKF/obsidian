@@ -13,6 +13,7 @@
 - strict and verbose control-flow
 - bitwise operations - [IEEE 754](https://en.wikipedia.org/wiki/Double-precision_floating-point_format)
 - precision math
+- functional programming (lots of copying, immutable, two space indents)
 
 ## Videos
 - [Promises explained exceptionally well](https://www.youtube.com/watch?v=bAlczbDUXx8&ab_channel=StevieJay)
