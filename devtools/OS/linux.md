@@ -1,6 +1,4 @@
-[[linux|cheat-sheets]]
-
->mostly linux stuff
+[[common|cheat-sheets]]
 
 ## Initial setup
 
@@ -22,12 +20,3 @@ htop
 nvim
 i3
 entr
-
-## Scripts
-
-### mac
-battery
-
-### general
-checkout
-teamocil

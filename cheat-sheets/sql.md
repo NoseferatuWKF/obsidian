@@ -15,6 +15,11 @@ commands
 \watch [SEC] # execute query every SEC seconds
 ```
 
+get number of connections
+```SQL
+SELECT sum(numbackends) FROM pg_stat_database;
+```
+
 ## SQL
 
 >double quotes for column names, single quotes for values
@@ -30,4 +35,9 @@ INSERT INTO
 ```SQL
 INSERT INTO table (column1, column2)
 VALUES ('a', 'b')
+```
+
+TRUNCATE
+```SQL
+TRUNCATE <table> CASCADE -- cascade to remove all fk constraints
 ```

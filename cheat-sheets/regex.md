@@ -32,10 +32,10 @@ a[bc]      # same as previous, but without capturing b or c
 
 character classes
 ```bash
-\d        # matches a single character that is a digit -> Try it!
+\d        # matches a single character that is a digit
 \w        # matches a word character (alphanumeric character plus underscore)
 \s        # matches a whitespace character (includes tabs and line breaks)
-.         # matches any character -> Try it!
+.         # matches any character
 \D        # matches a single non-digit character
 \$\d      # matches a string that has a $ before one digit
 ```

@@ -51,3 +51,24 @@
 
 **BSD**
 > [B]erkeley [S]oftware [D]istribution
+
+**Lambda** vs **Closure**
+> Lambda are anonymous functions, while closures are functions(so it can be a lambda as well) that encloses an environment which have access to variables outside of its current environment
+
+**Thunk**
+> A function with no arguments
+
+**POSIX**
+> [P]ortable [O]perating [S]ystem [I]nterface for Un[ix]
+
+**SUS**
+> [S]ingle [U]nit [S]pecification
+
+**Mutual Exclusion aka mutex**
+> Only one change can affect a value at a time
+
+**AST**
+> [A]bstract [S]yntax [T]ree
+
+**semaphore**
+> An unsigned integer variable shared among multiple processes/threads. It is used to sync and the changes on semaphores are atomic and can only be changed by wait() and post(). Also this different than mutex locks

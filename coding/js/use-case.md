@@ -26,11 +26,11 @@ for (const key in user) {
 		console.log(`${key}: ${user[key]}`);
 	} 
 }
-// with Object.values()
+// with Object.keys()
 for (const key of Object.keys(user)) {
 	// no checking here
 }
 ```
 
-string matching
+string matching performance
 >indexOf > slice > startsWith > regexStart

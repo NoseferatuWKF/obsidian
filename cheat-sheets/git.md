@@ -1,9 +1,19 @@
+playgroud
+```bash
+git init playground
+git init --bare local-remote
+cd playground
+git remote add origin ../local-remote
+```
+
 config
 ```bash
 git config --global \
 user.name "NoseferatuWKF" \
 user.email "wkf2584@gmail.com" \ 
 core.editor "/usr/local/bin/nvim" 
+
+git config --list # to show the current config
 ```
 
 remote
@@ -36,21 +46,29 @@ git rm /path/to/file # may require to use -f
 working with multiple keys
 ```bash
 #~/.ssh/config
-Host github.com-userA
+Host userA
 	HostName github.com
 	User git
 	IdentityFile ~/.ssh/userA
 	IdentitiesOnly yes
-Host bitbucket.org-userB
+Host userB
 	HostName bitbucket.org
 	User git
 	IdentityFile ~/.ssh/userB
 	IdentitiesOnly yes
 
+# then clone using git clone userA:userA/repo.git
+
 #/path/to/repo/.git/config
 [remote "origin"]
-	url = git@github.com-user-A:userA/repo.git # add id next to hostname
+	url = user-A:userA/repo.git # add id next to hostname
 	fetch = +refs/heads/*:refs/remotes/origin/*
+```
+
+get pubkey
+```shell
+# works with gitlab as well
+curl https://github.com/<username>.keys > /path/to/pubkey
 ```
 
 rebase
@@ -70,5 +88,12 @@ Co-authored-by: AUTHOR-NAME <ANOTHER-NAME@EXAMPLE.COM>
 copy branch
 ```bash
 git checkout -b new-branch old-branch # or @
+```
+
+symbols
+```bash
+@^ # one commit prior of HEAD, equals to @~1
+@^^ # two commits prior to HEAD, equals to @~2
+@~1..@~5 # between one commit prior to HEAD, and 5 commits prior to HEAD
 ```
 

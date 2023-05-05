@@ -4,35 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "9e686f069d992cf6",
+        "id": "3716f8e143c96ceb",
         "type": "tabs",
         "children": [
           {
-            "id": "cf74d30e3d6a3173",
+            "id": "72e59959d9db2d7e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "monitoring/PLG.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "22c3e5e6163a91c2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "coding/js.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -77,6 +60,14 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "1c7d99ae4f0ac7c3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
@@ -98,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "coding/js.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "coding/js.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,9 +126,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "coding/js.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -159,48 +146,54 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "22c3e5e6163a91c2",
+  "active": "9b3b14434e525763",
   "lastOpenFiles": [
-    "private/setel/api-iam.md",
-    "cheat-sheets/nvim.md",
-    "cheat-sheets/tmux.md",
-    "cheat-sheets/linux.md",
+    "books/The Robert C. Martin Clean Code Collection.pdf",
+    "books/StructuredDesign_EdwardYourdonLarryConstantine.pdf",
+    "books/97 Things Every Programmer Should Know - [Henney].pdf",
+    "books/dokumen.pub_the-art-of-scalability-scalable-web-architecture-processes-and-organizations-for-the-modern-enterprise-2ndnbsped-0134032802-9780134032801-t-1698361.pdf",
+    "books/Refactoring_ Improving the Design of Existing Code ( PDFDrive ).pdf",
+    "books/Fundamentals of Software Architecture.pdf",
+    "books/Eric Evans 2003 - Domain-Driven Design - Tackling Complexity in the Heart of Software.pdf",
+    "books/Structured Programming.pdf",
+    "books",
+    "technical/articles.md",
+    "cheat-sheets/redis.md",
+    "coding/js/use-case.md",
+    "coding/js/node.md",
+    "coding/js/base.md",
+    "cheat-sheets/js.md",
+    "cheat-sheets/i3.md",
     "cheat-sheets/git.md",
-    "technical/casbin.md",
-    "private/setel/access-control-config.md",
-    "private/setel/api-connect.md",
-    "private/setel/api-auth.md",
-    "private/setel/web-identity.md",
-    "cheat-sheets/sql.md",
-    "integration/grafana.md",
-    "Untitled.md",
-    "monitoring/PLG.md",
-    "monitoring/ELK.md",
-    "coding/js.md",
-    "life-hack/onboarding.md",
+    "cheat-sheets/docker.md",
+    "cheat-sheets/ansible.md",
+    "devtools/OS/linux.md",
+    "devtools/OS/mac.md",
+    "devtools/nvim.md",
+    "devtools/references.md",
+    "technical/algorithms/searching.md",
+    "technical/authorization-authentication/casbin.md",
+    "technical/authorization-authentication/oauth-2.0.md",
+    "technical/data-structures/doubly-linked-list.md",
+    "technical/data-structures/linked-list.md",
+    "technical/data-structures/max-heap.md",
+    "technical/data-structures/min-heap.md",
+    "technical/data-structures/queue.md",
+    "technical/data-structures/stack.md",
+    "technical/data-structures/tree.md",
+    "technical/networking/tcp.md",
+    "pasted-images/Pasted image 20230522002546.png",
+    "technical/authorization-authentication",
+    "technical/networking",
+    "private/pasted-images/Pasted image 20230328073557.png",
     "pasted-images/Pasted image 20230410120138.png",
     "pasted-images/Pasted image 20230410120825.png",
     "pasted-images/Pasted image 20230410120516.png",
-    "coding/c.md",
-    "coding/yaml.md",
-    "coding/lua.md",
-    "coding/go.md",
-    "coding/csharp.md",
-    "automation/terraform.md",
-    "private/setel/web-connect.md",
-    "devtools/nvim.md",
-    "automation/puppet.md",
-    "private/pasted-images/Pasted image 20230328073557.png",
     "pasted-images/Pasted image 20230331031407.png",
     "pasted-images/Pasted image 20230331031040.png",
     "pasted-images/Pasted image 20230329205356.png",
     "private/pasted-images/Pasted image 20230328063205.png",
     "private/pasted-images/Pasted image 20230328055552.png",
-    "private/pasted-images/Pasted image 20230328061500.png",
-    "private/setel",
-    "private/pasted-images",
-    "private/setel/casbin.canvas",
-    "life-hack",
-    "cheat-sheets/4913"
+    "private/setel/casbin.canvas"
   ]
 }

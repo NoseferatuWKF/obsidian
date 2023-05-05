@@ -4,7 +4,7 @@ docker kill $(docker ps -q) # unlike stop this fucks containers pronto
 ```
 
 start [[networking/docker|docker]] on mac (will open the application not just run the service): 
->anyone got anything better?
+>or just use finch or orbstack for GUI
 ```bash
 open -a Docker
 ```
@@ -16,7 +16,7 @@ docker system prune
 
 run multiple commands within docker
 ```bash
-docker run --rm ubuntu bash -c "whoami && pwd"
+docker run --rm busybox bash -c "whoami && pwd"
 ```
 
 cache busting

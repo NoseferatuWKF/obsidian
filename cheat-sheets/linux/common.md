@@ -1,5 +1,10 @@
 ## Shell Scripting
 
+symbols 
+```bash
+%1 # process that was just started and backgrounded
+```
+
 arrays
 ```bash
 indexedArray=(one two three)
@@ -52,7 +57,26 @@ check if file exist/not exist
 [[ ! -f /path/to/file ]] || source /path/to/file
 ```
 
-## Basics
+read silently
+```bash
+read -sp "Password: " password
+# then access with
+$password
+```
+
+## Core Utils
+
+firmware
+```bash
+cfdisk
+fdisk
+parted
+mkfs
+mkswap
+mount
+swapon
+mkinitpcio -P
+```
 
 eval
 ```bash
@@ -71,7 +95,7 @@ done
 
 exec
 ```bash
-# exec starts another process - BUT - it exits the current process when you do this kind of thing
+# replace currect process with new one
 exec echo "leaving this script forever  $0"   # Exit from script here.
 
 # ----------------------------------
@@ -80,7 +104,7 @@ exec echo "leaving this script forever  $0"   # Exit from script here.
 echo "This echo will never echo."
 ```
 
-chwon
+chown
 ```bash
 chown <user> /path/to/file
 ```
@@ -108,9 +132,18 @@ echo 2> file # stderr to file
 echo > file 2> &1 # stdout to file and stderr to where stdout goes
 ```
 
-apt housekeeping
-```shell
-sudo apt autoremove && sudo apt clean autoclean
+creating a new sudoer
+```bash
+adduser someone
+usermod -aG sudo someone
+# or
+useradd -m -g users -G wheel someone
+visudo # uncomment the wheel part
+```
+
+find open ports
+```bash
+lsof -i <port> # find open port
 ```
 
 tar
@@ -119,26 +152,24 @@ tar
 tar -C /usr/local -xzvf /path/to/file.tar.gz
 ```
 
-getting system information
+remove broken symlinks
 ```bash
-lsb_release -cs # distro
-dpkg --print-architecture # arch
+find -xtype l -delete
 ```
 
-creating a new sudoer
+## Utils
+
+ascii table
 ```bash
-adduser someone # can use useradd but this allows creation of home folders
-usermod -aG sudo someone
+man ascii
 ```
 
-x
+x11
 ```bash
 xprop # get gui information
 xclip -selection c # copy to system clipboard
 xev # capture keyboard events
 ```
-
-## Utils
 
 stow
 ```bash
@@ -146,35 +177,22 @@ stow --adopt -nv $HOME <stowed-dir> # dry-run and verbose
 stow --adopt -v * && git restore . #adopt and sync everything with repo
 ```
 
-ssh-server
+getting system information
 ```bash
-sudo apt install openssh-server
+lsb_release -cs # distro
+dpkg --print-architecture # arch
+```
+
+ssh
+```bash
+sudo apt install openssh-server # or whatever package manager
 sudo service ssh start # can use systemctl as well
-```
 
-scp / rsync
-```bash
-# host to remote
-rsync /host/file/path remote@hostname:path/to/file # can use relative paths
+# usefull with git
 
-# remote to host
-scp remote@hostname:path/to/file /host/file/path
-```
-
-add-apt-repository
-```bash
-# add repository to /etc/apt/sources.list.d
-sudo add-apt-repository -S deb https://path/to/source component
-# listing repository
-sudo add-apt-repository -L
-# removing repository
-sudo add-apt-repository -r /path/to/repository # usually /etc/apt/sources.list.d
-```
-
-ssh-add (use this with [[git]])
-```bash
 # in case the ssh-add agent instance is not running
 eval $(ssh-agent)
+
 # if that doesn't work
 exec ssh-agent
 
@@ -190,6 +208,25 @@ ssh-add -l
 
 # removing keys
 ssh-add -d ~/.ssh/another_acc
+
+# local port forwarding
+ssh -L <port>:<remote>:<port> <user>@<remote>
+```
+
+scp / rsync
+```bash
+# host to remote
+rsync /host/file/path remote@hostname:path/to/file # can use relative paths
+
+# remote to host
+scp remote@hostname:path/to/file /host/file/path
+```
+
+string manipulation
+```bash
+# sed does not support perl regex so cannot do something like \w
+sed 's/\w.*//' # this doesn't work
+perl -pe 's/\w.*//' # this works
 ```
 
 ## GUI
@@ -206,7 +243,36 @@ google-chrome
 exec google-chrome --user-data-dir=<path> --new-window <url>
 ```
 
-## zsh
+## Networking
+
+ip
+```bash
+ip link # show all network interfaces
+```
+
+ifconfig
+```bash
+ifconfig # show network details (more details than ip link)
+sudo ifconfig <interface> up # turn on interface
+```
+
+config
+```bash
+# /etc/network/interfaces
+sudo /etc/init.d/networking restart && sudo dhclient
+# /etc/netplan/something.yaml
+sudo netplan apply
+```
+
+connections
+```bash
+netstat -an | grep -i tcp # list all tcp connections
+cat /proc/net/tcp
+```
+
+## Shell
+
+### zsh
 
 hash
 ```bash
@@ -220,20 +286,20 @@ file sourcing step
 .zshrc > .zshenv > .zprofile (requires login shell)
 ```
 
-### keybinds
+keybinds
 ```bash
 "^@" set-mark-command
 "^A" beginning-of-line
-"^B" backward-char
+"^B" backward-word
 "^D" delete-char-or-list
 "^E" end-of-line
-"^F" forward-char
+"^F" forward-word
 "^G" send-break
 "^H" backward-delete-char
 "^I" expand-or-complete
 "^J" accept-line
 "^K" kill-line
-"^L" clear-screen
+"^[l" clear-screen
 "^M" accept-line
 "^N" down-line-or-history
 "^O" accept-line-and-down-history
@@ -347,7 +413,7 @@ file sourcing step
 "\M-^@"-"\M-^?" self-insert
 ```
 
-## bash/sh
+### bash/sh
 
 source
 ```bash

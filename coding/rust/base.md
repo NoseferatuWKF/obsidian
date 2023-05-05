@@ -68,6 +68,15 @@ let mut x = 5; // this is value
 let y = &x; // this is a borrow / read-only reference
 let z = &mut x; // this is a mutable borrow / read and write reference
 let new_x = x; // now new_x has the value of x and x no longer owns a value
+
+/* 
+this does not apply to string literals as it is stored as binary.
+So anything that is allocated on the heap when not borrowed will be moved.
+*/
+let heap = String::new();
+let change_owner = heap;
+
+println!("{heap}") // this errors because heap was moved
 ```
 
 **shadowing**
@@ -406,7 +415,7 @@ fn main() {
 ```
 
 lifetimes
-[video](https://www.youtube.com/watch?v=juIINGuZyBc&ab_channel=Let%27sGetRusty)
+[Rust Lifetimes Finally Explained!](https://www.youtube.com/watch?v=juIINGuZyBc&ab_channel=Let%27sGetRusty)
 ```rust
 // &'a str - this is a borrow with an explicit lifetime
 // &'a mut str - this is a mutable borrow with an explicit lifetime
@@ -577,6 +586,7 @@ fn job(who: &str) {
 > If a single piece of data must be accessible from more than one task concurrently, then it must be shared using synchronization primitives such as Arc.
 
 [arc](https://doc.rust-lang.org/std/sync/struct.Arc.html) (atomically reference counted) and [mutex](https://doc.rust-lang.org/std/sync/struct.Mutex.html) (mutual exclusion)
+[Easy Rust 109: Mutex part 2](https://www.youtube.com/watch?v=z3G_7_hNltE&ab_channel=mithradates)
 ```rust
 use std::{sync::{Arc, Mutex}, thread};
 

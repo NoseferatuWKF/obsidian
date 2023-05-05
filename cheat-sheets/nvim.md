@@ -21,9 +21,10 @@ V -- v-line (visual)
 -- numbers
 <C-a> -- increment number
 <C-x> -- decrement number
+<C-r> -- once in insert mode to do math
 
 -- 
-{count}<C-G>  -- print buffer absolute file path
+<C-G>  -- print current buffer details
 <C-z> -- suspend vim, resume with fg
 ```
 
@@ -35,6 +36,7 @@ D -- delete file/dir
 d -- add new dir
 R -- rename/move file/dir
 I -- show/hide banner
+p -- preview file
 ```
 
 navigations
@@ -44,19 +46,28 @@ gj -- go down one line, good for wrapped lines, works with k,$,0 as well
 gv -- go to previous highlighted
 gf -- go to file on cursor
 gx -- go to url on cursor
+g; -- changelist forward
+g, -- changelist backward
 G -- go bottom of file
 H -- go top of window (limited by vim scrolloff)
 M -- go middle of window (limited by vim scrolloff)
 L -- go bottom of window (limited by vim scrolloff)
-f -- forward first occurence
-F -- prev first occurence
+f -- forward first occurence (use ; or , to go back and forth)
+F -- prev first occurence (use ; or , to go back and forth)
 { -- prev blank line
 } -- next blank line
+% -- go to correspoding bracket
 <C-d> -- half page down
 <C-u> -- half page up
+<C-f> -- full page up
+<C-b> -- full page up
+<C-o> -- jumplist backward
+<C-i> -- jumplist forward
 /keyword -- search for keyword
 * -- next occurence of word under cursor
 # -- prev occurence of word under cursor
+]m -- next method/function
+[m -- prev method/function
 ```
 
 motions
@@ -75,7 +86,9 @@ g~~ -- reverse case all in line
 gUfw -- uppercase until first 'w'
 gqq -- make wrapped lines into proper lines
 g& -- apply prev substitutions to whole file
+g<C-a> -- increment all selection 
 ctw -- change line before 'w'
+cW -- change contiguous word
 ```
 
 tabs
@@ -90,10 +103,17 @@ window
 ```lua
 <C-w> v -- vertical split
 <C-w> s -- horizontal split
+<C-w> w -- alternate windows
 <C-w> x -- swap window with next
 <C-w> q -- close a window
 <C-w> o -- close all windows except current
 <C-w> = -- make all windows equal size
+```
+
+buffers
+>use arglist if buffer gets to big
+```lua
+<C-^> -- switch between buffers
 ```
 
 marks
@@ -101,7 +121,7 @@ marks
 ```lua
 ma -- create a new local mark 'a'
 mA -- create a new global mark 'A'
-`a -- jump to 'a' mark
+`a -- jump to 'a' mark (can use ' as well)
 ```
 
 registers and macros
@@ -116,6 +136,7 @@ qa -- record macro into register 'a'
 ## commands
 ```lua
 :e file                 -- edit file
+:e!                     -- cancel editing
 :!echo @%               -- directory/name of file
 :!echo expand('%:t')    -- name of file ('tail')
 :!echo expand('%:p')    -- full path
@@ -123,18 +144,25 @@ qa -- record macro into register 'a'
 :cd %:p:h               -- change working directory for current window
 :lcd %:p:h              -- change working directory for all windows
 :%s/abc/def/g           -- replace all strings within file
+::g/^\s*$/d             -- delete white spaces can use :'<,'>s/^\s*// as well
 :0,10 s/abc/def/g       -- replace line 0 - 10 strings
 :-5,-10co.              -- copy relative line from -5 to -10
+:-5,-10mo.              -- move relative line from -5 to -10
 :checkhealth            -- check nvim config
 :'<,'>!sort | uniq      -- sort and dedup selected lines
+:'<,'>s/$/s             -- add s to the end of each line of selection
 :X                      -- encrypt/decrypt file
+:args                   -- prints arglist
+:arga file              -- add file to arglist
 ```
 
 ## mah keybinds
 
 ```lua
 -- Netrw
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- maybe Sex! is better :)
+-- yank into system clipboard
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], { desc = "Yank into system clipboard"})
 ```
 
 ## some of ThePrimeagen keybinds
@@ -277,4 +305,9 @@ U -- unstage all
 = -- toggle diff
 
 cc -- create a commit
+
+-- resolving merge conflicts
+dv -- split screen merge conflict
+:diffget {buffer} -- could be //2 or //3 depending on which way to go
+Gwrite! -- to use native vim fugitive merge resolution
 ```
