@@ -1,3 +1,6 @@
 [submodule "private"]
 	path = private
 	url = wan-kamal:wan-kamal/proprietary-notes.git
+[submodule "books"]
+	path = books
+	url = wan-kamal:wan-kamal/books.git

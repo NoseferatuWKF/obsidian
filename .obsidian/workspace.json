@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "3716f8e143c96ceb",
+        "id": "e134e2d5986e1d2a",
         "type": "tabs",
         "children": [
           {
-            "id": "72e59959d9db2d7e",
+            "id": "8317b77c6dd0027f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "private/setel/web-identity.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -89,6 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "private/setel/web-identity.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "private/setel/web-identity.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +132,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "private/setel/web-identity.md"
+              }
             }
           }
         ]
@@ -146,18 +154,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9b3b14434e525763",
+  "active": "8317b77c6dd0027f",
   "lastOpenFiles": [
+    "technical/articles.md",
+    "automation/puppet.md",
+    "automation/terraform.md",
+    "automation/Makefile.md",
     "books/The Robert C. Martin Clean Code Collection.pdf",
     "books/StructuredDesign_EdwardYourdonLarryConstantine.pdf",
-    "books/97 Things Every Programmer Should Know - [Henney].pdf",
-    "books/dokumen.pub_the-art-of-scalability-scalable-web-architecture-processes-and-organizations-for-the-modern-enterprise-2ndnbsped-0134032802-9780134032801-t-1698361.pdf",
+    "books/Structured Programming.pdf",
     "books/Refactoring_ Improving the Design of Existing Code ( PDFDrive ).pdf",
     "books/Fundamentals of Software Architecture.pdf",
     "books/Eric Evans 2003 - Domain-Driven Design - Tackling Complexity in the Heart of Software.pdf",
-    "books/Structured Programming.pdf",
+    "books/dokumen.pub_the-art-of-scalability-scalable-web-architecture-processes-and-organizations-for-the-modern-enterprise-2ndnbsped-0134032802-9780134032801-t-1698361.pdf",
+    "books/97 Things Every Programmer Should Know - [Henney].pdf",
     "books",
-    "technical/articles.md",
     "cheat-sheets/redis.md",
     "coding/js/use-case.md",
     "coding/js/node.md",
@@ -180,11 +191,8 @@
     "technical/data-structures/min-heap.md",
     "technical/data-structures/queue.md",
     "technical/data-structures/stack.md",
-    "technical/data-structures/tree.md",
-    "technical/networking/tcp.md",
     "pasted-images/Pasted image 20230522002546.png",
     "technical/authorization-authentication",
-    "technical/networking",
     "private/pasted-images/Pasted image 20230328073557.png",
     "pasted-images/Pasted image 20230410120138.png",
     "pasted-images/Pasted image 20230410120825.png",

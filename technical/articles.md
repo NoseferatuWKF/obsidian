@@ -9,3 +9,4 @@
 [Casey - Uncle Bob: Clean Code QA](https://github.com/cmuratori/misc/blob/main/cleancodeqa.md)
 [Casey - Uncle Bob: Clean Code QA 2](https://github.com/cmuratori/misc/blob/main/cleancodeqa-2.md)
 [Server-side rendering React in OCaml](https://sancho.dev/blog/server-side-rendering-react-in-ocaml)
+[How Much Memory Do You Need to Run 1 Million Concurrent Tasks?](https://pkolaczk.github.io/memory-consumption-of-async/)
