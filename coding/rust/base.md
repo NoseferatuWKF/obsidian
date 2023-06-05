@@ -1,3 +1,4 @@
+>The community and the foundation sucks
 ## Docs
 
 [the-book](https://doc.rust-lang.org/book/)
@@ -9,40 +10,19 @@
 rustup
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+# uninstall via rustup
+rustup self uninstall
 ```
 
 ## Guidelines
 
-- by default every variable is immutable
+- by default a variable is immutable
 - try not to use unwraps and clones
-- instead of void, rust uses an empty tuple (), which is known as a unit
+- instead of void, rust uses a unit (),
 - by default the items in a module are private
 
-## When not to use rust?
-
-- when you want to use unsafe operations (performance purposes)
-- do not like the expressiveness of rust
-- want to collect garbage 
-- want to have production issues that is hard to debug
-
 ## Basics
-
->by default rust compiler will throw an error for unused variables, use underscore to bypass this
-```rust
-let mut mutable_var = 0; // mut here will make this variable mutable
-let some_var = "this will throw an error if unused";
-let _another_var = "this will not throw an error even when unused";
-```
-
->`usize` is the largest unsigned int depends on the machine
-```rust
-let max: usize = usize::MAX; // can different results on different machines
-```
-
->you can put underscores for large numbers to make it more readable
-```rust
-let big_num: u32 = 1_000_000;
-```
 
 using crates
 ```rust
@@ -54,36 +34,31 @@ use::sync::{Arc, Mutex};
 use::std::collections::*;
 ```
 
-macro and attribute macro
+procedural macros
 ```rust
-#[allow(unused)] // this is a attribute macro
+#[derive(Debug)] // derive macro
+#[allow(unused)] // attribute macro
 fn main() {
-	println!("Hello"); // this is a macro
+	println!("Hello"); // function macro
 }
+// proc_macro
 ```
 
-value and borrow
+borrow checker
 ```rust
-let mut x = 5; // this is value
-let y = &x; // this is a borrow / read-only reference
-let z = &mut x; // this is a mutable borrow / read and write reference
-let new_x = x; // now new_x has the value of x and x no longer owns a value
+let mut x = 5; // mutable value
+let y = &x; // borrow / read-only reference
+let z = &mut x; // mutable borrow / read and write reference
+let new_x = x; // move x to new_x
 
 /* 
-this does not apply to string literals as it is stored as binary.
+this does not apply to string slices as it is stored as binary.
 So anything that is allocated on the heap when not borrowed will be moved.
 */
 let heap = String::new();
 let change_owner = heap;
 
 println!("{heap}") // this errors because heap was moved
-```
-
-**shadowing**
->Variable with the same name and different data types can be set
-```rust
-let age: &str = 29;
-let mut age: u32 = age.trim().parse().expect("Whoops");
 ```
 
 [let vs const](https://doc.rust-lang.org/std/keyword.const.html)
@@ -106,15 +81,27 @@ let ternary = if condition == true {
 } else {
 	false
 };
+
+// Practical example using Option Enum
+let from_option = Option::new(1);
+if let Some(opt) = from_option {
+	// ...
+} else {
+	// ...
+}
 ```
+
 
 pattern matching
 ```rust
 let speed_limit: u32 = 60;
 match speed_limit { // must include all possible values
-	1..=59 => println!("you are within speed limit"); // = range including value
-	60 => println!("max speed limit allowed");
-	_ => println!("you are over the speed limit"); // _ is for the rest
+	// match a range
+	1..58 => println!("you are within speed limit"); 
+	// match exact
+	59 => println!("max speed limit allowed");
+	// match the rest
+	_ => println!("you are over the speed limit");
 }
 ```
 
@@ -128,7 +115,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 	    Err(),
     }
 }
-// ? operator can be used to astract result and option types
+// ? operator can be used to extract result and option types
 fn main() -> Result<(), Box<dyn Error>> {
     let greeting_file = File::open("hello.txt")?;
     Ok(())
@@ -153,7 +140,8 @@ while i < arr.len() {
 	break;
 }
 // for loop with iterator
-for val: &32 in arr.iter() { // make sure the type is referencing correctly
+// by default into_iter() will be used
+for val: &32 in arr.iter() { 
 	println!("Value = {}", val);
 }
 ```
@@ -194,9 +182,13 @@ println!("{} is {}, his salary is {}", t2, t1, t3);
 ```
 
 String and &str
->a String is mutable and stored in the heap, &str is immutable and commonly known as a slice, also has a UTF-8 encoding
+>a String is mutable and stored in the heap, &str is immutable and known as a string slice.
+
+>str has a static lifetime, meaning a str will always be valid throughout the program
 
 >String is a smart pointer
+
+>String has a pointer, length and capacity representation. str has a pointer and length
 
 ```rust
     let mut foo: String = String::new(); // instantiate a new mutable String
@@ -303,13 +295,27 @@ fn ref_fn(x: &Vec<u32>) -> &u32 {
 trait, struct, impl
 >this is probably a bad example
 ```rust
-trait Car { // methods
+// interface
+trait Car {
     fn new(x: u32, y: u32, z: String) -> Self; // Constructor
     fn print_manufacturer(&self) -> ();
     // https://github.com/rust-lang/rfcs/pull/1546
     // can't access struct fields here
     fn get_specs(&self) -> String; 
+	// default implementation, so structs do need to explictly implement
+	fn drive(&self) -> {
+		println!("Drive")
+	}
 }
+
+trait LandVehicle {
+	fn something_that_only_land_vehicle_can_do(&self);
+}
+
+// super trait
+trait SuperCar : Car + LandVehicle {}
+impl Car for SuperCar {}
+impl LandVehicle for SuperCar {}
 
 struct Supra { // fields
     hp: u32,
@@ -388,8 +394,6 @@ fn main() {
 ```
 
 [smart-pointers](https://doc.rust-lang.org/book/ch15-00-smart-pointers.html)
->smart pointers can own the data they point to and allows manipulation of said data. It also has extra metadata and capabilities
-
 ```rust
 struct Node<T> {
     _val: T,
@@ -428,7 +432,6 @@ fn main() {
     life_time(&A, &b);
 }
 
-// function with a generic lifetime annotation
 // this creates a relationship of the variable lifetimes
 fn life_time<'z>(a: &'z i32, b: &'z i32) -> &'z i32 {
     // a.to_string is ephemeral so need to bind it to a variable
@@ -447,7 +450,6 @@ fn life_time<'z>(a: &'z i32, b: &'z i32) -> &'z i32 {
     };
 }
 
-// struct with a generic lifetime annotation
 // need to specify a generic lifetime annotation if a field is a referenced type
 struct LifeTime<'a, 'b> {
 	life: &'a i32,
@@ -519,7 +521,7 @@ impl Specs for Engine {
         horsepower: u32,
         torque: u32,
     ) -> Self {
-        // kinda like the thing you can do in typescript
+        // kinda like the thing you can do in javascript
         Engine { manufacturer, displacement, no_of_cylinders, configuration, horsepower, torque }
     }
 
@@ -583,9 +585,9 @@ fn job(who: &str) {
 }
 ```
 
-> If a single piece of data must be accessible from more than one task concurrently, then it must be shared using synchronization primitives such as Arc.
+>If a single piece of data must be accessible from more than one task concurrently, then it must be shared using synchronization primitives such as Arc.
 
-[arc](https://doc.rust-lang.org/std/sync/struct.Arc.html) (atomically reference counted) and [mutex](https://doc.rust-lang.org/std/sync/struct.Mutex.html) (mutual exclusion)
+[arc](https://doc.rust-lang.org/std/sync/struct.Arc.html) and [mutex](https://doc.rust-lang.org/std/sync/struct.Mutex.html)
 [Easy Rust 109: Mutex part 2](https://www.youtube.com/watch?v=z3G_7_hNltE&ab_channel=mithradates)
 ```rust
 use std::{sync::{Arc, Mutex}, thread};
@@ -617,7 +619,7 @@ fn consume_fuel(tank: &Arc<Mutex<Tank>>, amt: usize, piston: i32) {
 }
 ```
 
-## Cases
+## Practical
 
 comparing stdin to a string
 ```rust
@@ -643,7 +645,7 @@ for each in arr.into_iter() { // consumes the element
 	println!("{each}")
 }
 
-println!("{:?}", arr) // error here
+println!("{:?}", arr) // moved value error here
 ```
 
 match vs matches!
@@ -666,10 +668,26 @@ fn lets_match() {
 }
 ```
 
-Rc vs Box
+ref vs & Rc vs Box vs RefCell vs Cell vs Arc
 ```rust
+let x: i32 = 10; // intialize x value
+let y: &i32 = &x; // idiomatic way of borrowing
+let ref z: &i32 = x; // this is borrowing x same as y
+
+// ref makes more sense when doing pattern matching
+match x {
+	// this borrows x instead of consuming it
+	Some(ref v) => ...
+	None => ...
+}
+
+// Box will always allocate on the heap while, & does not and can be used on the stack or heap
+let x = Box::new(12);
+// will print pointers for the box and value in the box
+println!("{:p}, {:p}", x, &x);
+
 struct ImmutableNode {
-	// Rc is shared ownership no immutable
+	// Rc is shared ownership and immutable
 	node: Rc<ImmutableNode>,
 }
 
@@ -677,5 +695,66 @@ struct MutableNode {
 	// Box is exclusive ownership and mutable
 	node: Box<MutableNode>,
 }
+
+// Arc is used instead of Box and Rc when supporting clone, shared ownership, and immutable.
+let x = Arc::new(10);
+// cloning an arc will increase the reference count and return a new pointer to the same allocation
+let y = x.clone();
+
+// RefCell creates single ownership for a mutable memory location with dynamically checked borrow rules. Refcell uses the interior mutability pattern where unsafe code is used which means the code can panic during runtime
+// Cell requires the data being wrapped to be copyable while RefCell does not
+let x = RefCell::new(5);
+let x_old = x.replace(4); // replace with new value, returning old one
+let x_another = RefCell::new(6);
+x.swap(&x_another); // swap RefCells
+let z = x.into_inner(); // consumes RefCell, returning wrapped value
 ```
 
+zero cost abstraction
+>extra cost for an implementation needs to be explicit
+```rust
+struct Dog;
+impl CanWalk for Dog {
+	fn walk(&self) {
+		println!("dog can walk")
+	}
+}
+
+struct Cat;
+impl CanWalk for Cat {
+	fn walk(&self) {
+		println!("cat can walk")
+	}
+}
+
+trait CanWalk {
+	fm walk(&self);
+}
+
+fn main() {
+	let dog = Dog;
+	do_walk_dyn(&dog);
+	do_walk_impl(&dog);
+	let cat = Cat;
+	do_walk_dyn(&cat);
+	do_walk_impl(&cat);
+}
+
+// dynamic dispatch
+// this creates a fat pointer which a collection of two pointers
+// one points to the data of the struct another points to a v-table that has a pointer to all the functions that the struct implements
+// incur runtime penalty
+fn do_walk_dyn(animal: &dyn CanWalk) {
+	animal.walk():
+}
+
+// static dispatch (similar to how generics are handled)
+// this creates a copy of the implementation
+// this incur compile penalty where more code is generated during compilation
+fn do_walk_impl(animal: &impl CanWalk) {
+	animal.walk();
+}
+```
+
+interior mutability
+>Cell, RefCell, RwLock, Mutex

@@ -1,8 +1,10 @@
 {
   "accentColor": "#6bdcef",
   "cssTheme": "custom",
-  "interfaceFontFamily": "Hack Nerd Font",
+  "interfaceFontFamily": "Hack Nerd Font Mono",
   "theme": "obsidian",
   "nativeMenus": false,
-  "showViewHeader": true
+  "showViewHeader": true,
+  "monospaceFontFamily": "Hack Nerd Font Mono",
+  "textFontFamily": "Hack Nerd Font Mono"
 }

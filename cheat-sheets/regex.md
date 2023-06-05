@@ -1,3 +1,5 @@
+>before starting with regex always figure out whether the regex is basic, extended or perl
+
 ## Tools
 
 [regex101](https://regex101.com/)
@@ -42,14 +44,14 @@ character classes
 
 flags
 ```bash
-//g       # global
-//m       # multi-line
-//i       # case insensitive
+/g       # global
+/m       # multi-line
+/i       # case insensitive
 ```
 
 ## Intermediate
 
-grouping
+grouping / capture groups
 ```bash
 a(bc)           # parentheses create a capturing group with value bc 
 a(?:bc)*        # using ?: we disable the capturing group

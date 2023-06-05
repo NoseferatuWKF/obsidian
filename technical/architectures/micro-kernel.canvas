@@ -1,0 +1,26 @@
+{
+	"nodes":[
+		{"id":"f2bcf26976629a85","type":"group","x":-1020,"y":-460,"width":1553,"height":900,"label":"Micro Kernel"},
+		{"type":"group","id":"9c36970fe82442ce","x":-1000,"y":-360,"width":333,"height":360,"label":"Abstraction"},
+		{"type":"group","id":"546a6cbd0acf628e","x":180,"y":-360,"width":333,"height":360,"label":"Extension"},
+		{"type":"group","id":"72608ad00c0b97f3","x":-420,"y":-360,"width":333,"height":360,"label":"Core"},
+		{"id":"a8d45f812f96f90f","type":"text","text":"External Server","x":-947,"y":-276,"width":220,"height":60},
+		{"id":"feb98e7b4235771f","type":"text","text":"External Server","x":-947,"y":-166,"width":220,"height":60},
+		{"id":"3a29fd2560f1afcb","type":"text","text":"Internal Server","x":246,"y":-166,"width":220,"height":60},
+		{"id":"6a54223ffa5285ab","type":"text","text":"Internal Server","x":246,"y":-276,"width":220,"height":60},
+		{"id":"17e236260c8987f0","type":"text","text":"Adapter","x":-777,"y":129,"width":220,"height":65},
+		{"id":"bf418dc96683dc2e","type":"text","text":"IPC","x":-357,"y":-166,"width":220,"height":60},
+		{"id":"1c944c13f46872e8","type":"text","text":"Scheduler","x":-357,"y":-276,"width":220,"height":60},
+		{"id":"088df529953276f7","type":"text","text":"Client","x":-1560,"y":129,"width":220,"height":65},
+		{"id":"63fe9b6209a40055","type":"text","text":"Client","x":-1560,"y":280,"width":220,"height":62},
+		{"id":"da1deadaaf89187d","type":"text","text":"Adapter","x":-777,"y":277,"width":220,"height":65}
+	],
+	"edges":[
+		{"id":"8624b5b18372a1d5","fromNode":"72608ad00c0b97f3","fromSide":"left","toNode":"9c36970fe82442ce","toSide":"right","fromEnd":"arrow"},
+		{"id":"09814902ce4585bc","fromNode":"72608ad00c0b97f3","fromSide":"right","toNode":"546a6cbd0acf628e","toSide":"left","fromEnd":"arrow"},
+		{"id":"24b31f003ad7a3ac","fromNode":"088df529953276f7","fromSide":"right","toNode":"17e236260c8987f0","toSide":"left"},
+		{"id":"23cc1c6ff14aefd2","fromNode":"17e236260c8987f0","fromSide":"right","toNode":"72608ad00c0b97f3","toSide":"bottom","fromEnd":"arrow"},
+		{"id":"b7e6fde45dec964d","fromNode":"63fe9b6209a40055","fromSide":"right","toNode":"da1deadaaf89187d","toSide":"left"},
+		{"id":"3aebe59805d33a15","fromNode":"da1deadaaf89187d","fromSide":"right","toNode":"72608ad00c0b97f3","toSide":"bottom","fromEnd":"arrow"}
+	]
+}

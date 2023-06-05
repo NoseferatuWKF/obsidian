@@ -1,5 +1,0 @@
-## Scripts
-
-### mac
-battery
-teamocil

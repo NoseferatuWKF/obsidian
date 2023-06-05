@@ -37,6 +37,9 @@ d -- add new dir
 R -- rename/move file/dir
 I -- show/hide banner
 p -- preview file
+mt -- mark target dir for copying
+mf -- mark file for copying
+mc -- copy file to target
 ```
 
 navigations
@@ -122,6 +125,9 @@ marks
 ma -- create a new local mark 'a'
 mA -- create a new global mark 'A'
 `a -- jump to 'a' mark (can use ' as well)
+:`apu -- paste to 'a' mark
+:`ad -- delete 'a' mark
+: `apu | `ad -- replace marked line with paste buffer
 ```
 
 registers and macros
@@ -138,22 +144,29 @@ qa -- record macro into register 'a'
 :e file                 -- edit file
 :e!                     -- cancel editing
 :!echo @%               -- directory/name of file
-:!echo expand('%:t')    -- name of file ('tail')
-:!echo expand('%:p')    -- full path
-:!echo expand('%:p:h')  -- directory containing file ('head')
+:!echo '%:t'            -- name of file ('tail')
+:!echo '%:p'            -- full path
+:!echo '%:p:h'          -- directory containing file ('head')
 :cd %:p:h               -- change working directory for current window
 :lcd %:p:h              -- change working directory for all windows
 :%s/abc/def/g           -- replace all strings within file
-::g/^\s*$/d             -- delete white spaces can use :'<,'>s/^\s*// as well
+:g/^\s*$/d              -- delete white spaces can use :'<,'>s/^\s*// as well
+:g/something/d          -- delete all lines containing something
 :0,10 s/abc/def/g       -- replace line 0 - 10 strings
 :-5,-10co.              -- copy relative line from -5 to -10
 :-5,-10mo.              -- move relative line from -5 to -10
+:30 put a               -- paste at line 30 from reg a
 :checkhealth            -- check nvim config
 :'<,'>!sort | uniq      -- sort and dedup selected lines
 :'<,'>s/$/s             -- add s to the end of each line of selection
-:X                      -- encrypt/decrypt file
+:%s/\(.*\)/\1\rabc/     -- add capture group and then add new line with abc
+:X                      -- encrypt/decrypt file (nvim cannot do this)
 :args                   -- prints arglist
 :arga file              -- add file to arglist
+:term                   -- open terminal
+:.!ls                   -- print files in current directory to current buffer
+:%!python -m json.tool  -- format json, can also use :%!jq .
+q:                      -- secret command
 ```
 
 ## mah keybinds
@@ -163,6 +176,9 @@ qa -- record macro into register 'a'
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- maybe Sex! is better :)
 -- yank into system clipboard
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], { desc = "Yank into system clipboard"})
+-- edit config from anywhere while in vim
+vim.keymap.set("n", "<leader>con", "<cmd>e ~/.dotfiles/nvim/.config/nvim/init.lua<CR>", { desc = "Edit Neovim config"})
+
 ```
 
 ## some of ThePrimeagen keybinds
@@ -260,6 +276,7 @@ vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>",
 ```
 
 ## [nvim-dap](https://github.com/mfussenegger/nvim-dap/tree/master)
+
 ```lua
 vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
 vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
@@ -286,15 +303,15 @@ vim.keymap.set('n', '<Leader>ds', function()
 end)
 ```
 
-## vim-surround
-
-```lua
-cs '" -- 'text' -> "text" 
-ds " -- "text" -> text
-(visual) S" -- text -> "text"
-```
-
 ## [telescope](https://github.com/nvim-telescope/telescope.nvim)
+
+query
+```lua
+Telescope vim_options -- show all vim options
+Telescope commands -- show all nvim commands
+-- this one is amazing when trying to find vim apis
+Telescope help_tags -- show all declared global functionalities 
+```
 
 ## vim-fugitive
 
@@ -310,4 +327,42 @@ cc -- create a commit
 dv -- split screen merge conflict
 :diffget {buffer} -- could be //2 or //3 depending on which way to go
 Gwrite! -- to use native vim fugitive merge resolution
+```
+
+## Mason
+
+```lua
+-- list all available lsp
+:Mason
+```
+
+## Treesitter
+
+```lua
+-- list all available parsers
+:TSInstallInfo
+```
+
+## [[lua]]
+
+```Lua
+-- Print lua table in neovim for debugging
+print(vim.inspect(vim.api.nvim_get_win_config(0))) -- example for window config
+-- Check if a file is readable
+if vim.fn.filereadable == 1 then
+	print("OK")
+end
+-- encode/decode json
+local lua_table = vim.fn.json_decode("/path/to/file.json")
+local json = vim.fn.json_encode(lua_table)
+-- read vs readfile
+vim.cmd.read("/path/to/file") -- read into buffer
+vim.fn.readfile("/path/to/file") -- read into memory
+-- event handler
+vim.api.nvim_create_autocmd({"BufEnter"}, {
+	pattern = "*.cs",
+	callback = function(ev)
+		print(ev)
+	end
+})
 ```

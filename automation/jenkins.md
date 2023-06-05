@@ -52,4 +52,3 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 >Just use something else
 1. Install rust
 2. Install build-essential (requires sudo)
-sdsd

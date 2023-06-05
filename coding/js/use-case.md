@@ -6,10 +6,6 @@ Array.from(mySet);
 mySet2 = new Set([1, 2, 3, 4]);
 ```
 
-getting swagger json from nestjs
-```bash
-http://path/to/swagger-json # add json at the end
-```
 
 get server timezone
 ```js

@@ -1,5 +1,8 @@
 {
   "vimMode": true,
   "alwaysUpdateLinks": true,
-  "showInlineTitle": false
+  "showInlineTitle": false,
+  "trashOption": "none",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "notes"
 }

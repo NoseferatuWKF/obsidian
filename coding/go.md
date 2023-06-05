@@ -5,8 +5,8 @@
 [effective-go](https://go.dev/doc/effective_go)
 
 ## Why go?
-- simplicity over expresiveness
-- fast compilation speed (good for large codebases)
+- simplicity over expressiveness
+- fast compilation speed (good for large code bases)
 - handling error during runtime instead of compilation time
 - you don't care about adding support for Windows
 
@@ -27,8 +27,6 @@ go version
 
 ## Basics
 
-### let's go
-
 create a go module
 ```bash
 go mod init <name>
@@ -48,9 +46,8 @@ func main() {
 }
 ```
 
-### setting variables
-
 := operator
+>to declare and initialize, note that this operator cannot deal with specific bits ie; int32 / float64, it will become int / float instead
 ```go
 // the long way
 var message string
@@ -59,21 +56,59 @@ message = fmt.Println("Hello %v", name)
 mesage := fmt.Println("Hello %v", name)
 ```
 
+strings
+```go
+s := "some string" // var string short form
+strconv.Itoa(69) // properly convert 69 into "69"
+string(69) // will convert to E as 69 is seen as a rune
+
+// comparing runes
+for _, v := range(s) {
+	if v == rune('A') {
+		return true
+	}
+}
+```
+
 arrays
 ```go
 var a [4]int
 a[0] = 1
 i := a[0]
-// i == 1
 
 // array literals
 b := [2]string{"Penn", "Teller"} 
 // same as above
 b := [...]string{"Penn", "Teller"}
+
+// to get length of array
+len(b)
+
+// indexing from a pointer array
+some_array := []int{1, 2, 3}
+p := &some_array
+fmt.Println((*p)[0]) // 1
+
+// loop over an array
+for i, v := range(some_array) { // can do range some_array as well
+	fmt.Println(i, v)
+}
+
+// appending to existing array
+arr := []int{1, 2, 3}
+arr = append(arr, []int{4, 5}...)
+
+// passing reference to func
+fromFunc := some_func(&some_array)
+fmt.Println(fromFunc) // &[1 2 3]
+
+func some_func(arr *[]int32) *[]int32 {
+	fmt.Println(arr) // &[1 2 3]
+}
 ```
 
 slices
-> slice literal is declared just like an array literal, except you leave out the element count
+>slice literal is declared just like an array literal, except you leave out the element count
 ```go
 letters := []string{"a", "b", "c", "d"}
 
@@ -87,13 +122,125 @@ b := []byte{'g', 'o', 'l', 'a', 'n', 'g'}
 // another way to create slices
 x := [3]string{"Лайка", "Белка", "Стрелка"}
 s := x[:] // a slice referencing the storage of x
+
+// use slices for dynamically sized arrays
+var dynamic = make([]int32, 1000)
 ```
 
-### loops
+structs
 ```go
-func Hellos(names []string) (map[string]string, error) {
+// definition
+type Bar struct {
+	x           int64 // single declaration
+	a, b, c, d  int32 // multiple declaration
+}
+
+// if struct points to same struct
+type Node struct {
+	Value   int32
+	Next    *Node
+}
+
+// add pointer to struct
+func (bar *Bar) DoSomething(a int32, b int32, c int32, d int32) {
+	bar.a = a
+	bar.b = b
+	bar.c = c
+	bar.d = d
+}
+
+func main() {
+	// initialize
+	b := Bar{}
+
+	// call method
+	b.DoSomething(1, 2, 3, 4)
+}
+```
+
+interfaces
+```go
+type IPreference interface {
+	doSomething(input string) string
+}
+
+type Like struct { }
+
+func (f Like) doSomething(input string) string {
+	return "I like " + input
+}
+
+type Hate struct { }
+
+func (f Hate) doSomething(input string) string {
+	return "I hate " + input
+}
+
+func main() {
+	var a IPreference
+	a = Like {}
+	a.doSomething("Ice cream");
+	a = Hate {}
+	a.doSomething("Potatoes");
+}
+
+```
+
+maps
+```go
+	// instantiate a map
+    messages := make(map[string]string) // or map[string]string{}
+
+	// setting/updating value in map
+	messages["key"] = "value"
+
+	// getting value from map
+	// will return the zero type if doesn't exist, in this case its ""
+	val := messages["key"]
+
+	// length of keys in a map
+	length := len(messages)
+
+	// deleting a key-value pair
+	delete(messages, "key")
+
+	// looping key, values in a map
+	for k, v := range messages {
+		fmt.Println(k, v)
+	}
+
+	// check if key exists in map
+	someMap = make(map[string]int)
+	if val, ok := someMap["key"]; ok {
+		fmt.Println("Key exists", val)
+	}
+```
+
+casting
+```go
+package main
+
+import "strconv"
+
+func main() {
+	// works for numbers
+	var x int32 = 10
+	var y float32 = (float32) x
+
+	// to conv str to int or vice versa
+	val := 100
+	valString := strconv.Itoa(val)
+	val = strconv.Atoi(valString)
+	
+}
+```
+
+loops
+```go
+func hellos(names []string) (map[string]string, error) {
     // A map to associate names with messages.
     messages := make(map[string]string)
+
     // Loop through the received slice of names, calling
     // the Hello function to get a message for each name.
     for _, name := range names {
@@ -109,65 +256,127 @@ func Hellos(names []string) (map[string]string, error) {
 }
 ```
 
+defer
+>kinda like await
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var x int32;
+	// defer will wait until everything underneath it finishes then executes
+	defer delayedAddition(&x, 4)
+	fmt.Println(x) // 0
+
+	// if there are two defers like this, then the bottom one will execute first
+	defer delayedAddition(&x, 6)
+	fmt.Println(x) // 0
+	x += 5
+	fmt.Println(x) // 5
+	// x will be 11 and then 15 after this
+}
+
+func delayedAddition(x *int32, y int32) {
+	*x += y
+}
+
+// defer already evaluates the function
+func main() {
+	x := 0
+	x++
+	defer fmt.Println(x) // prints 1 even though it is executed at the end of the function 
+	x++
+	fmt.Println(x) // 2
+}
+```
+
+generics
+```go
+// declare generic struct, K comparable is used for generic map
+type Foo[K comparable, V any] struct {
+	dict  map[K]V
+}
+
+// generic method
+func (f *Foo[K, V]) Insert(key K, value V) {
+	f.dict[key] = value
+}
+
+func (f *Foo[K, V]) Get(key K) V{
+	v := f.dict[key]
+
+	if v == nil {
+		// return default zero generic
+		return *new(V)
+	}
+}
+
+func main() {
+	// initilialized generic struct
+	foo := Foo[string, string]{}
+	foo.Insert("cat", "meow")
+
+	fmt.Println(foo)
+}
+```
+
+closures
+```go
+func closure(a int) func(int) int {
+    sum := a
+    return func(b int) int {
+        sum += b
+        return sum
+    }
+}
+
+func main() {
+    c := closure(1)
+    fmt.Println(c(2))
+}
+
+```
 ### modules
 
 file structure
 ```
-├── home
-├── greetings
-│   ├── go.mod
-│   └── greetings.go
-└── hello
-    ├── go.mod
-    └── hello.go
+├── parent
+    └── main.go
+    └── go.mod
+├───── child
+	   └── sub.go
 ```
 
-greetings.go
+go.mod
 ```go
-package greetings
+module parent
 
-import "fmt"
+go 1.20
+```
 
-func Hello(name string) string {
-    message := fmt.Sprintf("Hi, %v. Welcome!", name)
-    return message
+sub.go
+```go
+package child
+
+// need to caps first letter to make it public
+func Moo() string {
+	return "Moo"
 }
 ```
 
-hello.go
+main.go
 ```go
 package main
 
 import (
-    "fmt"
-
-    "example.com/greetings"
+	"fmt"
+	"parent/child"
 )
 
 func main() {
-    message := greetings.Hello("Human")
-    fmt.Println(message)
+	fmt.Println(child.Moo()) // Moo
 }
-```
-
-using module
->technically packages should be placed in an external repo, to make things work locally, go can redirect the package
-
-```bash
-go mod edit --replace example.com/greetings
-go mod tidy
-```
-
-hello/go.mod
-```go
-module example.com/hello
-
-go 1.20
-
-replace example.com/greetings => ../greetings
-
-require example.com/greetings v0.0.0-00010101000000-000000000000
-
 ```
 
 ### error handling
@@ -220,6 +429,73 @@ output
 ```bash
 greetings: empty name
 exit status 1
+```
+
+### concurrency
+
+go routines
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	x := 0
+	go concurrent(&x)
+	go concurrent(&x)
+	x++
+	fmt.Println(x)
+	time.Sleep(100 * time.Millisecond)
+	fmt.Println(x)
+}
+
+func concurrent(x *int) {
+	*x++
+}
+```
+
+channels
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	// unbuffered channel (without capacity)
+	// requires a receiver as soon as a message is emitted
+	// this will only succeed when both sender and receiver are ready
+	c := make(chan int)
+	// buffered channel
+	// at most one receiver
+	bc := make(chan int, 1)
+
+	go fillChan([4]int{0, 1, 2, 3}, c)
+	go fillChan([4]int{5, 6, 7, 8}, c)
+	go fillChan([4]int{9, 10, 11, 12}, c)
+	go closeChan(c) // need to close channel if iterating over it
+	closeChan(bc)
+	// to consume from channel directly can do this x := <-c
+	for i := range c {
+		fmt.Println(i)
+	}
+}
+
+func fillChan(arr [4]int, c chan int) {
+	for _, v := range arr {
+		c <- v // send value to channel
+	}
+}
+
+func closeChan(c chan int) {
+	time.Sleep(100 * time.Millisecond)
+	close(c) // close channel
+}
 ```
 
 ### test
@@ -280,4 +556,22 @@ ok      example.com/greetings   0.372s
 changing install target
 ```bash
 go env -w GOBIN=/path/to/your/bin
+```
+### use case
+
+rand
+```go
+import (
+	"math/rand"
+	"time"
+)
+
+func main() {
+	// first seed the rand generator
+	// dynamic value for different results
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
+
+	// generate random int32
+	v := r.Int31()
+}
 ```

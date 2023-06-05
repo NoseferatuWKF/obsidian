@@ -110,6 +110,11 @@ console.log(gen.next().value);
 
 console.log(gen.next().value);
 // Expected output: 20
+
+// loop over all values coming from generator using iterator
+for (const v of gen) {
+	console.log(v)
+}
 ```
 
 [yield*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield*)

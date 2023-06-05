@@ -1,27 +1,42 @@
-kill all running containers:
+>prefer containerd over docker
+
+house keeping
 ```bash
 docker kill $(docker ps -q) # unlike stop this fucks containers pronto
+docker system prune # full clean except volumes
 ```
 
-start [[networking/docker|docker]] on mac (will open the application not just run the service): 
->or just use finch or orbstack for GUI
+view
 ```bash
-open -a Docker
+docker ps --size # check running container size
 ```
 
-remove all unused containers, networks, images (both dangling and unreferenced)
+docker run
 ```bash
-docker system prune
-```
-
-run multiple commands within docker
-```bash
+# run multiple commands within docker
 docker run --rm busybox bash -c "whoami && pwd"
+
+# runtime options, good for benchmarking
+docker run --rm --cpu 0.8 --memory 256m busybox
+
+# overwrite entrypoint, sadly can't do anything for CMD
+docker run --entrypoint bash grafana/k6
 ```
 
 cache busting
 ```Dockerfile
 ARG CACHE_BUST=1
+```
+
+docker build, save and load somewhere else
+>can be used to load images in cri for kubernetes when loading images
+```bash
+# build image
+docker build -t image:latest .
+# save image to local
+docker save image:latest -o image.tar
+# load image in another docker runtime
+docker load -i image.tar
 ```
 
 ## more cheat-sheets:

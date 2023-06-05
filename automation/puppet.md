@@ -53,6 +53,11 @@ run plan
 bolt plan run <project>::<module>::<plan> -t <target>
 ```
 
+run tasks
+```bash
+bolt task run <project>::<module>::<task> -t <target>
+```
+
 ### Managing secrets
 
 create new pem key
@@ -137,4 +142,21 @@ plan my_project::zsh::utils (
   $command_result = run_command('whoami', $targets)
   return $command_result
 }
+```
+
+### Writing Tasks
+
+>tasks must use the proper binary to execute the file, ie; /bin/node for node.js, /usr/bin/bash for bash scripts, .json files can be used to add metadata on the task
+
+term.json
+```json
+{
+	"description": "terminal stuff"
+}
+```
+
+term.sh
+```bash
+ #!/bin/bash
+ arch -arm64 brew reinstall tmux stow derailed/k9s/k9s
 ```

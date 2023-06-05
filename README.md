@@ -5,13 +5,13 @@
 >Why Athena? Because she's hot
 
 ## TOGODDAMNDO
-- [ ] translate all notes taken before into .md
-	- [ ] kubernetes
-	- [ ] AWS
-	- [ ] GCP
-	- [ ] Linode
-- [x] move private notes to sub modules
-- [x] FOMO stuff
+- [ ] translate all notes taken before into .md (todo::general)
+	- [ ] kubernetes (todo::general)
+	- [ ] AWS (todo::general)
+	- [ ] GCP (todo::general)
+	- [ ] Linode (todo::general)
+- [x] move private notes to sub modules (todo::general)
+- [x] FOMO stuff (todo::general)
 
 ## [MARKDOWN CHEAT-SHEET](https://www.markdownguide.org/cheat-sheet/#extended-syntax)
 
