@@ -41,7 +41,6 @@ async fn main() {
 }
 ```
 
-
 ## Spawning
 
 concurrency with a single thread using tasks

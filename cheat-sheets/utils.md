@@ -59,9 +59,19 @@ openssl req -newkey rsa:2048 -keyout domain.key -out domain.csr
 # nodes option will not prompt for pass phrase
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /path/to/.key -out /path/to/.crt
 
+# a2enmod enable ssl -- apache
+# /usr/local/share/ca-certificates/.crt && update-ca-certificates -- debian
+
 # view certificate
-openssl x509 -text -noout -in /path/to/.crt
+openssl x509 -text -noout -in /path/to/.crtt
+
+# strip key from pfx
+openssl pkcs12 -in myfile.pfx -nocerts -legacy -out priv-key.pem -passin pass:<password>
+
+# strip cert from pfx
+openssl pkcs12 -in myfile.pfx -nokeys -legacy -out certificate.pem -passin pass:<password>
 ```
+
 
 ```bash
 # domain.ext config file

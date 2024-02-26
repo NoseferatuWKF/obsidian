@@ -1,12 +1,6 @@
-## Installation
-
-```bash
-# no hassle installation
-sudo apt install -y default-jre default-jdk
-```
+# Basics
 
 compiling and running
-
 ```shell
 javac <filename>.java
 # arguments can be passed here once compiled
@@ -25,8 +19,8 @@ jar -cvf <jarfile> /path/to/something.class
 # cp is for classpath, can use --jar as well
 java -cp /path/to/jar <class> # without .java
 ```
-## Basics
 
+some pet peevs
 ```java
 class Main {
 	private static class WhyIsThisAllowed {
@@ -56,7 +50,6 @@ class Main {
 ```
 
 loops
-
 ```java
 // iterator loop
 // let's say we have an array of strings elems
@@ -67,14 +60,12 @@ for (String el: elems) {
 
 unboxing and autoboxing
 https://javarevisited.blogspot.com/2010/10/what-is-problem-while-using-in.html#axzz82BXif5vU
->basically converting a stack into heap
-
+>basically converting stack into heap
 ```java
 ```
 
 strings
 >strings are heap allocated, and used something called a string constant pool where same/existing strings can be referenced instead of creating a new one as a string in java is immutabe
-
 ```java
 String a = "foo"; 
 a = "bar"; // this will create a new string object
@@ -110,7 +101,6 @@ jvm
 
 association
 >classes and contain references to other classes and form relationships such as one-to-one, one-to-many, etc.. This is known as association in java.
-
 ```java
 class Person {
 	// one-to-many association
@@ -148,7 +138,6 @@ class Foo {
 
 marker interface
 >empty interfaces used to tag classes for a certain implementation/metadata/intent
-
 ```java
 // marker interface usually are serializable or cloneable
 public interface Deletable {

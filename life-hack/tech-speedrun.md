@@ -23,3 +23,23 @@
 8. Remember that there is a "computer" in "computer science". Know how long it takes your computer to execute an instruction, fetch a word from memory (with and without a cache miss), read consecutive words from disk, and seek to a new location on disk. (Answers here.)
 9. Get involved in a language standardization effort. It could be the ANSI C++ committee, or it could be deciding if your local coding style will have 2 or 4 space indentation levels. Either way, you learn about what other people like in a language, how deeply they feel so, and perhaps even a little about why they feel so.
 10. Have the good sense to get off the language standardization effort as quickly as possible.
+
+## [[97 Things Every Programmer Should Know - [Henney].pdf |97 Things Every Programmer Should Know]]
+
+1. Better do it right than to do it quick. Technical debts is not your friend
+2. Use virtual mentors. Find authors and developers on the Web who you really like and read everything they write. Subscribe to their blogs
+3. Get to know the frameworks and libraries you use. Knowing how something works makes you know how to use it better. If they’re open source, you’re really in luck. Use the debugger to step through the code to see what’s going on under the hood. You’ll get to see code written and reviewed by some really smart people.
+4. Many incremental change is better than one massive change
+5. Personal preferences and ego should not get in the way. Thinking you can do a better job than the previous programmer is not a valid reason either
+6. Beware the share. Check your context. Only then, proceed
+7. Always leave the campground cleaner than you found it
+8. The purpose of code reviews should be to share knowledge and establish common coding guidelines. Sharing your code with other programmers enables collective code ownership
+9. Exception is an alternative return path that is part of the model and that the client should be aware and be prepared to handle
+10. A developer even a senior developer should never have access beyond the development server
+11. Provide data and context (stack trace, logs, exception, etc...) when asking help from another technical person
+12. Create a small program to test partial logic of a bigger program. Unit test is similar but once test suite grows large enough, compiling a small program is way faster
+13. Make an interface easy to use correctly, and hard to use incorrectly. Interfaces exist for their users not their implementer
+14. Control user interactions. Provide instructions or cues to guide user journey
+15. Re-inventing the wheel helps to teach intimate/deeper knowledge of an implementation/system
+16. SRP is for independent deployment
+17. Try to get acceptance criteria from all stakeholders (PO and QA) before implementing a new feature

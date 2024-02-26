@@ -1,4 +1,4 @@
-## psql
+# psql
 
 connect to db
 ```bash
@@ -21,7 +21,22 @@ get number of connections
 SELECT sum(numbackends) FROM pg_stat_database;
 ```
 
-## SQL
+copy to/from
+```sql
+COPY table TO /path/to/file.csv delimiter ',' csv quote '"';
+COPY table FROM /path/to/file.csv delimiter ',' csv quote '"';
+```
+# mssql
+
+repeat query
+```SQL
+insert into table (column1, column2)
+values ('abc', 123)
+
+go 100 -- n times of repeat
+```
+
+# SQL
 
 >double quotes for column names, single quotes for values
 
@@ -140,7 +155,6 @@ JOIN
 > - `LEFT JOIN`: Returns all records from the left table, and the matched records from the right table
 > - `RIGHT JOIN`: Returns all records from the right table, and the matched records from the left table
 > - `CROSS JOIN`: Returns all records from both tables
-
 ```sql
 SELECT SUM(CITY.POPULATION) FROM CITY LEFT JOIN COUNTRY ON CITY.COUNTRYCODE = COUNTRY.CODE WHERE COUNTRY.CONTINENT = 'Asia';
 

@@ -1,14 +1,28 @@
-[rpc vs rest](https://aws.amazon.com/compare/the-difference-between-rpc-and-rest/)
+client/server messaging
+```
+Client request:
 
-| **RPC** | **REST** |
-| ---- | ---- |
-| A system allows a remote client to call a procedure on a server as if it were local. | A set of rules that defines structured data exchange between a client and a server. |
-| Performing actions on a remote server. | Create, read, update, and delete (CRUD) operations on remote objects. |
-| When requiring complex calculations or triggering a remote process on the server. | When server data and data structures need to be exposed uniformly. |
-| Stateless or stateful. | Stateless. |
-| In a consistent structure defined by the server and enforced on the client. | In a structure determined independently by the server. Multiple different formats can be passed within the same API. |
+GET /hello.txt HTTP/1.1
+User-Agent: curl/7.64.1
+Host: www.example.com
+Accept-Language: en, mi
 
-# CORS
+Server response:
+
+HTTP/1.1 200 OK
+Date: Mon, 27 Jul 2009 12:28:53 GMT
+Server: Apache
+Last-Modified: Wed, 22 Jul 2009 19:15:56 GMT
+ETag: "34aa387-d-1568eb00"
+Accept-Ranges: bytes
+Content-Length: 51
+Vary: Accept-Encoding
+Content-Type: text/plain
+
+Hello World! My content includes a trailing CRLF.
+```
+
+CORS Headers
 ```
 Access-Control-Allow-Origins
 Access-Control-Allow-Methods
@@ -16,3 +30,18 @@ Access-Control-Allow-Headers
 ```
 
 [HTTP Security Response Headers Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Headers_Cheat_Sheet.html)
+
+status codes overview
+```
+1xx (Informational): The request was received, continuing process
+2xx (Successful): The request was successfully received, understood, and accepted
+3xx (Redirection): Further action needs to be taken in order to complete the request
+4xx (Client Error): The request contains bad syntax or cannot be fulfilled
+5xx (Server Error): The server failed to fulfill an apparently valid request
+```
+
+RFCs
+
+[RFC-2616](https://datatracker.ietf.org/doc/html/rfc2616) (Draft Standard - June 1999)
+[RFC-9110](https://datatracker.ietf.org/doc/html/rfc9110) (Internet Standard - June 2022)
+[RFC-9113](https://datatracker.ietf.org/doc/html/rfc9113) (Proposed Standard HTTP/2 - June 2022)

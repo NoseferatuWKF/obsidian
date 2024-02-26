@@ -9,10 +9,10 @@ TCP Connection State
 
 RFCs
 
-[RFC-793: TCP (Core)](https://datatracker.ietf.org/doc/html/rfc793)
-[RFC-1122: TCP Communication Layer](https://datatracker.ietf.org/doc/html/rfc1122)
-[RFC-1180: TCP/IP Tutorial](https://datatracker.ietf.org/doc/html/rfc1180)
-[RFC-7414: TCP Specs/Roadmap](https://datatracker.ietf.org/doc/html/rfc7414#section-2)
+[RFC-793: TCP (Core)](https://datatracker.ietf.org/doc/html/rfc793) (Internet Standard - September 1981)
+[RFC-1122: TCP Communication Layer](https://datatracker.ietf.org/doc/html/rfc1122) (Internet Standard - October 1989)
+[RFC-1180: TCP/IP Tutorial](https://datatracker.ietf.org/doc/html/rfc1180) (Informational - January 1991)
+[RFC-7414: TCP Specs/Roadmap](https://datatracker.ietf.org/doc/html/rfc7414#section-2) (Informational - February 2015)
 
 Implementation
 

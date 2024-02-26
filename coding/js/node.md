@@ -26,13 +26,4 @@ profiling
 node --prof app.js # this will output a tick file
 node --prof-process isolate-0xnnnnnnnnnnnn-v8.log # open tick file
 ```
-## NPM
 
-npm link
->linking will link same version of node packages
-```
-cd /path/to/dep
-npm link
-cd /path/to/app
-npm link dep
-```

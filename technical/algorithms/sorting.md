@@ -9,7 +9,6 @@ bubble sort
 void bubblesort(int arr[], int size);
 
 int main() {
-
     srand(time(NULL));
 
     int arr[SIZE];
@@ -21,16 +20,10 @@ int main() {
 
     bubblesort(arr, sizeof(arr) / sizeof(*arr));
 
-    // for (int i = 0; i < sizeof(arr) / sizeof(*arr); i++) {
-    //     printf("%d\n", arr[i]);
-    // }
-
     return 0;
-
 }
 
 void bubblesort(int arr[], int size) {
-
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
             if (arr[i] < arr[j]) {
@@ -40,7 +33,6 @@ void bubblesort(int arr[], int size) {
             }
         }
     }
-
 }
 ```
 
@@ -56,7 +48,6 @@ void quicksort(int arr[], int lo, int hi);
 int quicksort_helper(int arr[], int lo, int hi);
 
 int main() {
-
     srand(time(NULL));
 
     int arr[SIZE];
@@ -68,15 +59,10 @@ int main() {
 
     quicksort(arr, 0, sizeof(arr) / sizeof(*arr) - 1);
 
-    // for (int i = 0; i < sizeof(arr) / sizeof(*arr); i++) {
-    //     printf("%d\n", arr[i]);
-    // }
-
     return 0;
 }
 
 void quicksort(int arr[], int lo, int hi) {
-    
     if (lo >= hi) {
         return;
     }
@@ -85,11 +71,9 @@ void quicksort(int arr[], int lo, int hi) {
 
     quicksort(arr, lo, pivotIdx - 1);
     quicksort(arr, pivotIdx + 1, hi);
-
 }
 
 int quicksort_helper(int arr[], int lo, int hi) {
-
     const int pivot = arr[hi];
 
     int idx = lo - 1;
@@ -108,6 +92,5 @@ int quicksort_helper(int arr[], int lo, int hi) {
     arr[idx] = pivot;
 
     return idx;
-
 }
 ```

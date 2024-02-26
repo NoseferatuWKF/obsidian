@@ -8,32 +8,13 @@
 
 [[cheat-sheets/ansible|cheat-sheets]]
 
-## Installation
-
-### Debian/Ubuntu
-
->automate this with a shell script to reduce overhead
-
-```bash
-sudo apt update && \
-sudo apt install -y software-properties-common && \
-sudo add-apt-repository -yu ppa:ansible/ansible && \
-sudo apt install ansible -y
-```
-
-### Mac
-
-```bash
-brew install ansible
-```
-
-## Tips
+# Tips
 1. [include and import are different](https://docs.ansible.com/ansible/2.9/user_guide/playbooks_reuse_includes.html#includes-vs-imports)
 2. [ansible magic variables](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_vars_facts.html#information-about-ansible-magic-variables)
 3. [ansible builtin](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html#plugin-index) (usually you don't need to install depends on the ansible version you have)
 4. check [[yaml]] for advanced syntax
 
-## Getting Started
+# Getting Started
 
 create an inventory
 ```yaml
@@ -94,7 +75,7 @@ tasks:
     with_items: "{{ _create_instances.results }}"
 ```
 
-## Working with secrets
+# Working with secrets
 
 encrypt/decrypt
 >has a bunch of useful options to organize secrets

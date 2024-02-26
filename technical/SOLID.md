@@ -339,21 +339,11 @@ class EngineA : IEngine
 {
 	public void Start()
 	{
-		this.SetFiringOrder();
-		this.ConsumeFuel();
 		this.CheckPiston1();
 		this.CheckPiston2();
 		this.Ignition();
 	}
 
-	public void SetFiringOrder()
-	{
-	}
- 
-	public void ConsumeFuel()
-	{
-	}
- 
 	public void CheckPiston1()
 	{
 	}

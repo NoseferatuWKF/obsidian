@@ -4,23 +4,47 @@
     "type": "split",
     "children": [
       {
-        "id": "c84d466d6d846a91",
+        "id": "4b078aaa36cf5c50",
         "type": "tabs",
         "children": [
           {
-            "id": "ff941c0e25ab95d2",
+            "id": "64d67eab329535a0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "technical/videos.md",
+                "file": "life-hack/tech-speedrun.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2e2dcded935e57f2",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "books/Refactoring_ Improving the Design of Existing Code ( PDFDrive ).pdf"
+              }
+            }
+          },
+          {
+            "id": "ca7c171a249425c2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "technical/networking/graphql.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -78,7 +102,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "946de5a6e611c3cc",
@@ -105,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "technical/videos.md",
+                "file": "technical/networking/graphql.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "technical/videos.md",
+                "file": "technical/networking/graphql.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "technical/videos.md"
+                "file": "technical/networking/graphql.md"
               }
             }
           },
@@ -159,67 +184,68 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-excalidraw-plugin:Create new drawing": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "ff941c0e25ab95d2",
+  "active": "ca7c171a249425c2",
   "lastOpenFiles": [
-    "notes/shocking.md",
-    "technical/videos.md",
-    "technical/design-patterns/strategy/representation.md",
-    "technical/design-patterns/mediator/representation.md",
-    "technical/design-patterns/bridge/representation.md",
-    "technical/design-patterns/adapter/representation.md",
-    "technical/os/memory.md",
-    "technical/erp/accounting/chart-of-accounts.md",
-    "cheat-sheets/docker.md",
-    "cheat-sheets/linux/common.md",
-    "cheat-sheets/git.md",
-    "notes/template.md",
-    "coding/csharp/dotnet.md",
-    "coding/csharp/base.md",
-    "technical/system-design.md",
-    "technical/game-design/cavalier-fabula.md",
-    "technical/game-design",
-    "system-design.excalidraw",
-    "technical/system-design/ .excalidraw.md",
-    "technical/system-design",
-    "Untitled-2023-08-16-1201.excalidraw.crswap",
-    "cheat-sheets/linux/Arch.md",
-    "cheat-sheets/sql.md",
+    "technical/networking/websocket.md",
+    "technical/networking/graphql.md",
+    "technical/networking/udp.md",
+    "technical/networking/tcp.md",
+    "technical/networking/osi.md",
+    "technical/networking/http.md",
     "technical/networking/grpc.md",
-    "technical/design-patterns/bridge",
-    "technical/design-patterns/bridge.md",
-    "technical/design-patterns/adapter",
-    "technical/design-patterns/adapter.md",
-    "technical/design-patterns/strategy.md",
-    "technical/design-patterns/strategy",
-    "technical/erp/finance",
-    "technical/erp/supply-chain-management",
-    "technical/erp/crm",
-    "notes/chart-of-accounts.md",
-    "life-hack/onboarding.md",
-    "life-hack/software-speedrun.md",
-    "networking/proxmox/home-network.canvas",
-    "pasted-images/Pasted image 20230831025909.png",
-    "pasted-images/Pasted image 20230304032400.png",
+    "books/Refactoring_ Improving the Design of Existing Code ( PDFDrive ).pdf",
+    "life-hack/tech-speedrun.md",
+    "technical/low-lewel/filesystem.md",
+    "cheat-sheets/linux/common.md",
+    "technical/articles.md",
+    "notes/Extreme.md",
+    "cheat-sheets/linux/Arch.md",
+    "technical/system-design.md",
+    "recipes/tasty.md",
+    "coding/python.md",
+    "cheat-sheets/regex.md",
+    "cheat-sheets/shell.md",
+    "cheat-sheets/sql.md",
+    "cheat-sheets/tmux.md",
+    "cheat-sheets/utils.md",
+    "cheat-sheets/window-manager.md",
     "technical/architectures/micro-kernel.canvas",
-    "technical/architectures/microservices.canvas",
+    "technical/architectures/modular-monolith.md",
+    "notes/template.md",
+    "private/setel/access-control-config.md",
+    "private/setel/api-auth.md",
+    "networking/proxmox/home-network.canvas",
+    "books/dokumen.pub_the-art-of-scalability-scalable-web-architecture-processes-and-organizations-for-the-modern-enterprise-2ndnbsped-0134032802-9780134032801-t-1698361.pdf",
+    "books/97 Things Every Programmer Should Know - [Henney].pdf",
+    "books/Eric Evans 2003 - Domain-Driven Design - Tackling Complexity in the Heart of Software.pdf",
+    "books/Fundamentals of Software Architecture.pdf",
+    "books/Structured Programming.pdf",
+    "books/StructuredDesign_EdwardYourdonLarryConstantine.pdf",
+    "books/Unit Testing Principles, Practices, and Patterns.pdf",
+    "books/unix6.pdf",
+    "books/The Robert C. Martin Clean Code Collection.pdf",
+    "pasted-images/Pasted image 20240122163448.png",
+    "private/unleashed/shopify-integration.canvas",
+    "pasted-images/Pasted image 20230304032400.png",
     "technical/architectures/clean-architecture.canvas",
-    "pasted-images/Pasted image 20230410120825.png",
-    "pasted-images/Pasted image 20230331031040.png",
+    "technical/architectures/microservices.canvas",
+    "pasted-images/Pasted image 20230831025909.png",
     "pasted-images/Pasted image 20230831025737.png",
     "pasted-images/Pasted image 20230831025450.png",
     "private/pasted-images/Pasted image 20230302161956.png",
     "private/pasted-images/Pasted image 20230302161920.png",
     "pasted-images/Pasted image 20230728092018.png",
     "pasted-images/Pasted image 20230728092047.png",
+    "pasted-images/Pasted image 20230722123059.png",
     "private/setel/casbin.canvas"
   ]
 }

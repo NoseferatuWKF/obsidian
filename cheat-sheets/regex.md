@@ -1,10 +1,10 @@
 >before starting with regex always figure out whether the regex is basic, extended or perl
 
-## Tools
+# Tools
 
 [regex101](https://regex101.com/)
 
-## Basics
+# Basics
 
 anchors
 ```bash
@@ -49,7 +49,7 @@ flags
 /i       # case insensitive
 ```
 
-## Intermediate
+# Intermediate
 
 grouping / capture groups
 ```bash
@@ -67,13 +67,13 @@ bracket expression
 [^a-zA-Z]       # a string that has not a letter from a to z or from A to Z.
 ```
 
-greedy and lazy match
+greedy vs lazy match
 ```bash
 <.+?>           # matches any character one or more times included inside < and >, expanding as needed
 <[^<>]+>        # matches any character except < or > one or more times included inside < and >
 ```
 
-## Advanced
+# Advanced
 
 boundaries
 ```bash
@@ -83,8 +83,8 @@ boundaries
 
 back references
 ```bash
-([abc])\1             # using \1 it matches the same text that was matched by the first capturing group
-([abc])([de])\2\1     # we can use \2 (\3, \4, etc.) to identify the same text that was matched by the second (third, fourth, etc.) capturing group
+(abc)\1             # using \1 it matches the same text that was matched by the first capturing group
+(abc)(de)\2\1     # we can use \2 (\3, \4, etc.) to identify the same text that was matched by the second (third, fourth, etc.) capturing group
 (?<foo>[abc])\k<foo>  # we put the name foo to the group and we reference it later (\k<foo>). The result is the same of the first regex 
 ```
 

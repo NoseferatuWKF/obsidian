@@ -1,3 +1,21 @@
+# Installation
+
+debian / ubuntu
+>automate this with a shell script to reduce overhead
+```bash
+sudo apt update && \
+sudo apt install -y software-properties-common && \
+sudo add-apt-repository -yu ppa:ansible/ansible && \
+sudo apt install ansible -y
+```
+
+mac
+```bash
+brew install ansible
+```
+
+# Playbook
+
 run playbook
 ```bash
 # linux

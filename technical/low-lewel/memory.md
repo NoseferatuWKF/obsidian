@@ -1,4 +1,4 @@
-[[terms|segmented vs paged]]
+[[jargon|segmented vs paged]]
 >there is also a hybrid of segmented and paged memory management
 
 | segmented                                                    | paged                                           |

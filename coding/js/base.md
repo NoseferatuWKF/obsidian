@@ -1,23 +1,23 @@
 [best-practices](https://github.com/goldbergyoni/nodebestpractices) - good shit for a bad language
 
-## Guideline
+# Guideline
 - use loops when mutating data and higher order array functions when not  - airbnb
 - In general, it's good practice to always use block statements
 - Use maps over objects when keys are unknown until run time, and when all keys are the same type and all values are the same type
 - Use objects when there is logic that operates on individual elements
 - Currently, all modern engines ship a mark-and-sweep garbage collector
 
-## When you don't need JS
+# When you don't need JS
 - multi-threaded operations / parallel computing
 - strict and verbose control-flow
 - bitwise operations - [IEEE 754](https://en.wikipedia.org/wiki/Double-precision_floating-point_format)
 - precision math
 - functional programming (lots of copying, immutable, two space indents)
 
-## Videos
+# Videos
 - [Promises explained exceptionally well](https://www.youtube.com/watch?v=bAlczbDUXx8&ab_channel=StevieJay)
 
-## Installation
+# Installation
 
 >because installing it without a version manager sucks
 
@@ -28,7 +28,7 @@ fnm install --lts
 fnm use lts/latest
 ```
 
-## Basics
+# Basics
 
 [Logical AND (&&)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND)
 ```js
@@ -181,7 +181,7 @@ const b = 1n / 2n; // 0n
 const c = 40000000000000000n >> 2n; // 10000000000000000n
 ```
 
-## Advanced
+# Advanced
 
 Configuring memory
 ```bash
@@ -204,6 +204,14 @@ for (let i = 0; i < int16View.length; i++) {
 }
 ```
 
+directive
+```js
+"use strict" // this is a directive
+function doSomething() {
+	"use directive" // this is a function scoped directive
+	// ...
+}
+```
 
 Event loop
 ```
@@ -227,6 +235,35 @@ Event loop
    └───────────────────────────┘
 ```
 
+# Practical
+
+converting set to array and vice versa
+```js
+Array.from(mySet);
+[...mySet2];
+
+mySet2 = new Set([1, 2, 3, 4]);
+```
 
 
+get server timezone
+```js
+Intl.DateTimeFormat().resolvedOptions().timeZone
+```
 
+>` for...in` loops through the properties in the prototype chain, therefore we need to add to do a check using `hasOwnProperty()`. Better yet, we can use `Object.keys`
+```js
+// need to do checking
+for (const key in user) {
+	if (user.hasOwnProperty(key)) {
+		console.log(`${key}: ${user[key]}`);
+	} 
+}
+// with Object.keys()
+for (const key of Object.keys(user)) {
+	// no checking here
+}
+```
+
+string matching performance
+>indexOf > slice > startsWith > regexStart
