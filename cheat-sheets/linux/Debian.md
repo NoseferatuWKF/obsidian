@@ -1,6 +1,4 @@
-## Package managers
-
-### apt
+# APT
 
 apt housekeeping
 ```shell

@@ -1,16 +1,16 @@
-## Docs
+# Docs
 
 [official docs](https://go.dev/)
 [managing go versions](https://go.dev/doc/manage-install)
 [effective-go](https://go.dev/doc/effective_go)
 
-## Why go?
+# Why go?
 - simplicity over expressiveness
 - fast compilation speed (good for large code bases)
 - handling error during runtime instead of compilation time
 - you don't care about adding support for Windows
 
-## Installation
+# Installation
 
 ```bash
 # if this is first install
@@ -25,7 +25,7 @@ export PATH=$PATH:/usr/local/go/bin
 go version
 ```
 
-## Basics
+# Basics
 
 create a go module
 ```bash
@@ -337,7 +337,7 @@ func main() {
 }
 
 ```
-### modules
+## Modules
 
 file structure
 ```
@@ -379,7 +379,7 @@ func main() {
 }
 ```
 
-### error handling
+## Error Handling
 
 greetings.go
 ```go
@@ -431,7 +431,7 @@ greetings: empty name
 exit status 1
 ```
 
-### concurrency
+## Concurrency
 
 go routines
 ```go
@@ -498,7 +498,7 @@ func closeChan(c chan int) {
 }
 ```
 
-### test
+## Test
 
 >Ending a file's name with _test.go tells the go test command that this file contains test functions.
 
@@ -547,7 +547,7 @@ PASS
 ok      example.com/greetings   0.372s
 ```
 
-### build and install
+## Build and Install
 
 >The `go build` command compiles the packages, along with their dependencies, but it doesn't install the results.
 
@@ -557,7 +557,7 @@ changing install target
 ```bash
 go env -w GOBIN=/path/to/your/bin
 ```
-### use case
+# Practical
 
 rand
 ```go

@@ -1,3 +1,5 @@
+>consider using [k9s](https://k9scli.io/)
+
 run a pod in an interactive shell
 ```bash
 kubectl run -it busybox --image=busybox:1.28 -- sh

@@ -1,4 +1,4 @@
-## keybinds
+# keybinds
 
 keybind config
 ```bash
@@ -54,6 +54,6 @@ st compat
 export LC_CTYPE=en_US.UTF-8
 ```
 
-## more cheat-sheets:
+# more cheat-sheets:
 
 [tmux](https://tmuxcheatsheet.com/)

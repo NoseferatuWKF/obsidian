@@ -1,4 +1,4 @@
-## Basics
+# Basics
 
 constructors & destructors
 ```cs
@@ -442,13 +442,8 @@ idx[0] = "Hmm";
 Console.WriteLine(idx[0]); // Hmm
 ```
 
-## LINQ
-
-## New Features
-
-[What's new in C# 9.0](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-9#top-level-statements)
-
 top level statements
+>for C# 9.0 and later
 ```cs
 using System;
 
@@ -490,4 +485,20 @@ public record Teacher(string FirstName, string LastName, int Grade)
     : Person(FirstName, LastName);
 public record Student(string FirstName, string LastName, int Grade)
     : Person(FirstName, LastName);
+```
+
+generics
+```cs
+// type constraint / narrowing
+public class Generic<T> wehre T : IComparabel<T>
+```
+
+# LINQ
+
+[PLINQ](https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/introduction-to-plinq)
+# Practical
+
+deserialize JSON
+```cs
+Newtonsoft.Json.JsonConvert.SerializeObject(new {foo = "bar"})
 ```

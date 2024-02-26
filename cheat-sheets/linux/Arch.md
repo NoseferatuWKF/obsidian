@@ -1,4 +1,4 @@
-### pacman
+# Pacman
 
 config
 ```bash

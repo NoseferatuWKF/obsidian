@@ -1,3 +1,7 @@
+[Windows Terminal](https://learn.microsoft.com/en-us/windows/terminal/command-line-arguments?tabs=windows)
+
+[F2 - Predictive IntelliSense]([Using predictors in PSReadLine - PowerShell | Microsoft Learn](https://learn.microsoft.com/en-us/powershell/scripting/learn/shell/using-predictors?view=powershell-7.4))
+
 local port-forward windows to WSL2
 ```powershell
 # add interface
@@ -86,5 +90,3 @@ function Foo() {
 	# end
 }
 ```
-
-[Windows Terminal](https://learn.microsoft.com/en-us/windows/terminal/command-line-arguments?tabs=windows)

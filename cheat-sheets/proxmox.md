@@ -1,10 +1,10 @@
-## Guides
+# Guides
 
 - [proxmox with terraform](https://www.youtube.com/watch?v=dvyeoDBUtsU&ab_channel=ChristianLempa)
 - [truenas](https://www.youtube.com/watch?v=7lwqdVmCiI0&ab_channel=LoResDIY)
 - [pfsense](https://youtube.com/watch?v=yTMvrPAwbPE&ab_channel=Divgital)
 
-## General
+# General
 
 pleb mode
 ```bash
@@ -55,7 +55,7 @@ api-server
 <proxmox-url>/api2/json
 ```
 
-## Networking
+# Networking
 
 apply network configuration manually
 ```bash
@@ -89,7 +89,7 @@ iface vmbr0 inet static
 		post-down iptables -t raw -D PREROUTING -i fwbr+ -j CT --zone 1
 ```
 
-## GPU Passthrough 
+# GPU Passthrough 
 
 https://wvthoog.nl/proxmox-7-vgpu-v2/
 https://www.reddit.com/r/homelab/comments/b5xpua/the_ultimate_beginners_guide_to_gpu_passthrough/
@@ -160,7 +160,7 @@ cpu: host,hidden=1,flags=+pcid
 args: -cpu 'host,+kvm_pv_unhalt,+kvm_pv_eoi,hv_vendor_id=NV43FIX,kvm=off'
 ```
 
-## LXC
+# LXC
 
 setting up template
 ```bash
@@ -170,7 +170,7 @@ pveam list --section system # filter by type
 pveam download <image>
 ```
 
-## [[terraform|Terraform]]
+# [[terraform|Terraform]]
 
 terraform user
 ```bash
@@ -191,7 +191,7 @@ to make it work
 - if using scsi setup iothread = 1
 - only root can set args or do passthrough
 
-## VictoriaMetrics
+# VictoriaMetrics
 
 setup
 ```bash

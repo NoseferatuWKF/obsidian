@@ -3,12 +3,21 @@
 house keeping
 ```bash
 docker kill $(docker ps -q) # unlike stop this fucks containers pronto
+docker builder prune
+docker image prune # docker usually have dangling images after build
 docker system prune # full clean except volumes
 ```
 
 view
 ```bash
 docker ps --size # check running container size
+```
+
+build image from running container
+```bash
+docker commit container image:latest
+docker run --rm -it image
+docker push /path/to/registry
 ```
 
 docker run
@@ -23,11 +32,6 @@ docker run --rm --cpu 0.8 --memory 256m busybox
 docker run --entrypoint bash grafana/k6
 ```
 
-cache busting
-```Dockerfile
-ARG CACHE_BUST=1
-```
-
 docker build, save and load somewhere else
 >can be used to load images in cri for kubernetes when loading images
 ```bash
@@ -39,5 +43,5 @@ docker save image:latest -o image.tar
 docker load -i image.tar
 ```
 
-## more cheat-sheets:
+# more cheat-sheets:
 - https://dockercheatsheet.com/

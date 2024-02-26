@@ -52,6 +52,20 @@ build: dep.o main.c
 	# $@ is the target name
 	gcc -g -Wall -o $@ $^ # 
 ```
+
+shared libraries / dll
+```Makefile
+CC = gcc
+CFLAGS = -g -Wall -Wextra -pedantic
+
+static :
+	$(CC) $(CFLAGS) -o main *.c
+
+dynamic :
+	$(CC) $(CFLAGS) -shared -o libshared.so shared.c
+	$(CC) $(CFLAGS) -L./ -Wl,-rpath=./ -lshared main.c -o main
+
+```
 ## Automation
 
 changing default shell

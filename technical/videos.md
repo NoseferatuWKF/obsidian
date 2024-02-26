@@ -36,6 +36,7 @@
 [Simple Code, High Perfomance](https://www.youtube.com/watch?v=Ge3aKEmZcqY&t=8s)
 [Where Does Bad Code Come From?](https://www.youtube.com/watch?v=7YpFGkG-u1w&t=383s)
 [Clean Code, Horrible Performance](https://www.youtube.com/watch?v=tD5NrevFtbU&list=PLEMXAbCVnmY7uLZI18_vIO11HkzB2EgEH&index=14&t=4s)
+[Defining and Evaluating Reusable Components](https://www.youtube.com/watch?v=ZQ5_u8Lgvyk)
 # Douglas Crockford
 
 [The Next Programming Language - Douglas Crockford - code:dive 2022](https://www.youtube.com/watch?v=R2idkNdKqpQ&ab_channel=code%3A%3Adiveconference)

@@ -1,10 +1,10 @@
 >before starting with regex always figure out whether the regex is basic, extended or perl
 
-## Tools
+# Tools
 
 [regex101](https://regex101.com/)
 
-## Basics
+# Basics
 
 anchors
 ```bash
@@ -49,7 +49,7 @@ flags
 /i       # case insensitive
 ```
 
-## Intermediate
+# Intermediate
 
 grouping / capture groups
 ```bash
@@ -73,7 +73,7 @@ greedy and lazy match
 <[^<>]+>        # matches any character except < or > one or more times included inside < and >
 ```
 
-## Advanced
+# Advanced
 
 boundaries
 ```bash

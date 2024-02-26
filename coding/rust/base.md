@@ -1,11 +1,10 @@
->The community and the foundation sucks
-## Docs
+# Docs
 
 [the-book](https://doc.rust-lang.org/book/)
 [rust-by-example](https://doc.rust-lang.org/rust-by-example/index.html)
 [rust-blog](https://github.com/pretzelhammer/rust-blog/tree/master)
 
-## Installation
+# Installation
 
 rustup
 ```bash
@@ -15,14 +14,14 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 rustup self uninstall
 ```
 
-## Guidelines
+# Guidelines
 
 - by default a variable is immutable
 - try not to use unwraps and clones
 - instead of void, rust uses a unit (),
 - by default the items in a module are private
 
-## Basics
+# Basics
 
 using crates
 ```rust
@@ -458,6 +457,133 @@ struct LifeTime<'a, 'b> {
 }
 ```
 
+iter() vs into_iter()
+```rust
+let arr = vec![1, 2, 3 ];
+
+for each in arr.iter() { // returns a reference to the element
+	println!("{each}");
+}
+
+println!("{:?}", arr)
+
+for each in arr.into_iter() { // consumes the element
+	println!("{each}")
+}
+
+println!("{:?}", arr) // moved value error here
+```
+
+match vs matches!
+```rust
+enum Something {
+	First,
+	Second,
+	Third,
+}
+
+fn lets_match() {
+	// match is good for multiple match arms
+	match Something {
+		Something::First => todo!(),
+		Something::Second => todo!(),
+		Something::Third => todo!(),
+	}
+	// matches! is good for binary matches
+	matches!(Something::First, true | false);
+}
+```
+
+ref vs & Rc vs Box vs RefCell vs Cell vs Arc
+```rust
+let x: i32 = 10; // intialize x value
+let y: &i32 = &x; // idiomatic way of borrowing
+let ref z: &i32 = x; // this is borrowing x same as y
+
+// ref makes more sense when doing pattern matching
+match x {
+	// this borrows x instead of consuming it
+	Some(ref v) => ...
+	None => ...
+}
+
+// Box will always allocate on the heap while, & does not and can be used on the stack or heap
+let x = Box::new(12);
+// will print pointers for the box and value in the box
+println!("{:p}, {:p}", x, &x);
+
+struct ImmutableNode {
+	// Rc is shared ownership and immutable
+	node: Rc<ImmutableNode>,
+}
+
+struct MutableNode {
+	// Box is exclusive ownership and mutable
+	node: Box<MutableNode>,
+}
+
+// Arc is used instead of Box and Rc when supporting clone, shared ownership, and immutable.
+let x = Arc::new(10);
+// cloning an arc will increase the reference count and return a new pointer to the same allocation
+let y = x.clone();
+
+// RefCell creates single ownership for a mutable memory location with dynamically checked borrow rules. Refcell uses the interior mutability pattern where unsafe code is used which means the code can panic during runtime
+// Cell requires the data being wrapped to be copyable while RefCell does not
+let x = RefCell::new(5);
+let x_old = x.replace(4); // replace with new value, returning old one
+let x_another = RefCell::new(6);
+x.swap(&x_another); // swap RefCells
+let z = x.into_inner(); // consumes RefCell, returning wrapped value
+```
+
+zero cost abstraction
+>extra cost for an implementation needs to be explicit
+```rust
+struct Dog;
+impl CanWalk for Dog {
+	fn walk(&self) {
+		println!("dog can walk")
+	}
+}
+
+struct Cat;
+impl CanWalk for Cat {
+	fn walk(&self) {
+		println!("cat can walk")
+	}
+}
+
+trait CanWalk {
+	fm walk(&self);
+}
+
+fn main() {
+	let dog = Dog;
+	do_walk_dyn(&dog);
+	do_walk_impl(&dog);
+	let cat = Cat;
+	do_walk_dyn(&cat);
+	do_walk_impl(&cat);
+}
+
+// dynamic dispatch
+// this creates a fat pointer which a collection of two pointers
+// one points to the data of the struct another points to a v-table that has a pointer to all the functions that the struct implements
+// incur runtime penalty
+fn do_walk_dyn(animal: &dyn CanWalk) {
+	animal.walk():
+}
+
+// static dispatch (similar to how generics are handled)
+// this creates a copy of the implementation
+// this incur compile penalty where more code is generated during compilation
+fn do_walk_impl(animal: &impl CanWalk) {
+	animal.walk();
+}
+```
+
+interior mutability
+>Cell, RefCell, RwLock, Mutex
 ## Modules
 
 >`mod.rs` is the entrypoint for a mod directory, similar to `index.js` or `init.lua`
@@ -619,7 +745,7 @@ fn consume_fuel(tank: &Arc<Mutex<Tank>>, amt: usize, piston: i32) {
 }
 ```
 
-## Practical
+# Practical
 
 comparing stdin to a string
 ```rust
@@ -630,131 +756,3 @@ fn compare_two_strings() {
 	assert!(input.trim().eq("string_to_be_compared")) // trim trailing newline
 }
 ```
-
-iter() vs into_iter()
-```rust
-let arr = vec![1, 2, 3 ];
-
-for each in arr.iter() { // returns a reference to the element
-	println!("{each}");
-}
-
-println!("{:?}", arr)
-
-for each in arr.into_iter() { // consumes the element
-	println!("{each}")
-}
-
-println!("{:?}", arr) // moved value error here
-```
-
-match vs matches!
-```rust
-enum Something {
-	First,
-	Second,
-	Third,
-}
-
-fn lets_match() {
-	// match is good for multiple match arms
-	match Something {
-		Something::First => todo!(),
-		Something::Second => todo!(),
-		Something::Third => todo!(),
-	}
-	// matches! is good for binary matches
-	matches!(Something::First, true | false);
-}
-```
-
-ref vs & Rc vs Box vs RefCell vs Cell vs Arc
-```rust
-let x: i32 = 10; // intialize x value
-let y: &i32 = &x; // idiomatic way of borrowing
-let ref z: &i32 = x; // this is borrowing x same as y
-
-// ref makes more sense when doing pattern matching
-match x {
-	// this borrows x instead of consuming it
-	Some(ref v) => ...
-	None => ...
-}
-
-// Box will always allocate on the heap while, & does not and can be used on the stack or heap
-let x = Box::new(12);
-// will print pointers for the box and value in the box
-println!("{:p}, {:p}", x, &x);
-
-struct ImmutableNode {
-	// Rc is shared ownership and immutable
-	node: Rc<ImmutableNode>,
-}
-
-struct MutableNode {
-	// Box is exclusive ownership and mutable
-	node: Box<MutableNode>,
-}
-
-// Arc is used instead of Box and Rc when supporting clone, shared ownership, and immutable.
-let x = Arc::new(10);
-// cloning an arc will increase the reference count and return a new pointer to the same allocation
-let y = x.clone();
-
-// RefCell creates single ownership for a mutable memory location with dynamically checked borrow rules. Refcell uses the interior mutability pattern where unsafe code is used which means the code can panic during runtime
-// Cell requires the data being wrapped to be copyable while RefCell does not
-let x = RefCell::new(5);
-let x_old = x.replace(4); // replace with new value, returning old one
-let x_another = RefCell::new(6);
-x.swap(&x_another); // swap RefCells
-let z = x.into_inner(); // consumes RefCell, returning wrapped value
-```
-
-zero cost abstraction
->extra cost for an implementation needs to be explicit
-```rust
-struct Dog;
-impl CanWalk for Dog {
-	fn walk(&self) {
-		println!("dog can walk")
-	}
-}
-
-struct Cat;
-impl CanWalk for Cat {
-	fn walk(&self) {
-		println!("cat can walk")
-	}
-}
-
-trait CanWalk {
-	fm walk(&self);
-}
-
-fn main() {
-	let dog = Dog;
-	do_walk_dyn(&dog);
-	do_walk_impl(&dog);
-	let cat = Cat;
-	do_walk_dyn(&cat);
-	do_walk_impl(&cat);
-}
-
-// dynamic dispatch
-// this creates a fat pointer which a collection of two pointers
-// one points to the data of the struct another points to a v-table that has a pointer to all the functions that the struct implements
-// incur runtime penalty
-fn do_walk_dyn(animal: &dyn CanWalk) {
-	animal.walk():
-}
-
-// static dispatch (similar to how generics are handled)
-// this creates a copy of the implementation
-// this incur compile penalty where more code is generated during compilation
-fn do_walk_impl(animal: &impl CanWalk) {
-	animal.walk();
-}
-```
-
-interior mutability
->Cell, RefCell, RwLock, Mutex

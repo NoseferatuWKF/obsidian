@@ -1,4 +1,4 @@
-## Quickstart
+# Quickstart
 
 installation
 ```bash
@@ -31,7 +31,7 @@ nix-env
 nix-env -iA <nix.pkgs> # install
 ```
 
-## Links
+# Links
 
 [Firewall](https://nixos.wiki/wiki/Firewall)
 [Nginx](https://nixos.wiki/wiki/Nginx)

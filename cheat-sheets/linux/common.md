@@ -68,6 +68,8 @@ curl --proto="https" -Ssf <url> -o <output>
 # -f: fail silently (no output at all) on server errors
 
 # standard stuff when downloading
+# -L follow redirects
+# -O create output file
 curl -LO <url>
 
 # use custom ca cert 
@@ -227,7 +229,7 @@ format usb
 sudo cfdisk /path/to/dev # must be unmounted
 sudo mkfs.vfat /path/to/dev # for vfat fs
 ```
-## GUI
+# GUI
 
 dunst
 ```bash
@@ -251,7 +253,7 @@ chrome://tracing
 chrome://inspect
 ```
 
-## Networking
+# Networking
 
 ip
 ```bash
@@ -328,32 +330,35 @@ wormhole send /path/to/file
 wormhole receive <PAKE>
 ```
 
-## Disk
-
-### filesystem
+# Filesystem
 
 [btrfs](https://btrfs.readthedocs.io/en/latest/Administration.html)
+
+## File Structure
 
 /proc
 ```bash
 cat /proc/sys/kernel/threads/max # max number of physical threads
 cat /proc/stat # cpu stats
 cat /proc/net/tcp # tcp connections
+cat /proc/cpuinfo # cpu specs
 ```
 
 /etc
 ```bash
 cat /etc/os-release # distribution info
 cat /etc/hosts # local dns resolution
+cat /etc/resolv.conf # nameserver settings
+cat /etc/passwd # user settings
 ```
 
 /dev/urandom
 
 /dev/null
 
-## Media
+# Media
 
-### Audio
+## Audio
 
 pulse audio
 ```bash
@@ -370,7 +375,7 @@ alsactl restore # restart alsa with prev settings
 alsamixer # vol controls
 ```
 
-## Time
+# NTPD
 
 openntpd
 ```bash

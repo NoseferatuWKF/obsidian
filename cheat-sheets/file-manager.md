@@ -1,8 +1,8 @@
-## lf
+# [lf](https://github.com/gokcehan/lf)
 
 keybinds
 >mostly uses vim motions
-```bash
+```go
 <space> # select
 y # yank
 d # cut
@@ -19,10 +19,12 @@ $/<enter> # shell command
 ```
 
 custom cmd
-```bash
+```go
 cmd cat-files ${{
 	// use selected input
 	set -f
 	cat $fx
 }}
 ```
+
+# [yazi](https://github.com/sxyazi/yazi)

@@ -1,10 +1,49 @@
+tldr
+```bash
+git add . # add everything to staging including untracked
+git commit -m "commit message" # commit with a message into a sha
+git push origin # push commit to remote origin
+git pull origin # pull from remote origin to local
+```
+
+cat-file
+```bash
+git commit -m "first commit" # let's say this produces c6446ef sha
+# commits are stored in .git/objects in a compressed state
+git cat-file -p c6446ef # this will print out the commit similar to log
+# example output
+# tree 86f12b7a5769ee7c1a0d406dc3abc231224d5482
+# author someone <someone@email.com> 1711033833 +0800
+# committer someone <someone@email.com> 1711034555 +0800
+
+# first commit
+git cat-file -p 86f12b7 # cat the tree
+# example output
+# 100644 blob ce013625030ba8dba906f756967f9e9ca394464a    file
+git cat-file -p ce01362 # cat the blob will output the file content
+```
+
 tracking
 ```bash
 git log --oneline # digested logs
 git log --stat # show changed files stats
-git log --graph # show branch merging in a graph
+git log --graph # show graph representation of the git history
+git log --graph --parents # show graph with merge parents resolution
+git log <branch> # show log on specific branch
+git log -S "commit message" -p # search in log for commit message and print diff
+git log --grep "commit message" -p # grep in log and print diff
+git log -p -- /path/to/file # print history diff of a single file
 git show # show diff in each commit
+git log --graph --decorate > out # use decorate to make file same as stdout
 git whatchanged # show changed files
+```
+
+stash
+```bash
+git stash # I think this is git stash push?
+git stash pop # apply + drop
+git stash show # show changes that will be applied
+git stash clear # remove stash
 ```
 
 playground
@@ -24,6 +63,21 @@ core.editor $(which nvim)
 
 git config -l --show-origin # show config plus source file
 git config -l --local # show local config
+
+git config --get-regexp <section> # list all keys under section
+
+# power users use raw files
+# global changes are in .gitconfig
+# local changes are in .git folder in repo
+```
+
+rebase
+>NEVER REBASE MASTER (unless it's my own repo :p)
+```bash
+git rebase -i @~1 # interactive relative to HEAD~1 can use @^ as well
+git commit --amend # if want to amend kinda optional
+git rebase --continue # finishing up
+git rebase --abort # fuck this start over
 ```
 
 remote
@@ -34,12 +88,25 @@ git remote get-url <remote> # get the path for a remote
 git remote -v # get all remote push/pull
 ```
 
+worktree
+```bash
+git worktree add /path/to/worktree
+git worktree list
+rm -rf /path/to/worktree && git worktree prune
+```
+
+tag
+```bash
+git tag <name> # create tag
+git tag -d <name> # remove tag
+```
+
 cherry-pick
 ```bash
 git checkout feature
 git log # find the commit that you want
-git cherry-pick 123abc7
-git cherry-pick 123abc7 -m 1 # if it is a merge commit need to specify mainline
+git cherry-pick <commit>
+git cherry-pick <commit> -m 1 # if it is a merge commit need to specify mainline
 ```
 
 revert
@@ -47,17 +114,21 @@ revert
 git revert <commit>
 # or can use reset
 git reset <commit> && git restore .
+git reset --soft <commit> # go back to commit and stage all later changes
+git reset --hard <commit> # go back to commit and remove all later changes
 # or rebase
 git rebase <commit>
 ```
 
 bisect
 ```bash
-git bisect <good> <bad>
-# then there will be steps to resolve per commit
-git bisect good # if commit works
-git bisect bad # if commit does not work
-git bisect rest # reset bisect
+git bisect start
+git bisect good/bad # for the HEAD
+git bisect good/bad <commit> # for the inverse commit
+# then there will be steps to resolve per revision
+git bisect good/bad # if commit works or not
+git bisect reset # reset bisect
+git bisect run <cmd> # to automate the steps
 ```
 
 patching
@@ -115,15 +186,6 @@ get pubkey
 ```shell
 # works with gitlab as well
 curl https://github.com/<username>.keys > /path/to/pubkey
-```
-
-rebase
->NEVER REBASE MASTER (unless it's my own repo :p)
-```bash
-git rebase -i @~1 # interactive relative to HEAD~1 can use @^ as well
-git commit --amend # if want to amend kinda optional
-git rebase --continue # finishing up
-git rebase --abort # fuck this start over
 ```
 
 change commit author

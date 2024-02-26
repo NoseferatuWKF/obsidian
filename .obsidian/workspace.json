@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "c84d466d6d846a91",
+        "id": "7ea5fe0378a96651",
         "type": "tabs",
         "children": [
           {
-            "id": "ff941c0e25ab95d2",
+            "id": "41a81551f29a248f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "technical/videos.md",
+                "file": "technical/jargon.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -105,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "technical/videos.md",
+                "file": "technical/jargon.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "technical/videos.md",
+                "file": "technical/jargon.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "technical/videos.md"
+                "file": "technical/jargon.md"
               }
             }
           },
@@ -159,67 +159,68 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-excalidraw-plugin:Create new drawing": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "ff941c0e25ab95d2",
+  "active": "41a81551f29a248f",
   "lastOpenFiles": [
-    "notes/shocking.md",
-    "technical/videos.md",
-    "technical/design-patterns/strategy/representation.md",
-    "technical/design-patterns/mediator/representation.md",
-    "technical/design-patterns/bridge/representation.md",
-    "technical/design-patterns/adapter/representation.md",
-    "technical/os/memory.md",
-    "technical/erp/accounting/chart-of-accounts.md",
-    "cheat-sheets/docker.md",
-    "cheat-sheets/linux/common.md",
-    "cheat-sheets/git.md",
-    "notes/template.md",
-    "coding/csharp/dotnet.md",
+    "coding/html/htmx.md",
+    "coding/csharp/asp-net.md",
+    "coding/html",
+    "coding/html.md",
     "coding/csharp/base.md",
+    "coding/csharp/dotnet.md",
+    "coding/csharp/mediatR.md",
+    "coding/csharp/Untitled.md",
+    "cheat-sheets/dotnet.md",
+    "technical/jargon.md",
+    "coding/java.md",
+    "cheat-sheets/neovim.md",
+    "cheat-sheets/git.md",
+    "technical/articles.md",
+    "coding/lua.md",
+    "cheat-sheets/linux/common.md",
+    "cheat-sheets/docker.md",
+    "networking/docker.md",
+    "coding/c/basics.md",
+    "coding/c/xcb.md",
+    "coding/c/ipc.md",
+    "technical/UNIX-philosophy.md",
     "technical/system-design.md",
-    "technical/game-design/cavalier-fabula.md",
-    "technical/game-design",
-    "system-design.excalidraw",
-    "technical/system-design/ .excalidraw.md",
-    "technical/system-design",
-    "Untitled-2023-08-16-1201.excalidraw.crswap",
-    "cheat-sheets/linux/Arch.md",
-    "cheat-sheets/sql.md",
-    "technical/networking/grpc.md",
-    "technical/design-patterns/bridge",
-    "technical/design-patterns/bridge.md",
-    "technical/design-patterns/adapter",
-    "technical/design-patterns/adapter.md",
-    "technical/design-patterns/strategy.md",
-    "technical/design-patterns/strategy",
-    "technical/erp/finance",
-    "technical/erp/supply-chain-management",
-    "technical/erp/crm",
-    "notes/chart-of-accounts.md",
-    "life-hack/onboarding.md",
-    "life-hack/software-speedrun.md",
-    "networking/proxmox/home-network.canvas",
-    "pasted-images/Pasted image 20230831025909.png",
-    "pasted-images/Pasted image 20230304032400.png",
+    "technical/low-lewel/memory.md",
+    "automation/github-actions.md",
+    "automation/ansible.md",
+    "cheat-sheets/ansible.md",
+    "coding/js/npm",
     "technical/architectures/micro-kernel.canvas",
-    "technical/architectures/microservices.canvas",
+    "coding/c",
+    "private/unleashed/code references",
+    "pasted-images/Pasted image 20240122163448.png",
+    "dataview",
+    "excalidraw",
+    "private/unleashed/dataview",
+    "private/unleashed/notes",
+    "private/unleashed/shopify-integration.canvas",
+    "Excalidraw",
+    "private/unleashed",
+    "pasted-images/Pasted image 20230304032400.png",
+    "networking/proxmox/home-network.canvas",
     "technical/architectures/clean-architecture.canvas",
-    "pasted-images/Pasted image 20230410120825.png",
-    "pasted-images/Pasted image 20230331031040.png",
+    "technical/architectures/microservices.canvas",
+    "pasted-images/Pasted image 20230831025909.png",
     "pasted-images/Pasted image 20230831025737.png",
     "pasted-images/Pasted image 20230831025450.png",
     "private/pasted-images/Pasted image 20230302161956.png",
     "private/pasted-images/Pasted image 20230302161920.png",
     "pasted-images/Pasted image 20230728092018.png",
     "pasted-images/Pasted image 20230728092047.png",
+    "pasted-images/Pasted image 20230722123059.png",
     "private/setel/casbin.canvas"
   ]
 }

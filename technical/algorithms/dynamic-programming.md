@@ -2,7 +2,7 @@
 
 - [how-to-solve-a-dynamic-programming-problem](https://www.codingninjas.com/studio/library/how-to-solve-a-dynamic-programming-problem)
 
->the idea is to solve a larger problem with a subset of the larger problem if it exists. ie; Fibonacci sequence where fib(n - 1) and fib(n -2) are subsets of the problem
+>the idea is to solve a larger problem with a subset of the larger problem if it exists. ie; Fibonacci sequence where fib(n - 1) and fib(n - 2) are subsets of the problem
 
 >dynamic programming relies on memoization where the result of the subset problem is stored in a variable
 

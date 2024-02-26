@@ -18,7 +18,7 @@ else
 end
 
 local a = 10
-if a ~= 9 then
+if a ~= 9 then -- a not equals 9
 	print(a)
 end
 ```
