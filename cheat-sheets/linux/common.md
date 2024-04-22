@@ -192,10 +192,9 @@ ssh -L <port>:<remote>:<port> <user>@<remote>
 
 string manipulation
 ```bash
-# ---
 perl -pe 's/\w.*//' # loop(work like sed) and do not assume files 
 sed -E 's/\w.*//' # this works the same way
-# ---
+
 awk '{print $0}' # prints all columns, $1, $2, ... prints respective column
 # NR is first NF is last
 awk '{for (i=1; i<=NF; i++) print $i}' # loop and print
@@ -239,15 +238,13 @@ dunstify "some-message" # push mesagge to dunst
 
 vivaldi
 ```bash
-# make sure to install snappy, as some media uses it
-sudo pacman -S snappy
 # custom user + url
 exec vivaldi-stable --user-data-dir=<path> --new-window <url>
 ```
 
 chromium
 ```
-some url shortcuts for chromimum utils
+some url for chromimum utils
 chrome://settings
 chrome://tracing
 chrome://inspect
@@ -258,6 +255,7 @@ chrome://inspect
 ip
 ```bash
 ip link # show all network interfaces
+
 # show ip address
 ifconfig
 ip addr
@@ -287,14 +285,12 @@ nameserver 8.8.4.4
 
 find open ports
 ```bash
-lsof -i <port> # find open port
+lsof -i <port>
 ```
 
-connections
+netstat
 ```bash
 netstat -an | grep -i tcp # list all tcp connections
-cat /proc/net/tcp # hex tcp connections
-cat /etc/services # list of port aliases
 ```
 
 wpa_supplicant
@@ -342,6 +338,7 @@ cat /proc/sys/kernel/threads/max # max number of physical threads
 cat /proc/stat # cpu stats
 cat /proc/net/tcp # tcp connections
 cat /proc/cpuinfo # cpu specs
+cat /etc/services # list of port aliases
 ```
 
 /etc

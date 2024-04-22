@@ -1,4 +1,4 @@
-# psql
+## Postgres
 
 connect to db
 ```bash
@@ -21,7 +21,24 @@ get number of connections
 SELECT sum(numbackends) FROM pg_stat_database;
 ```
 
-# mssql
+MySQL UPSERT like using ON CONFLICT
+```sql
+INSERT INTO table_name (column1, column2, ...)
+VALUES (value1, value2, ...)
+ON CONFLICT (conflict_column)
+DO NOTHING | DO UPDATE SET column1 = value1, column2 = value2, ...;
+
+-- example
+INSERT INTO inventory (id, name, price, quantity)
+VALUES (1, 'A', 16.99, 120) -- where id 1 already exists
+ON CONFLICT(id) 
+DO UPDATE SET
+  -- update the required columns
+  price = EXCLUDED.price,
+  quantity = EXCLUDED.quantity;
+```
+
+## MSSQL
 
 repeat query
 ```SQL
@@ -69,7 +86,7 @@ SELECT CEIL(AVG(SALARY) - AVG(REPLACE(SALARY, '0', ''))) FROM EMPLOYEES;
 ```
 
 ORDER BY
-> by default it should be ASC first
+>by default it should be ASC first
 ```SQL
 -- double query with ordering and limit
 SELECT CITY,LENGTH(CITY) FROM STATION ORDER BY LENGTH(CITY) ASC, CITY LIMIT 1;
@@ -105,6 +122,21 @@ SET column =
 WHERE identifier = 'another_condition'
 ```
 
+ALTER
+```SQL
+-- drop column
+ALTER table table_name
+DROP COLUMN col
+
+-- add column with default value
+ALTER table table_name
+ADD COLUMN col smallint NOT NULL DEFAULT 0
+
+-- rename column
+ALTER table table_name
+RENAME COLUMN column_name TO new_column_name
+```
+
 INSERT INTO
 ```SQL
 INSERT INTO table (column1, column2)
@@ -129,7 +161,7 @@ FROM table
 ```
 
 CREATE VIEW
-> virtual table that is queryable
+>virtual table that is queryable
 ```SQL
 CREATE VIEW pq AS (
     SELECT 
@@ -146,10 +178,11 @@ GROUP BY cr
 ```
 
 JOIN
-> - `INNER JOIN`: Returns records that have matching values in both tables
-> - `LEFT JOIN`: Returns all records from the left table, and the matched records from the right table
-> - `RIGHT JOIN`: Returns all records from the right table, and the matched records from the left table
-> - `CROSS JOIN`: Returns all records from both tables
+>- `INNER JOIN`: Returns records that have matching values in both tables
+>- `LEFT JOIN`: Returns all records from the left table, and the matched records from the right table
+>- `RIGHT JOIN`: Returns all records from the right table, and the matched records from the left table
+>- `CROSS JOIN`: Returns all records from both tables
+
 ```sql
 SELECT SUM(CITY.POPULATION) FROM CITY LEFT JOIN COUNTRY ON CITY.COUNTRYCODE = COUNTRY.CODE WHERE COUNTRY.CONTINENT = 'Asia';
 
@@ -159,4 +192,17 @@ FROM COUNTRY
 CROSS JOIN CITY
 ON COUNTRY.CODE = CITY.COUNTRYCODE
 GROUP BY COUNTRY.CONTINENT;
+```
+
+UNION
+>combining results of two or more select statements
+```sql
+-- UNION selects distinct value by default
+SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;
+-- UNION ALL allows duplicates
+SELECT column_name(s) FROM table1
+UNION ALL
+SELECT column_name(s) FROM table2;
 ```

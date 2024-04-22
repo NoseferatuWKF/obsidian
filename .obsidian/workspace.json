@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "7ea5fe0378a96651",
+        "id": "e22def3d363e55e1",
         "type": "tabs",
         "children": [
           {
-            "id": "41a81551f29a248f",
+            "id": "628af7136c517701",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "technical/jargon.md",
+                "file": "private/unleashed/code-references/testing-with-shopify.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -105,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "technical/jargon.md",
+                "file": "private/unleashed/code-references/testing-with-shopify.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "technical/jargon.md",
+                "file": "private/unleashed/code-references/testing-with-shopify.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "technical/jargon.md"
+                "file": "private/unleashed/code-references/testing-with-shopify.md"
               }
             }
           },
@@ -168,40 +168,39 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "41a81551f29a248f",
+  "active": "628af7136c517701",
   "lastOpenFiles": [
-    "coding/html/htmx.md",
-    "coding/csharp/asp-net.md",
-    "coding/html",
-    "coding/html.md",
+    "private/unleashed/code-references/webhook-topics.md",
+    "private/unleashed/code-references/testing-with-shopify.md",
+    "private/unleashed/unl-integration.md",
+    "cheat-sheets/css.md",
+    "private/unleashed/notes/2024-03-08.md",
+    "private/unleashed/notes/2024-03-07.md",
+    "private/unleashed/notes/2024-03-04.md",
+    "private/unleashed/notes/2024-03-03.md",
+    "private/unleashed/notes/2024-02-11.md",
+    "private/unleashed/notes/2024-01-22.md",
+    "private/unleashed/notes/2024-03-13.md",
+    "private/unleashed/notes/2024-03-19.md",
+    "cheat-sheets/sql.md",
+    "private/unleashed/code-references/utils.md",
+    "private/unleashed/architecture.md",
+    "private/unleashed/dataview/todo.md",
+    "private/unleashed/micro-frontend.md",
     "coding/csharp/base.md",
     "coding/csharp/dotnet.md",
     "coding/csharp/mediatR.md",
-    "coding/csharp/Untitled.md",
-    "cheat-sheets/dotnet.md",
-    "technical/jargon.md",
-    "coding/java.md",
+    "coding/csharp/asp-net-web-forms.md",
     "cheat-sheets/neovim.md",
-    "cheat-sheets/git.md",
-    "technical/articles.md",
-    "coding/lua.md",
     "cheat-sheets/linux/common.md",
-    "cheat-sheets/docker.md",
-    "networking/docker.md",
-    "coding/c/basics.md",
-    "coding/c/xcb.md",
-    "coding/c/ipc.md",
-    "technical/UNIX-philosophy.md",
-    "technical/system-design.md",
-    "technical/low-lewel/memory.md",
-    "automation/github-actions.md",
-    "automation/ansible.md",
-    "cheat-sheets/ansible.md",
-    "coding/js/npm",
+    "private/unleashed/notes/2024-03-20.md",
+    "private/unleashed/wordpress-ssl.md",
+    "private/unleashed/code-references/message-queues.md",
     "technical/architectures/micro-kernel.canvas",
-    "coding/c",
-    "private/unleashed/code references",
+    "networking/proxmox/home-network.canvas",
+    "pasted-images/Pasted image 20230831025909.png",
     "pasted-images/Pasted image 20240122163448.png",
+    "private/unleashed/code-references",
     "dataview",
     "excalidraw",
     "private/unleashed/dataview",
@@ -210,10 +209,11 @@
     "Excalidraw",
     "private/unleashed",
     "pasted-images/Pasted image 20230304032400.png",
-    "networking/proxmox/home-network.canvas",
     "technical/architectures/clean-architecture.canvas",
     "technical/architectures/microservices.canvas",
-    "pasted-images/Pasted image 20230831025909.png",
+    "coding/csharp",
+    "technical/design-patterns",
+    "technical/architectures",
     "pasted-images/Pasted image 20230831025737.png",
     "pasted-images/Pasted image 20230831025450.png",
     "private/pasted-images/Pasted image 20230302161956.png",

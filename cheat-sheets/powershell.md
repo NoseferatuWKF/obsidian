@@ -2,6 +2,37 @@
 
 [F2 - Predictive IntelliSense]([Using predictors in PSReadLine - PowerShell | Microsoft Learn](https://learn.microsoft.com/en-us/powershell/scripting/learn/shell/using-predictors?view=powershell-7.4))
 
+keybinds
+```powershell
+GET-PSReadLineKeyHandler # Get current keybinds
+
+# bash style keybinds
+Set-PSReadLineKeyHandler 'ctrl+e' -ScriptBlock {
+  [Microsoft.PowerShell.PSConsoleReadLine]::EndOfLine()
+}
+
+Set-PSReadLineKeyHandler 'ctrl+a' -ScriptBlock {
+  [Microsoft.PowerShell.PSConsoleReadLine]::BeginningOfLine()
+}
+
+Set-PSReadLineKeyHandler 'ctrl+p' -ScriptBlock {
+  [Microsoft.PowerShell.PSConsoleReadLine]::Insert('UNL-Projects')
+  [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
+}
+
+Set-PSReadLineKeyHandler 'ctrl+u' -ScriptBlock {
+  [Microsoft.PowerShell.PSConsoleReadLine]::BackwardDeleteInput()
+}
+
+Set-PSReadLineKeyHandler 'ctrl+e' -ScriptBlock {
+  [Microsoft.PowerShell.PSConsoleReadLine]::EndOfLine()
+}
+
+# remove annoying clear terminal keybind
+Remove-PSReadlineKeyHandler -Chord ctrl+l
+
+```
+
 local port-forward windows to WSL2
 ```powershell
 # add interface
@@ -41,10 +72,10 @@ alias
 ```powershell
 # open profile
 notepad $PROFILE
-# add alias in profile.ps1
-New-Alias <ALIAS> <COMMAND>
-# reload profile
-. $PROFILE
+# create or update alias in profile.ps1
+Set-Alias <ALIAS> <COMMAND> # prefer to use Set-Alias than New-Alias
+# reload profile and clear buffer
+. $PROFILE; clear
 ```
 
 functions

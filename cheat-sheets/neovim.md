@@ -171,10 +171,16 @@ general
 :.!ls                   -- print files in current directory to current buffer
 :%!python -m json.tool  -- format json
 :!jq .                  -- format json
+q:                      -- secret command
+```
+
+quickfixlist
+```lua
 :copen                  -- open quickfix list
 :cnext                  -- next file in quickfix list
 :cprev                  -- prev file in quickfix list
-q:                      -- secret command
+:call setqfixlist([])   -- clear quickfix list
+:cdo s/a/b/             -- substitute a to b in quickfix list
 ```
 
 # Clever Tricks

@@ -437,7 +437,7 @@ namespace basics
     }
 }
 
-var idx = new Indexerx<string>();
+var idx = new Indexers<string>();
 idx[0] = "Hmm";
 Console.WriteLine(idx[0]); // Hmm
 ```
