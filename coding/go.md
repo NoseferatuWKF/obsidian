@@ -135,13 +135,18 @@ type Bar struct {
 	a, b, c, d  int32 // multiple declaration
 }
 
+type Foo struct {
+	Bar  // embedded struct
+	baz      int
+}
+
 // if struct points to same struct
 type Node struct {
 	Value   int32
 	Next    *Node
 }
 
-// add pointer to struct
+// pointer receiver
 func (bar *Bar) DoSomething(a int32, b int32, c int32, d int32) {
 	bar.a = a
 	bar.b = b
@@ -155,6 +160,9 @@ func main() {
 
 	// call method
 	b.DoSomething(1, 2, 3, 4)
+
+	// embedded structs can be accessed as if its the same member of the struct
+	fmt.Println("%v", b.x)
 }
 ```
 
@@ -557,7 +565,7 @@ changing install target
 ```bash
 go env -w GOBIN=/path/to/your/bin
 ```
-# Practical
+# Use-case
 
 rand
 ```go

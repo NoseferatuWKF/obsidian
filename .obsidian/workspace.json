@@ -4,47 +4,23 @@
     "type": "split",
     "children": [
       {
-        "id": "4b078aaa36cf5c50",
+        "id": "5e68d9fa7234e596",
         "type": "tabs",
         "children": [
           {
-            "id": "64d67eab329535a0",
+            "id": "67dd9b70659553e7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "life-hack/tech-speedrun.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2e2dcded935e57f2",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "books/Refactoring_ Improving the Design of Existing Code ( PDFDrive ).pdf"
-              }
-            }
-          },
-          {
-            "id": "ca7c171a249425c2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "technical/networking/graphql.md",
+                "file": "coding/rust/base.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -130,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "technical/networking/graphql.md",
+                "file": "coding/rust/base.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "technical/networking/graphql.md",
+                "file": "coding/rust/base.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "technical/networking/graphql.md"
+                "file": "coding/rust/base.md"
               }
             }
           },
@@ -193,46 +169,46 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "ca7c171a249425c2",
+  "active": "67dd9b70659553e7",
   "lastOpenFiles": [
-    "technical/networking/websocket.md",
-    "technical/networking/graphql.md",
-    "technical/networking/udp.md",
-    "technical/networking/tcp.md",
-    "technical/networking/osi.md",
-    "technical/networking/http.md",
-    "technical/networking/grpc.md",
-    "books/Refactoring_ Improving the Design of Existing Code ( PDFDrive ).pdf",
-    "life-hack/tech-speedrun.md",
-    "technical/low-lewel/filesystem.md",
-    "cheat-sheets/linux/common.md",
-    "technical/articles.md",
-    "notes/Extreme.md",
-    "cheat-sheets/linux/Arch.md",
-    "technical/system-design.md",
-    "recipes/tasty.md",
-    "coding/python.md",
-    "cheat-sheets/regex.md",
-    "cheat-sheets/shell.md",
-    "cheat-sheets/sql.md",
-    "cheat-sheets/tmux.md",
-    "cheat-sheets/utils.md",
-    "cheat-sheets/window-manager.md",
+    "coding/rust/tokio.md",
+    "coding/c/basics.md",
     "technical/architectures/micro-kernel.canvas",
+    "technical/architectures/hexagonal.md",
     "technical/architectures/modular-monolith.md",
+    "technical/architectures/microservices.md",
+    "books/Refactoring_ Improving the Design of Existing Code ( PDFDrive ).pdf",
+    "technical/techonologies/graphql.md",
+    "technical/data-structures/graph.md",
+    "coding/go.md",
+    "technical/articles.md",
+    "technical/data-structures/doubly-linked-list.md",
+    "technical/data-structures/ring-buffer/use-case.md",
+    "technical/data-structures/hashmap/use-case.md",
+    "technical/data-structures/hashmap",
+    "technical/data-structures/max-heap.md",
+    "technical/caching.md",
+    "technical/system-design.md",
+    "technical/database.md",
+    "cheat-sheets/sql.md",
+    "technical/caching/topology.md",
+    "technical/caching",
+    "technical/jargon.md",
+    "technical/SOLID.md",
+    "technical/UNIX-philosophy.md",
+    "technical/videos.md",
+    "README.md",
     "notes/template.md",
-    "private/setel/access-control-config.md",
-    "private/setel/api-auth.md",
+    "notes/Extreme.md",
+    "technical/low-lewel/networking/protocols/grpc.md",
+    "technical/low-lewel/os",
+    "technical/low-lewel/networking/protocols",
+    "technical/techonologies/frontend",
+    "technical/techonologies/backend",
+    "technical/techonologies",
+    "books/Hacker's Delight 2nd Edition.pdf",
+    "books/Hacker's Delight 2nd Edition.pdf.crdownload",
     "networking/proxmox/home-network.canvas",
-    "books/dokumen.pub_the-art-of-scalability-scalable-web-architecture-processes-and-organizations-for-the-modern-enterprise-2ndnbsped-0134032802-9780134032801-t-1698361.pdf",
-    "books/97 Things Every Programmer Should Know - [Henney].pdf",
-    "books/Eric Evans 2003 - Domain-Driven Design - Tackling Complexity in the Heart of Software.pdf",
-    "books/Fundamentals of Software Architecture.pdf",
-    "books/Structured Programming.pdf",
-    "books/StructuredDesign_EdwardYourdonLarryConstantine.pdf",
-    "books/Unit Testing Principles, Practices, and Patterns.pdf",
-    "books/unix6.pdf",
-    "books/The Robert C. Martin Clean Code Collection.pdf",
     "pasted-images/Pasted image 20240122163448.png",
     "private/unleashed/shopify-integration.canvas",
     "pasted-images/Pasted image 20230304032400.png",

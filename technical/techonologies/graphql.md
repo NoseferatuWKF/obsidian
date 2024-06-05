@@ -32,7 +32,7 @@ it is encouraged to be explicit because:
 - it provides more context and verbosity
 - allows the use of variables
 
-## Fields
+## Query
 
 basic fields query
 ```gql
@@ -52,8 +52,6 @@ basic fields query
 	}
 }
 ```
-
-## Arguments
 
 basic argument query
 ```gql
@@ -98,8 +96,6 @@ basic argument query with Enumeration type
 }
 ```
 
-## Aliases
-
 basic use of alias to query multiple records of the same field
 ```gql
 # query
@@ -127,8 +123,6 @@ basic use of alias to query multiple records of the same field
 	}
 }
 ```
-
-## Variables
 
 basic use of variables
 ```gql
@@ -182,7 +176,7 @@ query HeroNameAndFriends($episode: Episode = JEDI) {
 }
 ```
 
-required variables
+required and non-nullable variables
 ```gql
 # ! makes the $episode variable required and cannot be null
 query HeroNameAndFriends($episode: Episode!) {
@@ -241,6 +235,15 @@ query Hero($episode: Episode, $withFriends: Boolean!) {
 }
 ```
 
+defining new directives
+```gql
+# directive on enums
+directive @external on FIELD_DEFINITION | OBJECT
+# directive with arguments
+directive @requires(fields: FieldSet!) on FIELD_DEFINITION
+# recursive directive
+directive @key(fields: FieldSet!, resolvable: Boolean = true) repeatable on OBJECT | INTERFACE
+```
 ## Fragments
 
 basic use of fragments to reuse query constructs
@@ -500,3 +503,225 @@ mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {
 	}
 }
 ```
+
+# Schema and Types
+
+## Object types and fields
+
+basic GraphQL schema components
+```gql
+# Character is an object type and can have nested fields
+type Character {
+	name: String! # name is a scalar type and cannot have nested fields
+	appearsIn: [Episode!]! # appearsIn is an array of Episode objects
+}
+```
+
+arguments
+```gql
+type Starship {
+	id: ID!
+	name: String!
+	# any field can have zero or more arguments
+	length(unit: LengthUnit = METER): Float
+}
+```
+
+## Types
+
+default scalar types out of the box
+- Int: A signed 32‐bit integer.
+- Float: A signed double-precision floating-point value.
+- String: A UTF‐8 character sequence.
+- Boolean: true or false.
+- ID: The ID scalar type represents a unique identifier, often used to refetch an object or as the key for a cache. The ID type is serialized in the same way as a String; however, defining it as an ID signifies that it is not intended to be human‐readable.
+
+defining custom scalar type
+```gql
+scalar Date
+```
+
+enumeration types
+```gql
+enum Episode {
+	NEWHOPE
+	EMPIRE
+	JEDI
+}
+```
+
+lists and non-null
+```gql
+type Character {
+	name: String! # ! is used to mark a field as non-null
+	appearsIn: [Episode]! # the list cannot be null but can contain no element
+}
+```
+
+union
+```gql
+union SearchResult = Human | Droid | Starship
+```
+
+input type
+```gql
+input ReviewInput {
+	stars: Int!
+	commentary: String
+}
+```
+
+extend type
+```gql
+extend type Character {
+	bio: String!
+}
+```
+
+## Interfaces
+
+basic interface
+```gql
+# interface declaration
+interface Character {
+	id: ID!
+	name: String!
+	friends: [Character]
+	appearsIn: [Episode]!
+}
+
+# concrete implementation
+type Human implements Character {
+	id: ID!
+	name: String!
+	friends: [Character]
+	appearsIn: [Episode]!
+	# extra fields
+	starships: [Starship]
+	totalCredits: Int
+}
+ 
+type Droid implements Character {
+	id: ID!
+	name: String!
+	friends: [Character]
+	appearsIn: [Episode]!
+	# extra fields
+	primaryFunction: String
+}
+```
+
+# Introspection
+
+- Query, Character, Human, Episode, Droid - These are the ones that we defined in our type system.
+- String, Boolean - These are built-in scalars that the type system provided.
+- __Schema, __Type, __TypeKind, __Field, __InputValue, __EnumValue, __Directive - These all are preceded with a double underscore, indicating that they are part of the introspection system.
+
+# Best Practices
+
+serving over http
+```
+# GraphQL should be placed after authentication middleware
+Req --> Authentication --> GraphQL
+
+# example GET request
+http://myapi/graphql?query={me{name}}
+
+# example POST request body
+{
+	"query": "...",
+	"operationName": "...", # optional. required if more than one operation
+	"variables": { "myVariable": "someValue", ... } # optional
+}
+
+# example response
+{
+	"data": { ... },
+	"errors": [ ... ]
+}
+```
+
+JSON (with gzip)
+```
+# client need to send this header
+Accept-Encoding: gzip
+```
+
+separate authorization logic to business logic layer
+```ts
+// Authorization logic lives inside postRepository
+const postRepository = require('postRepository');
+ 
+const postType = new GraphQLObjectType({
+  name: 'Post',
+  fields: {
+    body: {
+      type: GraphQLString,
+      resolve(post, args, context, { rootValue }) {
+        return postRepository.getBody(context.user, post)
+      }
+    }
+  }
+})
+```
+
+pagination - [Relay](https://facebook.github.io/relay/)
+```gql
+# offset-based pagination
+{
+	hero {
+		name
+		# return the first two items
+		friends(first: 2, offset: 1) {
+			name
+		}
+	}
+}
+
+# cursor-based pagination
+{
+	hero {
+		name
+		# return the next 2 item after cursor from last item
+		# cursors are opaque therefore should be base64 encoded
+		friendsConnection(first: 2, after: $cursor) {
+			# list of edges contains a node for the data
+			# and a cursor to the next data
+			# edges can be replaced by querying the field
+			# directly to avoid indirection
+			edges {
+				node {
+					name
+				}
+				cursor
+			}
+			# pageInfo tells whether the current node has more data after
+			pageInfo {
+		        endCursor
+		        hasNextPage
+		    }
+		}
+	}
+}
+```
+
+global object identification
+```gql
+{
+	# node is a generic interface to fetch any object
+	node(id: "4") {
+		# by passing the id we can get any type using an inline fragment
+	    id
+	    ... on User {
+			# ...and then get the specific type fields
+		    name
+	    }
+	}
+}
+```
+
+batching - [DataLoader](https://github.com/facebook/dataloader)
+
+[GraphQL Federation](https://www.apollographql.com/docs/federation/subgraph-spec/)
+[Apollo Sandbox](https://studio.apollographql.com/sandbox/explorer)
+[Why I'm over GraphQL](https://bessey.dev/blog/2024/05/24/why-im-over-graphql/)

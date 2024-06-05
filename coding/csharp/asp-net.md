@@ -182,3 +182,5 @@ public class ReviewComponent
     public string Status(string name) => JobStatus.GetCurrentStatus(name);
 }
 ```
+
+# Razor Pages

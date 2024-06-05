@@ -554,7 +554,7 @@ impl CanWalk for Cat {
 }
 
 trait CanWalk {
-	fm walk(&self);
+	fn walk(&self);
 }
 
 fn main() {
@@ -745,7 +745,7 @@ fn consume_fuel(tank: &Arc<Mutex<Tank>>, amt: usize, piston: i32) {
 }
 ```
 
-# Practical
+# Use-case
 
 comparing stdin to a string
 ```rust

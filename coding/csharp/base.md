@@ -492,13 +492,3 @@ generics
 // type constraint / narrowing
 public class Generic<T> wehre T : IComparabel<T>
 ```
-
-# LINQ
-
-[PLINQ](https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/introduction-to-plinq)
-# Practical
-
-deserialize JSON
-```cs
-Newtonsoft.Json.JsonConvert.SerializeObject(new {foo = "bar"})
-```
