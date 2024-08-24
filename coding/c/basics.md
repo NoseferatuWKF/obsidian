@@ -12,6 +12,20 @@ void do_something(int a, char *stuff[]) {
 }
 ```
 
+array
+```c
+int main(void) {
+	int arr[]; // declare array
+	int arr[4]; // declare array with size of 4
+	int arr[4] = {}; // declare and initialize array with size 4
+}
+
+// function that accepts an array pointer
+void foo(int arr[]) {
+	arr[0] = 1; // this mutates the array
+}
+```
+
 struct
 ```c
 #include <stdio.h>

@@ -124,7 +124,7 @@ basic use of alias to query multiple records of the same field
 }
 ```
 
-basic use of variables
+basic use of input and variables
 ```gql
 # declare $episode variable
 query HeroNameAndFriends($episode: Episode) {
@@ -472,6 +472,8 @@ basic use of meta fields to get the name of the object type
 
 ## Mutations
 >While query fields are executed in parallel, mutation fields run in series, one after the other.
+
+>Naming mutations usually starts with a verb that describes the action, such as "add," "delete," or "create."
 
 basic mutation
 ```gql

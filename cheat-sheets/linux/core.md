@@ -1,6 +1,6 @@
 # General
 
-disk, ram, io
+low level io
 ```bash
 # partitioning
 cfdisk # IMO, most user friendly
@@ -17,8 +17,10 @@ swapon # mount swap
 
 mkinitcpio -P # ram
 
-lspci -nnk # motherboard io
+lspci -nnk # list devices summary
+lspci -v # list devices verbose
 lsblk -f # block devices with fs
+lscpu # dump cpu information
 pw-cli list-objects Device # can pass Node as well, view all devices
 ss # socket statistics
 ```
@@ -26,6 +28,13 @@ ss # socket statistics
 find which port a disk is connected to
 ```bash
 for i in /dev/disk/by-path/*;do [[ ! "$i" =~ '-part[0-9]+$' ]] && echo "Port $(basename "$i"|grep -Po '(?<=ata-)[0-9]+'): $(readlink -f "$i")";done
+```
+
+logs
+```bash
+journalctl
+dmidecode
+dmesg
 ```
 
 eval
@@ -111,8 +120,10 @@ visudo # uncomment the wheel part
 
 tar
 ```bash
-# go to path and then untar
-tar -C /usr/local -xzvf /path/to/file.tar.gz
+# tldr
+tar xf /path/file.tar
+# untar with path
+tar -C /usr/local -xzvf /path/to/file.tar
 ```
 
 remove broken symlinks
@@ -190,13 +201,16 @@ ssh-add -d ~/.ssh/another_acc
 ssh -L <port>:<remote>:<port> <user>@<remote>
 ```
 
-string manipulation
+perl
 ```bash
-# ---
 perl -pe 's/\w.*//' # loop(work like sed) and do not assume files 
 sed -E 's/\w.*//' # this works the same way
-# ---
-awk '{print $0}' # prints all columns, $1, $2, ... prints respective column
+```
+
+awk
+```bash
+# prints all columns, $1, $2, ... prints respective column
+awk '{print $0}'
 # NR is first NF is last
 awk '{for (i=1; i<=NF; i++) print $i}' # loop and print
 # print in one line
@@ -205,6 +219,20 @@ awk '{printf "%s ", $0}'
 awk -v ORS=" " '{print $0}'
 # ternary
 awk '{print (NR==1 ? $1 : "")}'
+```
+
+sed
+```bash
+# find and replace
+sed 's/<find>/<replace>'
+# add text to line
+sed '1 i <text>'
+# add text after line
+sed '1 i <text>'
+# add text before last line
+sed '$ i <text>'
+# add text at the last line
+sed '$ a <text>'
 ```
 
 windows drive mount
@@ -300,12 +328,21 @@ cat /etc/services # list of port aliases
 wpa_supplicant
 ```bash
 sudo wpa_supplicant -B -i <interface> -c /etc/wpa_supplicant/wpa_supplicant.conf
-sudo wpa_cli
+
 # wpa_cli
+sudo wpa_cli
 scan
-scan results
-save config
+scan_results
+add_network
+set_network <id> <key> <value> # ssid and psk are usual keys
+enable_network <id>
+disable_network <id>
+remove_network <id>
+reconnect # use this after disconnect
+disconnect
+save_config # write config to /etc/wpa_supplicant/wpa_supplicant.conf
 quit
+
 # wpa_passphrase
 sudo wpa_passphrase SSID <passphrase>
 ```

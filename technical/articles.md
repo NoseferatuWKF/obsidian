@@ -56,3 +56,4 @@ uncle bob summary:
 [The Shodan Programmer](https://mozinc.wordpress.com/2017/06/18/99/)
 [How Developers Stop Learning: Rise of the Expert Beginner](https://daedtech.com/how-developers-stop-learning-rise-of-the-expert-beginner/)
 [Scrum vs Kanban vs Lean vs XP](https://www.objectstyle.com/blog/agile-scrum-kanban-lean-xp-comparison)
+[Dotnet Evolutionary Architecture By Example](https://github.com/evolutionary-architecture/evolutionary-architecture-by-example)

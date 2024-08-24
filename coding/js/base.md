@@ -1,7 +1,7 @@
 [best-practices](https://github.com/goldbergyoni/nodebestpractices) - good shit for a bad language
 
 # Guideline
-- use loops when mutating data and higher order array functions when not  - airbnb
+- use loops when mutating data and higher order array functions when not - airbnb
 - In general, it's good practice to always use block statements
 - Use maps over objects when keys are unknown until run time, and when all keys are the same type and all values are the same type
 - Use objects when there is logic that operates on individual elements
@@ -10,8 +10,7 @@
 # When you don't need JS
 - multi-threaded operations / parallel computing
 - strict and verbose control-flow
-- bitwise operations - [IEEE 754](https://en.wikipedia.org/wiki/Double-precision_floating-point_format)
-- precision math
+- precision math - [IEEE 754](https://en.wikipedia.org/wiki/Double-precision_floating-point_format)
 - functional programming (lots of copying, immutable, two space indents)
 
 # Videos
@@ -213,7 +212,7 @@ function doSomething() {
 }
 ```
 
-Event loop
+[Event loop](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick)
 ```
    ┌───────────────────────────┐
 ┌─>│           timers          │
@@ -235,7 +234,7 @@ Event loop
    └───────────────────────────┘
 ```
 
-# Practical
+# Use case
 
 converting set to array and vice versa
 ```js
@@ -244,7 +243,6 @@ Array.from(mySet);
 
 mySet2 = new Set([1, 2, 3, 4]);
 ```
-
 
 get server timezone
 ```js

@@ -29,7 +29,7 @@ git cat-file -p 86f12b7 # cat the tree
 git cat-file -p ce01362 # cat the blob will output the file content
 ```
 
-tracking
+log
 ```bash
 git log --oneline # digested logs
 git log --stat # show changed files stats
@@ -39,14 +39,17 @@ git log <branch> # show log on specific branch
 git log -S "commit message" -p # search in log for commit message and print diff
 git log --grep "commit message" -p # grep in log and print diff
 git log -p -- /path/to/file # print history diff of a single file
-git show # show diff in each commit
 git log --graph --decorate > out # use decorate to make file same as stdout
+git log -L <line>, <column>:/path/to/file # history of changes
+# not logs but does something similar
+git show # show diff in each commit
 git whatchanged # show changed files
 ```
 
 stash
 ```bash
 git stash # I think this is git stash push?
+git stash --all # include untracked
 git stash pop # apply + drop
 git stash show # show changes that will be applied
 git stash clear # remove stash
@@ -72,9 +75,20 @@ git config -l --local # show local config
 
 git config --get-regexp <section> # list all keys under section
 
+# signing with ssh
+git config gpg.format ssh
+git config user.signingkey /path/to/key.pub
+# then use with git commit -S
+
 # power users use raw files
 # global changes are in .gitconfig
 # local changes are in .git folder in repo
+```
+
+conditional configs
+```bash
+[includeIf "gitdir:/path/to/project/"]
+	path = /path/to/.gitconfig
 ```
 
 rebase
@@ -135,6 +149,11 @@ git bisect good/bad <commit> # for the inverse commit
 git bisect good/bad # if commit works or not
 git bisect reset # reset bisect
 git bisect run <cmd> # to automate the steps
+```
+
+maintenance
+```bash
+git maintenance start
 ```
 
 patching

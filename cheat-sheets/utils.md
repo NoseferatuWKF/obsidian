@@ -1,3 +1,8 @@
+[[Makefile|make]]
+```bash
+make -j 8 # 8 parallel jobs
+```
+
 stow
 ```bash
 stow --adopt -nv $HOME <stowed-dir> # dry-run and verbose
@@ -7,6 +12,18 @@ stow --adopt -v * && git restore . #adopt and sync everything with repo
 fzf
 ```bash
 fzf -m # select multiple
+```
+
+jq
+```bash
+# prettify json
+curl www.example.com | jq
+# get field
+curl www.example.com | jq .field
+# get multiple fields
+curl www.example.com | jq .field1, .field2
+# map array to fields
+curl www.example.com | jq ".[] | .field1, .field2"
 ```
 
 gdb
@@ -37,14 +54,14 @@ grpcurl <server> list # list all grpc addresses
 
 ffmpeg
 ```bash
-# concat demuxer
-# path to files
+# join files
 cat files
 file '/path/to/file.mp4'
 file '/path/to/file2.mp4'
-
-# join files
 ffmpeg -f concat -safe 0 -i files -c copy output.mp4
+
+# convert audio file
+ffmpeg -i <input> <output>
 ```
 
 openssl

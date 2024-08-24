@@ -1,14 +1,16 @@
 # Docs
-
 [official docs](https://go.dev/)
 [managing go versions](https://go.dev/doc/manage-install)
 [effective-go](https://go.dev/doc/effective_go)
 
+# Topics
+[Go concurrency patterns](https://www.youtube.com/watch?v=f6kdp27TYZs)
+[Advanced Go concurrency patterns](https://www.youtube.com/watch?v=QDDwwePbDtw)
+
 # Why go?
 - simplicity over expressiveness
 - fast compilation speed (good for large code bases)
-- handling error during runtime instead of compilation time
-- you don't care about adding support for Windows
+- concurrency first
 
 # Installation
 
@@ -32,8 +34,12 @@ create a go module
 go mod init <name>
 ```
 
-main entrypoint
->external deps can be resolved using go mod tidy
+resolve dependencies
+```bash
+go mod tidy
+```
+
+entry point
 ```go
 package main // package declaration to group functions together
 
@@ -47,7 +53,7 @@ func main() {
 ```
 
 := operator
->to declare and initialize, note that this operator cannot deal with specific bits ie; int32 / float64, it will become int / float instead
+>to declare and initialize, note that this operator cannot infer specific bits ie; int16 / float64
 ```go
 // the long way
 var message string
@@ -79,32 +85,24 @@ i := a[0]
 // array literals
 b := [2]string{"Penn", "Teller"} 
 // same as above
-b := [...]string{"Penn", "Teller"}
+b = [...]string{"Penn", "Teller"}
 
-// to get length of array
+// get length of array
 len(b)
 
 // indexing from a pointer array
-some_array := []int{1, 2, 3}
+some_array := [3]int{1, 2, 3}
 p := &some_array
 fmt.Println((*p)[0]) // 1
 
 // loop over an array
-for i, v := range(some_array) { // can do range some_array as well
+for i, v := range(some_array) /* can omit the parentheses */ { 
 	fmt.Println(i, v)
 }
 
 // appending to existing array
-arr := []int{1, 2, 3}
+arr := [3]int{1, 2, 3}
 arr = append(arr, []int{4, 5}...)
-
-// passing reference to func
-fromFunc := some_func(&some_array)
-fmt.Println(fromFunc) // &[1 2 3]
-
-func some_func(arr *[]int32) *[]int32 {
-	fmt.Println(arr) // &[1 2 3]
-}
 ```
 
 slices
@@ -114,13 +112,14 @@ letters := []string{"a", "b", "c", "d"}
 
 // slice from "slicing" elements
 b := []byte{'g', 'o', 'l', 'a', 'n', 'g'}
-// b[1:4] == []byte{'o', 'l', 'a'}, sharing the same storage as b
-// b[:2] == []byte{'g', 'o'}
-// b[2:] == []byte{'l', 'a', 'n', 'g'}
-// b[:] == b
+// ranges are [a:b)
+// b[1:4] -> []byte{'o', 'l', 'a'}
+// b[:2] -> []byte{'g', 'o'}
+// b[2:] -> []byte{'l', 'a', 'n', 'g'}
+// b[:] -> b
 
 // another way to create slices
-x := [3]string{"Лайка", "Белка", "Стрелка"}
+x := []string{"Лайка", "Белка", "Стрелка"}
 s := x[:] // a slice referencing the storage of x
 
 // use slices for dynamically sized arrays
@@ -136,7 +135,7 @@ type Bar struct {
 }
 
 type Foo struct {
-	Bar  // embedded struct
+	Bar      // embedded struct
 	baz      int
 }
 
@@ -185,7 +184,9 @@ func (f Hate) doSomething(input string) string {
 }
 
 func main() {
+	// declare variable interface
 	var a IPreference
+	// pass struct to interface
 	a = Like {}
 	a.doSomething("Ice cream");
 	a = Hate {}
@@ -224,25 +225,6 @@ maps
 	}
 ```
 
-casting
-```go
-package main
-
-import "strconv"
-
-func main() {
-	// works for numbers
-	var x int32 = 10
-	var y float32 = (float32) x
-
-	// to conv str to int or vice versa
-	val := 100
-	valString := strconv.Itoa(val)
-	val = strconv.Atoi(valString)
-	
-}
-```
-
 loops
 ```go
 func hellos(names []string) (map[string]string, error) {
@@ -265,7 +247,6 @@ func hellos(names []string) (map[string]string, error) {
 ```
 
 defer
->kinda like await
 ```go
 package main
 
@@ -581,5 +562,58 @@ func main() {
 
 	// generate random int32
 	v := r.Int31()
+}
+```
+
+sort
+```go
+package main
+
+import (
+    "fmt"
+    "strings"
+    "sort"
+)
+
+func main() {
+    input := "<user1> hello\n<user2> hi\n<user3> hola amigos!\n<user1> how are you guys today?"
+
+    m := make(map[string]int)
+    users := make([]string, 0)
+
+    for _, v := range strings.Split(input, "\n") {
+        msg := strings.Split(v, " ")
+
+        if _, ok := m[msg[0]]; !ok {
+            users = append(users, msg[0])
+        }
+
+        m[msg[0]] += len(msg[1:])
+    }
+
+    sort.SliceStable(users, func(i, j int) bool {
+        return m[users[i]] > m[users[j]]
+    })
+
+    fmt.Println(users) // [user1, user3, user2]
+}
+
+```
+
+casting
+```go
+package main
+
+import "strconv"
+
+func main() {
+	// works for numericals
+	var x int32 = 10
+	var y float32 = (float32) x
+
+	// to conv str to int or vice versa
+	val := 100
+	valString := strconv.Itoa(val)
+	val = strconv.Atoi(valString)
 }
 ```

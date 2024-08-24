@@ -9,8 +9,8 @@ find largest subarray sum from array
 func solution(arr []int) int {
 	gMax, lMax := 0, 0
 
-	for i := range {
-		lMax = math.Max(arr[i], arr[i] + lMax)
+	for _, v := range arr {
+		lMax = math.Max(v, v + lMax)
 		if lMax > gMax {
 			gMax = lMax
 		}

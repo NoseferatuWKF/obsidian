@@ -9,3 +9,9 @@ add specific version of package
 
 apk add <package>=<version> --repository=https://dl.cdn.alpinelinux.org/alpine/<branch>/<repo>
 ```
+
+manually changing default shell
+```bash
+# /etc/passwd
+user:x:1000:1000:user:/home/user:/path/to/shell
+```

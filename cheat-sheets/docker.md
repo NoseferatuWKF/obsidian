@@ -1,5 +1,3 @@
->prefer containerd over docker
-
 house keeping
 ```bash
 docker kill $(docker ps -q) # unlike stop this fucks containers pronto
@@ -8,9 +6,19 @@ docker image prune # docker usually have dangling images after build
 docker system prune # full clean except volumes
 ```
 
+single file mount
+```bash
+docker run --mount type=bind,source=/local/file,target=/remote/file,readonly alpine
+```
+
 view
 ```bash
 docker ps --size # check running container size
+```
+
+copy from container to local
+```bash
+docker cp container:/path/to/file/in/container /path/to/local
 ```
 
 build image from running container
@@ -42,6 +50,8 @@ docker save image:latest -o image.tar
 # load image in another docker runtime
 docker load -i image.tar
 ```
+
+[ghcr.io](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)
 
 # more cheat-sheets:
 - https://dockercheatsheet.com/

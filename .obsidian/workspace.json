@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "5e68d9fa7234e596",
+        "id": "733e12065e7ea14e",
         "type": "tabs",
         "children": [
           {
-            "id": "67dd9b70659553e7",
+            "id": "d3216a6b713d8e33",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "coding/rust/base.md",
+                "file": "coding/go.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "coding/rust/base.md",
+                "file": "coding/go.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "coding/rust/base.md",
+                "file": "coding/go.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "coding/rust/base.md"
+                "file": "coding/go.md"
               }
             }
           },
@@ -169,38 +169,38 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "67dd9b70659553e7",
+  "active": "d3216a6b713d8e33",
   "lastOpenFiles": [
-    "coding/rust/tokio.md",
-    "coding/c/basics.md",
-    "technical/architectures/micro-kernel.canvas",
-    "technical/architectures/hexagonal.md",
-    "technical/architectures/modular-monolith.md",
+    "cheat-sheets/utils.md",
     "technical/architectures/microservices.md",
-    "books/Refactoring_ Improving the Design of Existing Code ( PDFDrive ).pdf",
-    "technical/techonologies/graphql.md",
-    "technical/data-structures/graph.md",
-    "coding/go.md",
-    "technical/articles.md",
-    "technical/data-structures/doubly-linked-list.md",
-    "technical/data-structures/ring-buffer/use-case.md",
-    "technical/data-structures/hashmap/use-case.md",
-    "technical/data-structures/hashmap",
-    "technical/data-structures/max-heap.md",
-    "technical/caching.md",
-    "technical/system-design.md",
-    "technical/database.md",
+    "cheat-sheets/docker.md",
     "cheat-sheets/sql.md",
-    "technical/caching/topology.md",
-    "technical/caching",
-    "technical/jargon.md",
-    "technical/SOLID.md",
-    "technical/UNIX-philosophy.md",
+    "technical/system-design.md",
+    "technical/architectures/service-oriented.md",
+    "technical/architectures/modular-monolith.md",
+    "coding/js/next.js.md",
+    "coding/js/base.md",
+    "coding/js/nest.js.md",
+    "coding/js/node.md",
+    "coding/js/react.md",
+    "automation/puppet.md",
+    "automation/terraform.md",
+    "automation/ansible.md",
+    "automation/Makefile.md",
+    "automation/jenkins.md",
+    "automation/github-actions.md",
+    "cheat-sheets/npm.md",
+    "cheat-sheets/qemu.md",
+    "coding/js/angular.md",
+    "technical/articles.md",
     "technical/videos.md",
-    "README.md",
-    "notes/template.md",
-    "notes/Extreme.md",
-    "technical/low-lewel/networking/protocols/grpc.md",
+    "technical/UNIX-philosophy.md",
+    "technical/agile-manifesto.md",
+    "technical/architectures/hexagonal.md",
+    "technical/architectures/micro-kernel.canvas",
+    "books/Refactoring_ Improving the Design of Existing Code ( PDFDrive ).pdf",
+    "technical/data-structures/hashmap",
+    "technical/caching",
     "technical/low-lewel/os",
     "technical/low-lewel/networking/protocols",
     "technical/techonologies/frontend",

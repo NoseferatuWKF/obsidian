@@ -1,6 +1,4 @@
->better than shell script
-
-## Build System
+# Build System
 
 basics
 ```Makefile
@@ -66,7 +64,7 @@ dynamic :
 	$(CC) $(CFLAGS) -L./ -Wl,-rpath=./ -lshared main.c -o main
 
 ```
-## Automation
+# Automation
 
 changing default shell
 ```Makefile

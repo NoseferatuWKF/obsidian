@@ -63,3 +63,7 @@
 - Code nowadays are read bottom-up (or basically from a stack trace) instead of top-down (could be this way for new code bases)
 - prioritize locality of behavior
 - control flow should be clear not hidden
+
+# Andrew Kelly
+
+[Andrew Kelley - Practical DOD](https://vimeo.com/649009599)

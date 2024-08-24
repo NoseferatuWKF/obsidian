@@ -4,7 +4,7 @@
 
 >push based automation
 
->Agent-less which makes it great for automating setting up local machine
+>Agent-less which makes it great for automating local machine setup
 
 [[cheat-sheets/ansible|cheat-sheets]]
 
