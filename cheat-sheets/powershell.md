@@ -1,4 +1,10 @@
 [Windows Terminal](https://learn.microsoft.com/en-us/windows/terminal/command-line-arguments?tabs=windows)
+```powershell
+wt sp # will split either horizontal/vertical
+wt sp -H # horizonal split
+wt sp -V # vertical split
+wt nt # new tab
+```
 
 [F2 - Predictive IntelliSense]([Using predictors in PSReadLine - PowerShell | Microsoft Learn](https://learn.microsoft.com/en-us/powershell/scripting/learn/shell/using-predictors?view=powershell-7.4))
 
@@ -10,10 +16,20 @@ netsh interface portproxy add v4tov4 listenport=<yourPortToForward> listenaddres
 netsh interface portproxy del v4tov4 listenport=<yourPortToForward> listenaddress=0.0.0.0
 ```
 
+[Test-NetConnection](https://learn.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection?view=windowsserver2022-ps)
+```powershell
+Test-NetConnection -ComputerName <host> -Port <port>
+```
+
 [Get-ChildItem](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.4)
 >basically ls, it is also aliased to ls
 ```powershell
 (gci \).FullName # list all in root with absolute path
+```
+
+cli history
+```powershell
+cat (Get-PSReadlineOption).HistorySavePath
 ```
 
 env
@@ -89,4 +105,19 @@ function Foo() {
 	# cont. long command `
 	# end
 }
+```
+
+double hypen flags
+```powershell
+# use array splitters
+$param = @(
+	'--rm'
+	'--name', 'interceder')
+	
+docker run @param -d -h interceder `
+	-p 3435:3435 `
+	-e AWSSecret=${env:AWSSecret} `
+	-e AuthSignature=${env:AuthSignature} `
+	-e OrgId=${env:OrgId} `
+	ghcr.io/noseferatuwkf/interceder:latest
 ```

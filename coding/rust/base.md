@@ -228,7 +228,7 @@ enum
 ```rust
 enum Shapes { // a warning will show if any of the enum is not constructed
     Square,
-    Pentagon,
+    Pentagon(String), // enum variant
     Triangle,
     Circle,
 }

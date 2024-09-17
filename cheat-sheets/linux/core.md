@@ -367,6 +367,9 @@ wormhole send /path/to/file
 wormhole receive <PAKE>
 ```
 
+# Filesystem
+
+[btrfs](https://btrfs.readthedocs.io/en/latest/Administration.html)
 ## File Structure
 
 /proc

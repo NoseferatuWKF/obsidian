@@ -21,12 +21,32 @@ get number of connections
 SELECT sum(numbackends) FROM pg_stat_database;
 ```
 
-copy to/from
-```sql
-COPY table TO /path/to/file.csv delimiter ',' csv quote '"';
-COPY table FROM /path/to/file.csv delimiter ',' csv quote '"';
+get schemas
+```SQL
+SELECT * from pg_namespace;
 ```
+
+get users
+```SQL
+SELECT * from pg_user;
+```
+
+get roles
+```SQL
+SELECT * from pg_roles;
+```
+
 # mssql
+
+variables
+```sql
+DECLARE @MyVariable INT
+
+SET @MyVariable = 10
+
+DELETE FROM table
+where column = @MyVariable
+```
 
 repeat query
 ```SQL

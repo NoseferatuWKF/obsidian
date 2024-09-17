@@ -492,3 +492,20 @@ generics
 // type constraint / narrowing
 public class Generic<T> wehre T : IComparabel<T>
 ```
+
+# Concepts
+
+[covariance & contravariance](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/covariance-contravariance/)
+```c#
+// covariance
+// less derived type is assigned/instantiated with a more derived type
+// assignment compatibility is preserved
+IEnumerable<int> foo = new List<int>();
+
+// contravariance
+// more derived type is assigned/instantiated with a less derived type
+// assignment compatibility is reversed
+static void SetObject(object o) {}
+Action<object> bar = SetObject;
+Action<string> baz = bar;
+```

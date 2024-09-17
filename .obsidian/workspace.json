@@ -4,23 +4,37 @@
     "type": "split",
     "children": [
       {
-        "id": "733e12065e7ea14e",
+        "id": "5ce740827a980580",
         "type": "tabs",
         "children": [
           {
-            "id": "d3216a6b713d8e33",
+            "id": "8ea5c9c6ef80648e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "coding/go.md",
+                "file": "coding/csharp/base.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "22d502c24acfcd45",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cheat-sheets/powershell.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -106,7 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "coding/go.md",
+                "file": "cheat-sheets/powershell.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +137,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "coding/go.md",
+                "file": "cheat-sheets/powershell.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "coding/go.md"
+                "file": "cheat-sheets/powershell.md"
               }
             }
           },
@@ -150,8 +164,19 @@
                 "searchQuery": ""
               }
             }
+          },
+          {
+            "id": "39e9bb32c47c9578",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "cheat-sheets/powershell.md"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -169,34 +194,34 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "d3216a6b713d8e33",
+  "active": "22d502c24acfcd45",
   "lastOpenFiles": [
-    "cheat-sheets/utils.md",
-    "technical/architectures/microservices.md",
-    "cheat-sheets/docker.md",
+    "private/unleashed/scratch.md",
+    "coding/csharp/base.md",
+    "private/unleashed/Untitled.md",
+    "private/unleashed/code-references/rough-idea.md",
+    "coding/csharp/asp-net.md",
+    "coding/csharp/dotnet.md",
+    "coding/csharp/use-case.md",
+    "coding/csharp/mediatR.md",
     "cheat-sheets/sql.md",
-    "technical/system-design.md",
-    "technical/architectures/service-oriented.md",
-    "technical/architectures/modular-monolith.md",
-    "coding/js/next.js.md",
-    "coding/js/base.md",
-    "coding/js/nest.js.md",
-    "coding/js/node.md",
-    "coding/js/react.md",
-    "automation/puppet.md",
-    "automation/terraform.md",
-    "automation/ansible.md",
-    "automation/Makefile.md",
-    "automation/jenkins.md",
-    "automation/github-actions.md",
-    "cheat-sheets/npm.md",
-    "cheat-sheets/qemu.md",
-    "coding/js/angular.md",
-    "technical/articles.md",
-    "technical/videos.md",
-    "technical/UNIX-philosophy.md",
-    "technical/agile-manifesto.md",
-    "technical/architectures/hexagonal.md",
+    "cheat-sheets/linux/Alpine.md",
+    "private/unleashed/code-references/shipment.md",
+    "cheat-sheets/cloud/aws.md",
+    "cheat-sheets/docker.md",
+    "networking/docker.md",
+    "private/unleashed/code-references/message-queues.md",
+    "private/unleashed/organization-evaluation.md",
+    "private/unleashed/code-references/entity-change-event.md",
+    "private/unleashed/code-references/database.md",
+    "private/unleashed/utils.md",
+    "cheat-sheets/dotnet.md",
+    "cheat-sheets/powershell.md",
+    "cheat-sheets/utils.md",
+    "private/unleashed/structure.md",
+    "cheat-sheets/redis.md",
+    "private/unleashed/micro-frontend.md",
+    "private/unleashed/wordpress-ssl.md",
     "technical/architectures/micro-kernel.canvas",
     "books/Refactoring_ Improving the Design of Existing Code ( PDFDrive ).pdf",
     "technical/data-structures/hashmap",
