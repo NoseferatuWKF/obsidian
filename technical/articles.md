@@ -1,5 +1,17 @@
 [The Law of Leaky Abstractions](https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/)
+- abstraction over an unreliable system
+- .forward files?
+- manually first then use a tool
+
 [react is holding me hostage](https://emnudge.dev/blog/react-hostage)
+- "Hooks created a lot of problems that simply do not exist in idiomatic JS; Difficult to optimize; Too heavily invested in runtime semantics which makes it difficult to evolve in a direction that make more use of compilers." ~ Evan You
+- Complexity of front-end have been moved to React, in the case of Hooks, the complexity of Class components have been moved there
+- VDOM is the consequence of React
+- React allows so much foot guns
+- "When I build libraries for React, ironically, I don't really use hooks like useState, useReducer, etc. One of the best perks (and footguns) of managing your state *outside* of react is that you get to have full control over when a component should rerender." ~ Tanner Linsley
+- React libraries exists to fix React shortcomings
+- React has component level reactivity not fine-grained reactivity
+
 [making tanstack table 1000x faster](https://jpcamara.com/2023/03/07/making-tanstack-table.html)
 [speeding up JS eco system](https://marvinh.dev/blog/speeding-up-javascript-ecosystem/)
 [how one developer just broke Node Babel and Thousands of projects](https://www.theregister.com/2016/03/23/npm_left_pad_chaos/)

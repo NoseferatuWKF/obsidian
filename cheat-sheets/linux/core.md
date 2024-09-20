@@ -25,6 +25,18 @@ pw-cli list-objects Device # can pass Node as well, view all devices
 ss # socket statistics
 ```
 
+pipe
+```bash
+# make pipe
+mkfifo /path/to/pipe
+# keep pipe open
+sleep infinity > /path/to/pipe
+# connect pipe to program
+/path/to/bin < /path/to/pipe
+# write to pipe
+echo 'hello' >> /path/to/pipe
+```
+
 find which port a disk is connected to
 ```bash
 for i in /dev/disk/by-path/*;do [[ ! "$i" =~ '-part[0-9]+$' ]] && echo "Port $(basename "$i"|grep -Po '(?<=ata-)[0-9]+'): $(readlink -f "$i")";done
@@ -196,6 +208,9 @@ ssh-add -l
 
 # removing keys
 ssh-add -d ~/.ssh/another_acc
+
+# test connection
+ssh -T <user>@<remote>
 
 # local port forwarding
 ssh -L <port>:<remote>:<port> <user>@<remote>
@@ -378,6 +393,7 @@ cat /proc/sys/kernel/threads/max # max number of physical threads
 cat /proc/stat # cpu stats
 cat /proc/net/tcp # tcp connections
 cat /proc/cpuinfo # cpu specs
+cat /proc/<pid>/fd # file descriptor; 0 is stdin, 1 is stdout, 2 is stderr
 ```
 
 /etc

@@ -11,7 +11,7 @@ memory layout
 -------------------
 |    Text Segment  |    // Contains executable code
 -------------------
-|   Data Segment   |    // Contains static and global variables
+|    Data Segment  |    // Contains static and global variables
 -------------------
 |    Heap          |    // Dynamically allocated memory
 -------------------

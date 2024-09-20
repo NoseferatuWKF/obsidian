@@ -4,4 +4,4 @@ Base Framing Protocol
 
 RFCs
 
-[RFC-6455](https://datatracker.ietf.org/doc/html/rfc6455)
+[RFC-6455](https://datatracker.ietf.org/doc/html/rfc6455)(Proposed Standard - December 2011)

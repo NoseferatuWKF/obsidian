@@ -199,6 +199,7 @@ Host userB
 	IdentityFile ~/.ssh/userB
 	IdentitiesOnly yes
 
+# test connection using ssh -T userA
 # then clone using git clone userA:userA/repo.git
 
 #/path/to/repo/.git/config

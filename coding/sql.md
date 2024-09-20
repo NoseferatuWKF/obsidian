@@ -1,88 +1,22 @@
-# psql
-
-connect to db
-```bash
-psql postgresql://[user]:[password]@[host]:[port][...][/dbname]?[param=value&...]
-```
-
-commands
-```bash
-\l # list dbs
-\c # connect to db
-\d # list tables
-\q # quit
-\x on # expanded display use \x auto for both table and expanded
-\watch [SEC] # execute query every SEC seconds
-\! clear # clear term
-```
-
-get number of connections
-```SQL
-SELECT sum(numbackends) FROM pg_stat_database;
-```
-
-get schemas
-```SQL
-SELECT * from pg_namespace;
-```
-
-get users
-```SQL
-SELECT * from pg_user;
-```
-
-get roles
-```SQL
-SELECT * from pg_roles;
-```
-
-# mssql
-
-variables
-```sql
-DECLARE @MyVariable INT
-
-SET @MyVariable = 10
-
-DELETE FROM table
-where column = @MyVariable
-```
-
-repeat query
-```SQL
-insert into table (column1, column2)
-values ('abc', 123)
-
-go 100 -- n times of repeat
-```
-
-# mysql
-
-case when column matches with any from another table
-```SQL
-select distinct t1.N,
-case
-    when t1.P is NULL then 'Root'
-    when t2.P is not NULL then 'Inner'
-    else 'Leaf'
-end
-from BST t1
-left join BST t2 on t1.N = t2.P
-order by t1.N;
-
--- another way
-select t1.N
-case
-	when t1.P is NULL then 'Root'
-	when exists (select 1 from BST t2 where t1.N = t2.P) then 'Inner'
-	else 'Leaf'
-from BST t1
-order by t1.N;
-```
-
-# SQL
-
 >double quotes for column names, single quotes for values
+
+INDEXES
+```SQL
+-- create single column index
+CREATE INDEX index_name
+ON table_name (column1);
+
+-- create composite index, ordering of the column matters
+CREATE INDEX index_name
+ON table_name (column1, column2);
+
+-- create unique index, cannot be duplicated
+CREATE UNIQUE INDEX index_name
+ON table_name (column1, column2);
+
+-- drop index
+DROP INDEX index_name;
+```
 
 SELECT
 ```SQL
@@ -178,7 +112,7 @@ FROM table
 ```
 
 CREATE VIEW
-> virtual table that is queryable
+>virtual table that is queryable
 ```SQL
 CREATE VIEW pq AS (
     SELECT 
@@ -195,10 +129,10 @@ GROUP BY cr
 ```
 
 JOIN
-> - `INNER JOIN`: Returns records that have matching values in both tables
-> - `LEFT JOIN`: Returns all records from the left table, and the matched records from the right table
-> - `RIGHT JOIN`: Returns all records from the right table, and the matched records from the left table
-> - `CROSS JOIN`: Returns all records from both tables
+>- `INNER JOIN`: Returns records that have matching values in both tables
+>- `LEFT JOIN`: Returns all records from the left table, and the matched records from the right table
+>- `RIGHT JOIN`: Returns all records from the right table, and the matched records from the left table
+>- `CROSS JOIN`: Returns all records from both tables
 ```sql
 SELECT SUM(CITY.POPULATION) FROM CITY LEFT JOIN COUNTRY ON CITY.COUNTRYCODE = COUNTRY.CODE WHERE COUNTRY.CONTINENT = 'Asia';
 

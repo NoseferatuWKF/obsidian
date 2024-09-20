@@ -1,5 +1,3 @@
->yaml is superset of json, so valid json is valid yaml
-
 anchors and aliases
 ```yaml
 some_key: &anchor ["this", "is", "an", "anchor"]

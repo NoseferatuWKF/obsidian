@@ -4,37 +4,23 @@
     "type": "split",
     "children": [
       {
-        "id": "5ce740827a980580",
+        "id": "d1974a982c46aff2",
         "type": "tabs",
         "children": [
           {
-            "id": "8ea5c9c6ef80648e",
+            "id": "0c98f5a19951e0e7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "coding/csharp/base.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "22d502c24acfcd45",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cheat-sheets/powershell.md",
+                "file": "cheat-sheets/utils.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -92,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "946de5a6e611c3cc",
@@ -120,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "cheat-sheets/powershell.md",
+                "file": "cheat-sheets/utils.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -137,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "cheat-sheets/powershell.md",
+                "file": "cheat-sheets/utils.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "cheat-sheets/powershell.md"
+                "file": "cheat-sheets/utils.md"
               }
             }
           },
@@ -164,19 +149,8 @@
                 "searchQuery": ""
               }
             }
-          },
-          {
-            "id": "39e9bb32c47c9578",
-            "type": "leaf",
-            "state": {
-              "type": "file-properties",
-              "state": {
-                "file": "cheat-sheets/powershell.md"
-              }
-            }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "horizontal",
@@ -194,59 +168,59 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "22d502c24acfcd45",
+  "active": "0c98f5a19951e0e7",
   "lastOpenFiles": [
-    "private/unleashed/scratch.md",
-    "coding/csharp/base.md",
-    "private/unleashed/Untitled.md",
-    "private/unleashed/code-references/rough-idea.md",
-    "coding/csharp/asp-net.md",
-    "coding/csharp/dotnet.md",
     "coding/csharp/use-case.md",
-    "coding/csharp/mediatR.md",
-    "cheat-sheets/sql.md",
-    "cheat-sheets/linux/Alpine.md",
-    "private/unleashed/code-references/shipment.md",
-    "cheat-sheets/cloud/aws.md",
+    "coding/csharp/dotnet.md",
+    "technical/oAuth/jwt.md",
+    "technical/oAuth/oauth-flows.md",
+    "technical/oAuth/basics.md",
     "cheat-sheets/docker.md",
-    "networking/docker.md",
-    "private/unleashed/code-references/message-queues.md",
-    "private/unleashed/organization-evaluation.md",
-    "private/unleashed/code-references/entity-change-event.md",
-    "private/unleashed/code-references/database.md",
-    "private/unleashed/utils.md",
-    "cheat-sheets/dotnet.md",
-    "cheat-sheets/powershell.md",
-    "cheat-sheets/utils.md",
-    "private/unleashed/structure.md",
-    "cheat-sheets/redis.md",
-    "private/unleashed/micro-frontend.md",
-    "private/unleashed/wordpress-ssl.md",
-    "technical/architectures/micro-kernel.canvas",
-    "books/Refactoring_ Improving the Design of Existing Code ( PDFDrive ).pdf",
-    "technical/data-structures/hashmap",
-    "technical/caching",
-    "technical/low-lewel/os",
-    "technical/low-lewel/networking/protocols",
-    "technical/techonologies/frontend",
-    "technical/techonologies/backend",
-    "technical/techonologies",
-    "books/Hacker's Delight 2nd Edition.pdf",
-    "books/Hacker's Delight 2nd Edition.pdf.crdownload",
-    "networking/proxmox/home-network.canvas",
+    "pasted-images/Pasted image 20240915211903.png",
+    "pasted-images/Pasted image 20240915204549.png",
+    "technical/low-lewel/networking/protocols/websocket.md",
+    "technical/low-lewel/networking/protocols/http.md",
+    "coding/sql.md",
+    "cheat-sheets/linux/core.md",
+    "coding/go.md",
+    "technical/web-vitals.md",
+    "integration/discord.md",
+    "cheat-sheets/databases/postgres.md",
+    "cheat-sheets/databases/mysql.md",
+    "cheat-sheets/databases/mssql.md",
+    "cheat-sheets/cloud/aws.md",
+    "technical/technologies/aws.md",
+    "technical/technologies/graphql.md",
+    "technical/technologies/kafka.md",
+    "technical/technologies/rabbitmq.md",
+    "technical/low-lewel/networking/protocols/udp.md",
+    "technical/low-lewel/networking/protocols/tcp.md",
+    "technical/low-lewel/networking/protocols/grpc.md",
+    "automation/jenkins.md",
+    "pasted-images/Pasted image 20230410120516.png",
+    "pasted-images/Pasted image 20230410120138.png",
+    "pasted-images/Pasted image 20230329205356.png",
+    "pasted-images/Pasted image 20240913174056.png",
+    "pasted-images/Pasted image 20240913173947.png",
     "pasted-images/Pasted image 20240122163448.png",
-    "private/unleashed/shopify-integration.canvas",
-    "pasted-images/Pasted image 20230304032400.png",
-    "technical/architectures/clean-architecture.canvas",
-    "technical/architectures/microservices.canvas",
     "pasted-images/Pasted image 20230831025909.png",
     "pasted-images/Pasted image 20230831025737.png",
-    "pasted-images/Pasted image 20230831025450.png",
-    "private/pasted-images/Pasted image 20230302161956.png",
-    "private/pasted-images/Pasted image 20230302161920.png",
-    "pasted-images/Pasted image 20230728092018.png",
-    "pasted-images/Pasted image 20230728092047.png",
-    "pasted-images/Pasted image 20230722123059.png",
+    "automation/ .excalidraw.md",
+    "networking/proxmox/home-network.canvas",
+    "technical/architectures/micro-kernel.canvas",
+    "technical/technologies/aws",
+    "cheat-sheets/databases",
+    "Untitled",
+    "technical/databases",
+    "technical/design-patterns/singleton",
+    "technical/design-patterns/observer",
+    "technical/design-patterns/factory",
+    "technical/design-patterns/facade",
+    "technical/design-patterns/builder",
+    "books/Refactoring_ Improving the Design of Existing Code ( PDFDrive ).pdf",
+    "private/unleashed/shopify-integration.canvas",
+    "technical/architectures/clean-architecture.canvas",
+    "technical/architectures/microservices.canvas",
     "private/setel/casbin.canvas"
   ]
 }

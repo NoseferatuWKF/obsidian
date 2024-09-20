@@ -8,4 +8,4 @@ UDP Fields
 
 RFCs
 
-[RFC-768](https://www.rfc-editor.org/rfc/rfc768)
+[RFC-768](https://datatracker.ietf.org/doc/html/rfc768) (Internet Standard - August 1980)

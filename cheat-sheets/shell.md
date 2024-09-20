@@ -5,7 +5,7 @@
 arrays
 ```bash
 indexedArray=(one two three)
-associativeArray=([one]=one [two]=two [three]=three)
+associativeArray=([one]=one [two]=two [three]=three) # aka map
 indexedArray[0] # one
 indexedArray[@] # one two three
 ```

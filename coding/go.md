@@ -122,6 +122,9 @@ b := []byte{'g', 'o', 'l', 'a', 'n', 'g'}
 x := []string{"Лайка", "Белка", "Стрелка"}
 s := x[:] // a slice referencing the storage of x
 
+// clear slice
+clear(s)
+
 // use slices for dynamically sized arrays
 var dynamic = make([]int32, 1000)
 ```
@@ -615,5 +618,44 @@ func main() {
 	val := 100
 	valString := strconv.Itoa(val)
 	val = strconv.Atoi(valString)
+}
+```
+
+[command line flags](https://gobyexample.com/command-line-flags)
+```go
+// flags.go
+package main
+
+import (
+	"flag"
+	"fmt"
+)
+
+var foo string
+
+func main() {
+	flag.StringVar(&foo, "f", "", "foo value")
+	flag.Parse()
+	fmt.Println(foo)
+}
+```
+
+```bash
+go run flags.go -foo abc # abc
+```
+
+concat string from string slice
+```go
+package main
+
+import (
+	"strings"
+	"fmt"
+)
+
+func main() {
+	input := []string{"abc", "def", "ghi"}
+	output := strings.Join(input, " ")
+	fmt.Println(output) // abc def ghi
 }
 ```

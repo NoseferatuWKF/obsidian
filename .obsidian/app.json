@@ -4,5 +4,7 @@
   "showInlineTitle": false,
   "trashOption": "none",
   "newFileLocation": "folder",
-  "newFileFolderPath": "notes"
+  "newFileFolderPath": "notes",
+  "useTab": true,
+  "attachmentFolderPath": "pasted-images"
 }

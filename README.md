@@ -4,8 +4,6 @@
 - [ ] kubernetes (todo::notes)
 - [ ] AWS (todo::notes)
 - [ ] GCP (todo::notes)
-- [ ] Linode (todo::notes)
-- [ ] RAG (todo::notes)
 
 "... we do not consider it as good engineering practice to consume a resource lavishly just because it happens to be cheap." ~Niklaus Wirth
 
