@@ -121,6 +121,9 @@
 **Amdahl's Law**
 >The overall performance improvement gained by optimizing a single part of a system is limited by the fraction of time that the improved part is actually used
 
+**Brooke's Law**
+>Adding manpower to a late software project makes it later
+
 **Conway's Law**
 >Organizations which design systems are constrained to produce designs which are copies of the communication structures of these organizations.
 
@@ -134,7 +137,7 @@ LDAP
 >[L]ightweight [D]irectory [A]ccess [P]rotocol
 
 nonce
->In cryptography, a nonce is an arbitrary number that can be used just once in a cryptographic communication.[1] It is often a random or pseudo-random number issued in an authentication protocol to ensure that old communications cannot be reused in replay attacks. They can also be useful as initialization vectors and in cryptographic hash functions.
+>In cryptography, a nonce is an arbitrary number that can be used just once in a cryptographic communication. It is often a random or pseudo-random number issued in an authentication protocol to ensure that old communications cannot be reused in replay attacks. They can also be useful as initialization vectors and in cryptographic hash functions.
 
 TLB
 >[T]ranslation [L]ook-aside [B]uffer, is a unit in CPU to translate virtual address to physical address
@@ -150,3 +153,6 @@ syscall
 
 interrupt
 >usually called by hardware, but can also be called by software (soft interrupt) notifying the CPU/Microprocessor about an event that needs handling in software (usually a driver)
+
+copyleft
+>legal techniques of granting the same rights to derivative works/copies

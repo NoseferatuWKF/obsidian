@@ -7,6 +7,7 @@
 ![[Pasted image 20240122163448.png]]
 
 ## KubeADM
+
 ## Control Plane Components
 
 ### kube-apiserver

@@ -38,11 +38,11 @@ git log --graph --parents # show graph with merge parents resolution
 git log <branch> # show log on specific branch
 git log -S "commit message" -p # search in log for commit message and print diff
 git log --grep "commit message" -p # grep in log and print diff
-git log -p -- /path/to/file # print history diff of a single file
 git log --graph --decorate > out # use decorate to make file same as stdout
-git log -L <line>, <column>:/path/to/file # history of changes
+git log -p -- /path/to/file # print history diff of a single file
+git log -L <line>, <column>:/path/to/file # history changes on line
 # not logs but does something similar
-git show # show diff in each commit
+git show # show diff in commit
 git whatchanged # show changed files
 ```
 
@@ -72,9 +72,7 @@ core.editor $(which nvim)
 
 git config -l --show-origin # show config plus source file
 git config -l --local # show local config
-
 git config --get-regexp <section> # list all keys under section
-
 # signing with ssh
 git config gpg.format ssh
 git config user.signingkey /path/to/key.pub
@@ -97,7 +95,7 @@ rebase
 git rebase -i @~1 # interactive relative to HEAD~1 can use @^ as well
 git commit --amend # if want to amend kinda optional
 git rebase --continue # finishing up
-git rebase --abort # fuck this start over
+git rebase --abort # start over
 ```
 
 remote
@@ -129,7 +127,7 @@ git cherry-pick <commit>
 git cherry-pick <commit> -m 1 # if it is a merge commit need to specify mainline
 ```
 
-revert
+revert/reset/rebase for discarding changes
 ```bash
 git revert <commit>
 # or can use reset
@@ -173,7 +171,6 @@ submodule
 # adding submodule
 git submodule add /path/to/file git@github.com:user/path.git # setup submodule
 git submodule update --init --recursive # install all submodules
-
 # removing submodules
 git submodule deinit /path/to/file # may require to use -f
 git rm /path/to/file # may require to use -f
@@ -208,7 +205,7 @@ Host userB
 	fetch = +refs/heads/*:refs/remotes/origin/*
 ```
 
-get pubkey
+get pubkey from remote repository
 ```shell
 # works with gitlab as well
 curl https://github.com/<username>.keys > /path/to/pubkey

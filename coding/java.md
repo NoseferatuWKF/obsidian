@@ -20,35 +20,6 @@ jar -cvf <jarfile> /path/to/something.class
 java -cp /path/to/jar <class> # without .java
 ```
 
-some pet peevs
-```java
-class Main {
-	private static class WhyIsThisAllowed {
-		long id;
-		String name;
-
-		WhyIsThisAllowed(long id, String name) {
-			this.id = id;
-			this.name = name;
-		}
-
-		private void printName() {
-			System.out.println(this.name);
-		}
-	}
-	// The bane of java
-	public static void main(String[] args) {
-		// Once inside here only static members are allowed
-		System.out.println("Java sucks btw");
-
-		WhyIsThisAllowed iDunnoWhy = new WhyIsThisAllowed(0, "magic");
-		// this was supposed to be a private method
-		iDunnoWhy.printName();
-	}
-
-}
-```
-
 loops
 ```java
 // iterator loop
@@ -57,6 +28,23 @@ for (String el: elems) {
 	System.out.println(el);
 }
 ```
+
+variables
+```java
+class Foo {
+	// instance variables
+	String field1;
+	int field2;	
+
+	public void doSomething() {
+		// local variables
+		final int a = 0; // constants that must be initialized
+		String b = "Yoooo";
+		System.out.println(a + b);
+	}
+}
+```
+
 
 unboxing and autoboxing
 https://javarevisited.blogspot.com/2010/10/what-is-problem-while-using-in.html#axzz82BXif5vU
@@ -96,9 +84,6 @@ Arrays.stream(a).forEach(e -> System.out.println(e));
 
 packages
 
-jvm
->the jvm typically has a class loader, interpreter and a jit compiler. The class loader, allows the jvm to load the byte code classes. The jit compiler compiles the java byte code to machine code
-
 association
 >classes and contain references to other classes and form relationships such as one-to-one, one-to-many, etc.. This is known as association in java.
 ```java
@@ -136,30 +121,6 @@ class Foo {
 }
 ```
 
-marker interface
->empty interfaces used to tag classes for a certain implementation/metadata/intent
-```java
-// marker interface usually are serializable or cloneable
-public interface Deletable {
-}
-```
-
-variables
-```java
-class Foo {
-	// instance variables
-	String field1;
-	int field2;	
-
-	public void doSomething() {
-		// local variables
-		final int a = 0; // constants that must be initialized
-		String b = "Yoooo";
-		System.out.println(a + b);
-	}
-}
-```
-
 access specifiers
 ```java
 // public / default
@@ -176,6 +137,17 @@ protected class Baz {
 
 }
 ```
+
+marker interface
+>empty interfaces used to tag classes for a certain implementation/metadata/intent
+```java
+// marker interface usually are serializable or cloneable
+public interface Deletable {
+}
+```
+
+jvm
+>the jvm typically has a class loader, interpreter and a jit compiler. The class loader, allows the jvm to load the byte code classes. The jit compiler compiles the java byte code to machine code
 
 binding and dispatchers
 

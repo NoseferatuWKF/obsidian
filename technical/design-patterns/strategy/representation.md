@@ -12,7 +12,7 @@ Context:
 IStrategy ^IIv2tsAV
 
 IStrategy:
-exectute() ^Cf2lkBnA
+execute() ^Cf2lkBnA
 
 StrategyA:
 IStrategy ^4rOqFBje
@@ -40,8 +40,8 @@ pass strategy to context ^RveMmvPI
 	"elements": [
 		{
 			"type": "rectangle",
-			"version": 160,
-			"versionNonce": 1630760595,
+			"version": 164,
+			"versionNonce": 1472475150,
 			"isDeleted": false,
 			"id": "ABmxHqLvAv_FFdgILy40G",
 			"fillStyle": "solid",
@@ -80,14 +80,14 @@ pass strategy to context ^RveMmvPI
 					"type": "arrow"
 				}
 			],
-			"updated": 1707582353418,
+			"updated": 1727619510418,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 123,
-			"versionNonce": 284080157,
+			"version": 127,
+			"versionNonce": 434184146,
 			"isDeleted": false,
 			"id": "IIv2tsAV",
 			"fillStyle": "solid",
@@ -107,7 +107,7 @@ pass strategy to context ^RveMmvPI
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707582353418,
+			"updated": 1727619510418,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -123,8 +123,8 @@ pass strategy to context ^RveMmvPI
 		},
 		{
 			"type": "rectangle",
-			"version": 570,
-			"versionNonce": 1263751765,
+			"version": 574,
+			"versionNonce": 1209990734,
 			"isDeleted": false,
 			"id": "7SyBS7u6yOobr13nvvfF5",
 			"fillStyle": "solid",
@@ -163,14 +163,14 @@ pass strategy to context ^RveMmvPI
 					"type": "arrow"
 				}
 			],
-			"updated": 1724671095832,
+			"updated": 1727619510418,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 569,
-			"versionNonce": 771468413,
+			"version": 574,
+			"versionNonce": 202462610,
 			"isDeleted": false,
 			"id": "Cf2lkBnA",
 			"fillStyle": "solid",
@@ -179,35 +179,35 @@ pass strategy to context ^RveMmvPI
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 697.2722352248032,
+			"x": 697.4422333937486,
 			"y": -194.25251548607517,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
-			"width": 103.11988830566406,
+			"width": 102.77989196777344,
 			"height": 50,
 			"seed": 2079507901,
 			"groupIds": [],
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707582353418,
+			"updated": 1727619510418,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
 			"fontFamily": 1,
-			"text": "IStrategy:\nexectute()",
-			"rawText": "IStrategy:\nexectute()",
+			"text": "IStrategy:\nexecute()",
+			"rawText": "IStrategy:\nexecute()",
 			"textAlign": "center",
 			"verticalAlign": "middle",
 			"containerId": "7SyBS7u6yOobr13nvvfF5",
-			"originalText": "IStrategy:\nexectute()",
+			"originalText": "IStrategy:\nexecute()",
 			"lineHeight": 1.25,
 			"baseline": 43
 		},
 		{
 			"type": "rectangle",
-			"version": 402,
-			"versionNonce": 1180997397,
+			"version": 406,
+			"versionNonce": 2022048910,
 			"isDeleted": false,
 			"id": "XZk8BRhIow63DRyz1ggcP",
 			"fillStyle": "solid",
@@ -238,14 +238,14 @@ pass strategy to context ^RveMmvPI
 					"type": "arrow"
 				}
 			],
-			"updated": 1724671176925,
+			"updated": 1727619510418,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 422,
-			"versionNonce": 439031005,
+			"version": 430,
+			"versionNonce": 1043649362,
 			"isDeleted": false,
 			"id": "4rOqFBje",
 			"fillStyle": "solid",
@@ -265,7 +265,7 @@ pass strategy to context ^RveMmvPI
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707582353418,
+			"updated": 1727619510418,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -281,8 +281,8 @@ pass strategy to context ^RveMmvPI
 		},
 		{
 			"type": "rectangle",
-			"version": 409,
-			"versionNonce": 1019183957,
+			"version": 413,
+			"versionNonce": 179454670,
 			"isDeleted": false,
 			"id": "7amb33dxkwjK4oCCU-GKt",
 			"fillStyle": "solid",
@@ -313,14 +313,14 @@ pass strategy to context ^RveMmvPI
 					"type": "arrow"
 				}
 			],
-			"updated": 1724671179046,
+			"updated": 1727619510418,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 423,
-			"versionNonce": 1296867709,
+			"version": 435,
+			"versionNonce": 1654823186,
 			"isDeleted": false,
 			"id": "2l777YfY",
 			"fillStyle": "solid",
@@ -340,7 +340,7 @@ pass strategy to context ^RveMmvPI
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707584286696,
+			"updated": 1727619510419,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -356,8 +356,8 @@ pass strategy to context ^RveMmvPI
 		},
 		{
 			"type": "rectangle",
-			"version": 295,
-			"versionNonce": 1078652021,
+			"version": 299,
+			"versionNonce": 20756750,
 			"isDeleted": false,
 			"id": "wfdX-zfY_Jl_ESsopYKzP",
 			"fillStyle": "solid",
@@ -388,14 +388,14 @@ pass strategy to context ^RveMmvPI
 					"type": "arrow"
 				}
 			],
-			"updated": 1724671176925,
+			"updated": 1727619510419,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 281,
-			"versionNonce": 1611088285,
+			"version": 285,
+			"versionNonce": 1221699282,
 			"isDeleted": false,
 			"id": "aMppSZFY",
 			"fillStyle": "solid",
@@ -415,7 +415,7 @@ pass strategy to context ^RveMmvPI
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707582353419,
+			"updated": 1727619510419,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -431,8 +431,8 @@ pass strategy to context ^RveMmvPI
 		},
 		{
 			"type": "rectangle",
-			"version": 329,
-			"versionNonce": 1023299765,
+			"version": 333,
+			"versionNonce": 597583694,
 			"isDeleted": false,
 			"id": "BOOyZ7fd71xt-ShQVHuMg",
 			"fillStyle": "solid",
@@ -463,14 +463,14 @@ pass strategy to context ^RveMmvPI
 					"type": "arrow"
 				}
 			],
-			"updated": 1724671179046,
+			"updated": 1727619510419,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 323,
-			"versionNonce": 149815859,
+			"version": 327,
+			"versionNonce": 962133138,
 			"isDeleted": false,
 			"id": "4qHtkt1x",
 			"fillStyle": "solid",
@@ -490,7 +490,7 @@ pass strategy to context ^RveMmvPI
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707584283208,
+			"updated": 1727619510419,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -506,8 +506,8 @@ pass strategy to context ^RveMmvPI
 		},
 		{
 			"type": "arrow",
-			"version": 105,
-			"versionNonce": 1506389595,
+			"version": 113,
+			"versionNonce": 1647332750,
 			"isDeleted": false,
 			"id": "K-ILa_xkzh18CE6IdwvoJ",
 			"fillStyle": "solid",
@@ -529,7 +529,7 @@ pass strategy to context ^RveMmvPI
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1724671243660,
+			"updated": 1727619510419,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -558,8 +558,8 @@ pass strategy to context ^RveMmvPI
 		},
 		{
 			"type": "arrow",
-			"version": 125,
-			"versionNonce": 1103558939,
+			"version": 133,
+			"versionNonce": 1374657106,
 			"isDeleted": false,
 			"id": "PtrmhJQhqW5m2eMebpcen",
 			"fillStyle": "solid",
@@ -581,7 +581,7 @@ pass strategy to context ^RveMmvPI
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1724671243659,
+			"updated": 1727619510419,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -610,8 +610,8 @@ pass strategy to context ^RveMmvPI
 		},
 		{
 			"type": "arrow",
-			"version": 225,
-			"versionNonce": 1488240347,
+			"version": 235,
+			"versionNonce": 975924174,
 			"isDeleted": false,
 			"id": "NzUh6xw-dxxUQNTZ480fL",
 			"fillStyle": "solid",
@@ -633,7 +633,7 @@ pass strategy to context ^RveMmvPI
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1724671243656,
+			"updated": 1727619510419,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -662,8 +662,8 @@ pass strategy to context ^RveMmvPI
 		},
 		{
 			"type": "arrow",
-			"version": 41,
-			"versionNonce": 1446813339,
+			"version": 57,
+			"versionNonce": 1634500626,
 			"isDeleted": false,
 			"id": "z6_9CUi6Tk3Ql0k_9ZecX",
 			"fillStyle": "solid",
@@ -685,7 +685,7 @@ pass strategy to context ^RveMmvPI
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1724671243657,
+			"updated": 1727619510419,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -714,8 +714,8 @@ pass strategy to context ^RveMmvPI
 		},
 		{
 			"type": "arrow",
-			"version": 92,
-			"versionNonce": 640938971,
+			"version": 104,
+			"versionNonce": 430490126,
 			"isDeleted": false,
 			"id": "GnbivgqVIO26KLZQ0A39b",
 			"fillStyle": "solid",
@@ -737,7 +737,7 @@ pass strategy to context ^RveMmvPI
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1724671243659,
+			"updated": 1727619510419,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -766,8 +766,8 @@ pass strategy to context ^RveMmvPI
 		},
 		{
 			"type": "text",
-			"version": 49,
-			"versionNonce": 660468507,
+			"version": 53,
+			"versionNonce": 1137094098,
 			"isDeleted": false,
 			"id": "Nl1f0QQz",
 			"fillStyle": "solid",
@@ -787,7 +787,7 @@ pass strategy to context ^RveMmvPI
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1724671129416,
+			"updated": 1727619510419,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -803,8 +803,8 @@ pass strategy to context ^RveMmvPI
 		},
 		{
 			"type": "text",
-			"version": 86,
-			"versionNonce": 927403259,
+			"version": 90,
+			"versionNonce": 1134645326,
 			"isDeleted": false,
 			"id": "RveMmvPI",
 			"fillStyle": "solid",
@@ -824,7 +824,7 @@ pass strategy to context ^RveMmvPI
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1724671131834,
+			"updated": 1727619510419,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -835,43 +835,6 @@ pass strategy to context ^RveMmvPI
 			"verticalAlign": "top",
 			"containerId": null,
 			"originalText": "pass strategy to context",
-			"lineHeight": 1.25,
-			"baseline": 18
-		},
-		{
-			"type": "text",
-			"version": 115,
-			"versionNonce": 1725912629,
-			"isDeleted": true,
-			"id": "OxlbDujJ",
-			"fillStyle": "solid",
-			"strokeWidth": 2,
-			"strokeStyle": "solid",
-			"roughness": 1,
-			"opacity": 100,
-			"angle": 0,
-			"x": 287.45490613005444,
-			"y": -214.42875969722826,
-			"strokeColor": "#1e1e1e",
-			"backgroundColor": "transparent",
-			"width": 98.19989013671875,
-			"height": 25,
-			"seed": 1309592309,
-			"groupIds": [],
-			"frameId": null,
-			"roundness": null,
-			"boundElements": [],
-			"updated": 1724671246758,
-			"link": null,
-			"locked": false,
-			"fontSize": 20,
-			"fontFamily": 1,
-			"text": "implements",
-			"rawText": "implements",
-			"textAlign": "left",
-			"verticalAlign": "top",
-			"containerId": null,
-			"originalText": "implements",
 			"lineHeight": 1.25,
 			"baseline": 18
 		}

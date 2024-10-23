@@ -21,6 +21,8 @@ webp, avif, jpegxl
 ## Speculative API
 
 # First Input Delay
+- partial hydration
+- island architecture
 
 ## Debounce
 

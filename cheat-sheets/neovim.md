@@ -242,12 +242,19 @@ dv -- split screen merge conflict
 Gwrite! -- to use native vim fugitive merge resolution
 ```
 
-vim-surround
+mini-surround
 ```lua
-cs      -- change surround
-ysiw    -- add surround in word
-ysap    -- add surround around paragraph
-ds      -- delete surround
+sa -- add surround, normal or visual mode, eg; saw", saap(, sa2w[, saiw'
+sd -- delete surround, normal mode, eg; sd", sd<space>
+sr -- replace surround, normal mode, eg; sr"', sr)], sr]( sr(<space>
+sf -- find surround, normal mode, eg; sf[, sf]
+sF -- find backwards surround, normal mode eg; sF[, sF]
+sh -- highlight surround, normal mode, eg; sh[, sh]
+sn -- search line limit, good for large functions/methods
+
+-- sf/sF and sh can be chained with ? to do assymetric matching
+sf?
+sh?
 ```
 
 Mason

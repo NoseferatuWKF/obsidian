@@ -1,3 +1,6 @@
+# Streaming HTML
+
+# Selective Hydration
 # API
 
 ## [memo](https://react.dev/reference/react/memo)

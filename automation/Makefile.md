@@ -51,7 +51,7 @@ build: dep.o main.c
 	gcc -g -Wall -o $@ $^ # 
 ```
 
-shared libraries / dll
+[shared libraries / dll](https://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html)
 ```Makefile
 CC = gcc
 CFLAGS = -g -Wall -Wextra -pedantic

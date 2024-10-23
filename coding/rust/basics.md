@@ -105,7 +105,6 @@ match speed_limit { // must include all possible values
 ```
 
 ? operator
->can only be used with Result types
 ```rust
 // without ? operator
 fn main() -> Result<(), Box<dyn Error>> { 

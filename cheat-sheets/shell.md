@@ -61,7 +61,6 @@ check if file exist/not exist
 ```bash
 # if file not exists
 [[ ! -f /path/to/file ]] && echo "whoops"
-
 # if file exists
 [[ ! -f /path/to/file ]] || source /path/to/file
 ```
@@ -76,7 +75,8 @@ $password
 
 symbols 
 ```bash
-%1 # process that was just started and backgrounded
+$$ # parent process
+%! # process that was just started and backgrounded
 ```
 
 ## zsh

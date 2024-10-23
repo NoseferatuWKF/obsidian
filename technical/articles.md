@@ -1,9 +1,12 @@
 [The Law of Leaky Abstractions](https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/)
+```
 - abstraction over an unreliable system
 - .forward files?
 - manually first then use a tool
+```
 
 [react is holding me hostage](https://emnudge.dev/blog/react-hostage)
+```
 - "Hooks created a lot of problems that simply do not exist in idiomatic JS; Difficult to optimize; Too heavily invested in runtime semantics which makes it difficult to evolve in a direction that make more use of compilers." ~ Evan You
 - Complexity of front-end have been moved to React, in the case of Hooks, the complexity of Class components have been moved there
 - VDOM is the consequence of React
@@ -11,8 +14,8 @@
 - "When I build libraries for React, ironically, I don't really use hooks like useState, useReducer, etc. One of the best perks (and footguns) of managing your state *outside* of react is that you get to have full control over when a component should rerender." ~ Tanner Linsley
 - React libraries exists to fix React shortcomings
 - React has component level reactivity not fine-grained reactivity
+```
 
-[making tanstack table 1000x faster](https://jpcamara.com/2023/03/07/making-tanstack-table.html)
 [speeding up JS eco system](https://marvinh.dev/blog/speeding-up-javascript-ecosystem/)
 [how one developer just broke Node Babel and Thousands of projects](https://www.theregister.com/2016/03/23/npm_left_pad_chaos/)
 [THE CONFERENCE FOR JAVA & SOFTWARE INNOVATION](https://jaxlondon.com/blog/java-core-languages/the-error-of-our-ways-kevlin-henney/)
@@ -69,3 +72,47 @@ uncle bob summary:
 [How Developers Stop Learning: Rise of the Expert Beginner](https://daedtech.com/how-developers-stop-learning-rise-of-the-expert-beginner/)
 [Scrum vs Kanban vs Lean vs XP](https://www.objectstyle.com/blog/agile-scrum-kanban-lean-xp-comparison)
 [Dotnet Evolutionary Architecture By Example](https://github.com/evolutionary-architecture/evolutionary-architecture-by-example)
+```
+CHAPTER 1: Simplicity, namespaces, feature slices
+CHAPTER 2: Maintainability, modularity
+CHAPTER 3: Scale, micro services, distributed architecture
+CHAPTER 4: Complexity, Tactical DDD
+```
+
+[Service Granularity, Disintegrators](https://klotzandrew.com/blog/service_granularity_disintegrators/)
+
+[B-trees and database indexes](https://planetscale.com/blog/btrees-and-database-indexes)
+```
+nodes = pages = disk blocks
+
+# B-tree
+- Each node in the tree stores N key/value pairs, where N is greater than 1 and less than or equal to K.
+- Each internal node has at least N/2 key/value pairs (an internal node is one that is not a leaf or the root).
+- Each internal node has N+1 children.
+- The root node has at least one value and two children, unless it is the sole node.
+- All leaves are on the same level.
+- Searching for a key uses binary search as the keys are strongly sorted
+
+# B+tree - similar to B-tree with a change to the rules
+- Key/value pairs are stored only at the leaf nodes.
+- Non-leaf nodes store only keys and the associated child pointers.
+- pages are 16K by default
+
+# MySQL B+tree - additional rules
+- Non-leaf nodes store N child pointers instead of N+1.
+- All nodes also contain "next" and "previous" pointers, allowing each level of the tree to also act as a doubly-linked list.
+- Because MySQL loads the entire associated page by default, any query that uses less than the page size is not really performance optimizing
+
+# InnoDB - the B+tree database engine
+- all tables data are stored in B+tree with the table's primary key as the tree key
+- more columns = less leaf rows, less columns = more leaf rows
+- each secondary indexes will create a new B+tree instance, and a query using the secondary index will first lookup on its B+tree returns the associated primary key and then lookup on the primary key B+tree
+
+# Buffer pool - in memory cache for InnoDB pages
+- InnoDB caches unique node visits to the buffer pool
+
+# Note on perfomance
+- Use smaller primary keys to create shallower B+trees by fitting the internal nodes with more keys
+- Use predictable primary keys for fewer I/O requests on insertions
+- Consider using created_at timestamps for tables that does sorting or querying by created_at columnn as it is predictable
+```

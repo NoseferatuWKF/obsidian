@@ -7,7 +7,7 @@ cfdisk # IMO, most user friendly
 fdisk
 parted 
 
-df -h # file mount
+df -h # list directory mounts
 du -sh # current directory size
 
 mkfs # format filesystem
@@ -21,11 +21,10 @@ lspci -nnk # list devices summary
 lspci -v # list devices verbose
 lsblk -f # block devices with fs
 lscpu # dump cpu information
-pw-cli list-objects Device # can pass Node as well, view all devices
 ss # socket statistics
 ```
 
-pipe
+named pipe
 ```bash
 # make pipe
 mkfifo /path/to/pipe
@@ -83,16 +82,14 @@ chown <user> /path/to/file
 curl
 ```bash
 # usually there is a command like this
-curl --proto="https" -Ssf <url> -o <output> 
 # -s: silent do not show progess meter or error message
 # -S: show error, when used with -s makes curl show and error message if it fails
 # -f: fail silently (no output at all) on server errors
-
+curl --proto="https" -Ssf <url> -o <output> 
 # standard stuff when downloading
 # -L follow redirects
 # -O create output file
 curl -LO <url>
-
 # use custom ca cert 
 curl --cacert /path/to/ca.crt <url>
 ```
@@ -165,55 +162,10 @@ ascii table
 man ascii
 ```
 
-x11
-```bash
-xprop # get gui information
-xclip -selection c # copy to system clipboard
-xev # capture keyboard events
-```
-
 getting system information
 ```bash
 lsb_release -cs # distro
 dpkg --print-architecture # arch
-```
-
-ssh-server
-```bash
-sudo apt install openssh-server # or whatever package manager
-sudo service ssh start # can use systemctl as well
-```
-
-ssh-agent
-```bash
-# in case the ssh-add agent instance is not running
-eval $(ssh-agent)
-
-# if that doesn't work
-exec ssh-agent
-```
-
-ssh-add
->can be used to check connection to remote repos
-```bash
-# maybe need to remove cached keys first
-ssh-add -D
-
-# adding ssh keys
-ssh-add ~/.ssh/id_rsa
-ssh-add ~/.ssh/another_acc
-
-# check for keys
-ssh-add -l
-
-# removing keys
-ssh-add -d ~/.ssh/another_acc
-
-# test connection
-ssh -T <user>@<remote>
-
-# local port forwarding
-ssh -L <port>:<remote>:<port> <user>@<remote>
 ```
 
 perl
@@ -250,13 +202,6 @@ sed '$ i <text>'
 sed '$ a <text>'
 ```
 
-windows drive mount
-```bash
-sudo ntfsfix /dev/sdxy # if drive is in unsafe state
-sudo ntfs-3g /path/to/drive /path/to/mount
-umount /mnt/windows
-```
-
 mount usb
 ```bash
 # find usb device something like /dev/sdb
@@ -272,30 +217,14 @@ format usb
 sudo cfdisk /path/to/dev # must be unmounted
 sudo mkfs.vfat /path/to/dev # for vfat fs
 ```
-# GUI
 
-dunst
+generate random password
 ```bash
-dunstcl set-paused toggle # enable/disable dunst
-dunstify "some-message" # push mesagge to dunst
-```
+local LENGTH="${1:-8}"
+local CHAR="A-Za-z0-9"
 
-vivaldi
-```bash
-# make sure to install snappy, as some media uses it
-sudo pacman -S snappy
-# custom user + url
-exec vivaldi-stable --user-data-dir=<path> --new-window <url>
+echo $(LC_ALL=C tr -dc $CHAR < /dev/urandom | head -c $LENGTH)
 ```
-
-chromium
-```
-some url shortcuts for chromimum utils
-chrome://settings
-chrome://tracing
-chrome://inspect
-```
-
 # Networking
 
 ip
@@ -304,21 +233,13 @@ ip link # show all network interfaces
 # show ip address
 ifconfig
 ip addr
-hostname -I
+hostname -i
 ```
 
 ifconfig
 ```bash
 ifconfig # show network details (more details than ip link)
 sudo ifconfig <interface> up # turn on interface
-```
-
-config
-```bash
-# /etc/network/interfaces
-sudo systemctl restart networking && sudo dhclient
-# /etc/netplan/something.yaml
-sudo netplan apply
 ```
 
 dns
@@ -335,51 +256,8 @@ lsof -i <port> # find open port
 
 connections
 ```bash
-netstat -an | grep -i tcp # list all tcp connections
 cat /proc/net/tcp # hex tcp connections
 cat /etc/services # list of port aliases
-```
-
-wpa_supplicant
-```bash
-sudo wpa_supplicant -B -i <interface> -c /etc/wpa_supplicant/wpa_supplicant.conf
-
-# wpa_cli
-sudo wpa_cli
-scan
-scan_results
-add_network
-set_network <id> <key> <value> # ssid and psk are usual keys
-enable_network <id>
-disable_network <id>
-remove_network <id>
-reconnect # use this after disconnect
-disconnect
-save_config # write config to /etc/wpa_supplicant/wpa_supplicant.conf
-quit
-
-# wpa_passphrase
-sudo wpa_passphrase SSID <passphrase>
-```
-
-transferring files between remotes
-```bash
-# ssh
-ssh user@host "cat /path/to/file" > /path/to/local
-
-# nc
-nc -l 1234 > file.out # on remote
-nc ip 1234 < file.in # host
-
-# rsync host to remote
-rsync /host/file/path remote@hostname:path/to/file # can use relative paths
-
-# scp remote to host
-scp remote@hostname:path/to/file /host/file/path
-
-# wormhole
-wormhole send /path/to/file
-wormhole receive <PAKE>
 ```
 
 # Filesystem
@@ -402,44 +280,11 @@ cat /etc/os-release # distribution info
 cat /etc/hosts # local dns resolution
 cat /etc/resolv.conf # nameserver settings
 cat /etc/passwd # user settings
+cat /etc/security/limits.conf # resource limits for the users logged in via PAM.
 ```
 
 /dev
 ```bash
 cat /dev/urandom # cryptographically secure pseudorandom number generators 
 cat /dev/null # black hole 
-```
-
-# Media
-
-## Audio
-
-pulse audio
-```bash
-pactl list short sinks # list sinks
-# setting audio passthrough
-pactl get-default-sink
-pactl set-default-sink
-```
-
-alsa
-```bash
-alsactl init # reset settings
-alsactl restore # restart alsa with prev settings
-alsamixer # vol controls
-```
-
-# NTPD
-
-openntpd
-```bash
-# enable and start ntpd
-sudo systemctl enable openntpd.service
-sudo systemctl start openntpd.service
-
-# check if it ntpd is active
-timedatectl
-
-# sync to system clock
-timedatectl set-ntp true
 ```

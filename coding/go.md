@@ -27,8 +27,6 @@ export PATH=$PATH:/usr/local/go/bin
 go version
 ```
 
-# Basics
-
 create a go module
 ```bash
 go mod init <name>
@@ -38,6 +36,8 @@ resolve dependencies
 ```bash
 go mod tidy
 ```
+
+# Basics
 
 entry point
 ```go
@@ -328,6 +328,37 @@ func main() {
     fmt.Println(c(2))
 }
 
+```
+
+variadic functions
+```go
+func sums(input ...int) {
+	for _, v range input {
+		fmt.Println(v)
+	}
+}
+
+func main() {
+	sums(1, 2)
+	sums(1, 2, 3) // can input any number of arguments
+}
+```
+
+[init functions](https://go.dev/ref/spec#Program_initialization_and_execution)
+```go
+func init() {
+	fmt.Println("First init")
+}
+
+// can have as many init as a file needsj
+func init() {
+	fmt.Println("Second init")
+}
+
+// evaluated after all init
+func main() {
+	fmt.Println("Finally main")
+}
 ```
 ## Modules
 
