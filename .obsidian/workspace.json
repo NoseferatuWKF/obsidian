@@ -88,8 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "946de5a6e611c3cc",
@@ -189,8 +188,11 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "25e2c1885f8e97ae",
+  "active": "9b3b14434e525763",
   "lastOpenFiles": [
+    "notes/2024-09-19.md",
+    "technical/videos.md",
+    "notes/prepayments-td.md",
     "cheat-sheets/shell.md",
     "cheat-sheets/utils.md",
     "cheat-sheets/linux/core.md",
@@ -230,9 +232,6 @@
     "private/setel/api-connect.md",
     "private/setel/api-iam.md",
     "private/setel/web-connect.md",
-    "private/setel/web-identity.md",
-    "notes/template.md",
-    "notes/2024-06-24.md",
     "books/unix6.pdf",
     "books/Software Architecture_ The Hard Parts_ Modern Trade-Off -- Neal Ford & Mark Richards & Pramod Sadalage & Zhamak -- 1, 2021 -- O'Reilly Media -- 9781492086895 -- 6abdba667e209c75f49d97e44bc16b5c -- Anna’s Archive.pdf.crdownload",
     "pasted-images/Pasted image 20230410120516.png",

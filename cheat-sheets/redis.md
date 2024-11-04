@@ -11,7 +11,7 @@ redis-cli monitor
 basic operations
 ```bash
 FLUSHALL # remove everything
-keys <pattern> # list keys by pattern
+keys <pattern> # list keys by pattern, key * to get all
 get <key> # get values by key
 del <key> # remove key(s)
 ```
