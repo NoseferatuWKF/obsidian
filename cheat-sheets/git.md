@@ -6,6 +6,11 @@ git push origin # push commit to remote origin
 git pull origin # pull from remote origin to local
 ```
 
+copy branch
+```bash
+git checkout -b new-branch old-branch # or @
+```
+
 add
 ```bash
 git add -p # show confirmation for each chunk
@@ -79,7 +84,7 @@ git config user.signingkey /path/to/key.pub
 # then use with git commit -S
 
 # power users use raw files
-# global changes are in .gitconfig
+# global changes are in ~/.gitconfig
 # local changes are in .git folder in repo
 ```
 
@@ -90,7 +95,6 @@ conditional configs
 ```
 
 rebase
->NEVER REBASE MASTER (unless it's my own repo :p)
 ```bash
 git rebase -i @~1 # interactive relative to HEAD~1 can use @^ as well
 git commit --amend # if want to amend kinda optional
@@ -103,7 +107,15 @@ remote
 git remote add <remote> /path/to/remote # add new remote
 git remote set-url <remote> /new/path # set new path for a remote
 git remote get-url <remote> # get the path for a remote
+git remote show <remote> # show remote information
 git remote -v # get all remote push/pull
+
+# push to multiple remote
+git remote add origin /path/to/remote
+git remote add alternate /path/to/another/remote
+git remote set-url --add --push origin /path/to/remote
+git remote set-url --add --push origin /path/to/another/remote
+git remote show origin # this will show two push remotes
 ```
 
 worktree
@@ -221,11 +233,6 @@ co-author trailer
 Co-authored-by: AUTHOR-NAME <ANOTHER-NAME@EXAMPLE.COM>
 ```
 
-copy branch
-```bash
-git checkout -b new-branch old-branch # or @
-```
-
 symbols
 ```bash
 @^ # one commit prior of HEAD, equals to @~1
@@ -243,4 +250,3 @@ gh pr create -w # to use web UI
 # list pr
 gh pr list
 ```
-

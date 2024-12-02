@@ -182,10 +182,3 @@ public class ReviewComponent
     public string Status(string name) => JobStatus.GetCurrentStatus(name);
 }
 ```
-
-# Blazor
-
-## Blazor Server
-![[Pasted image 20240913173947.png]]
-## Blazor WA
-![[Pasted image 20240913174056.png]]

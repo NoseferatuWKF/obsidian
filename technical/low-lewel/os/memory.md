@@ -18,3 +18,7 @@ memory layout
 |    Stack         |    // Contains local variables and function call stack
 -------------------
 ```
+
+error correcting in Linux Kernel
+- < 6.12: ECC -> EDAC -> SMI -> SMM
+- 6.12: ECC -> EDAC -> PRM

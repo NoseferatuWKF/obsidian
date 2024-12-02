@@ -15,3 +15,8 @@ serve
 dotnet run --project /path/to/project.csproj
 dotnet watch -lp profile
 ```
+
+reference
+```bash
+dotnet add <project> reference <another-project>
+```

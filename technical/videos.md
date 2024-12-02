@@ -66,3 +66,7 @@
 # Andrew Kelly
 
 [Andrew Kelley - Practical DOD](https://vimeo.com/649009599)
+
+# Dylan Beattie
+
+[Architecture: The Stuff That's Hard to Change](https://www.youtube.com/watch?v=3LtQWxhqjqI)

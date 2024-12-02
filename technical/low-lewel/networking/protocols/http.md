@@ -2,22 +2,22 @@ client/server messaging
 ```
 Client request:
 
-GET /hello.txt HTTP/1.1
-User-Agent: curl/7.64.1
-Host: www.example.com
-Accept-Language: en, mi
+GET /hello.txt HTTP/1.1\r\n
+User-Agent: curl/7.64.1\r\n
+Host: www.example.com\r\n
+Accept-Language: en, mi\r\n
 
 Server response:
 
-HTTP/1.1 200 OK
-Date: Mon, 27 Jul 2009 12:28:53 GMT
-Server: Apache
-Last-Modified: Wed, 22 Jul 2009 19:15:56 GMT
-ETag: "34aa387-d-1568eb00"
-Accept-Ranges: bytes
-Content-Length: 51
-Vary: Accept-Encoding
-Content-Type: text/plain
+HTTP/1.1 200 OK\r\n
+Date: Mon, 27 Jul 2009 12:28:53 GMT\r\n
+Server: Apache\r\n
+Last-Modified: Wed, 22 Jul 2009 19:15:56 GMT\r\n
+ETag: 34aa387-d-1568eb00\r\n
+Accept-Ranges: bytes\r\n
+Content-Length: 51\r\n
+Vary: Accept-Encoding\r\n
+Content-Type: text/plain\r\n\r\n
 
 Hello World! My content includes a trailing CRLF.
 ```

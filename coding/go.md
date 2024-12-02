@@ -413,7 +413,7 @@ import (
     "fmt"
 )
 
-func Hello(name string) string {
+func Hello(name string) (string, error) {
     if name == "" {
         return "", errors.New("empty name") // return error
     }
@@ -580,6 +580,7 @@ changing install target
 ```bash
 go env -w GOBIN=/path/to/your/bin
 ```
+
 # Use-case
 
 rand

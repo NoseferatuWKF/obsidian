@@ -87,14 +87,14 @@ nodes = pages = disk blocks
 
 # B-tree
 - Each node in the tree stores N key/value pairs, where N is greater than 1 and less than or equal to K.
-- Each internal node has at least N/2 key/value pairs (an internal node is one that is not a leaf or the root).
+- Each internal node has at least N/2 key-value pairs (an internal node is one that is not a leaf or the root).
 - Each internal node has N+1 children.
 - The root node has at least one value and two children, unless it is the sole node.
 - All leaves are on the same level.
 - Searching for a key uses binary search as the keys are strongly sorted
 
 # B+tree - similar to B-tree with a change to the rules
-- Key/value pairs are stored only at the leaf nodes.
+- Key-value pairs are stored only at the leaf nodes.
 - Non-leaf nodes store only keys and the associated child pointers.
 - pages are 16K by default
 

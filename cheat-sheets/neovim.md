@@ -267,6 +267,8 @@ Treesitter
 ```lua
 -- list all available parsers
 :TSInstallInfo
+-- AST
+:InspectTree
 ```
 
 vim to neovim options
@@ -293,7 +295,7 @@ if vim.fn.buflisted(1) then
 end
 
 -- get [count]
-let count = vim.v.count
+local count = vim.v.count
 
 -- encode/decode json
 local lua_table = vim.fn.json_decode("/path/to/file.json")
@@ -309,5 +311,22 @@ vim.api.nvim_create_autocmd({"BufEnter"}, {
 	callback = function(ev)
 		print(ev)
 	end
+})
+
+-- extend lua tables
+local table = {key = "value"}
+vim.tbl_extend("keep", table, {key2 = "value2"})
+-- extend lua tables recursively
+vim.tbl_deep_extend("keep", table, {key2 = "value2"})
+
+-- auto group is needed to prevent clashing
+local au_group = vim.api.nvim_create_augroup("Razor", { clear = false })
+-- create autocommand for event
+vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead', {
+    pattern = '*.razor', -- file ext
+    callback = function()
+		-- do something
+    end,
+    group = au_group,
 })
 ```

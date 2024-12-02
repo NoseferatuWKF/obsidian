@@ -73,5 +73,8 @@ docker save image:latest -o image.tar
 docker load -i image.tar
 ```
 
-# Registries
-- [ghcr.io](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)
+debug
+
+init
+
+compose watch

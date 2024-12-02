@@ -29,8 +29,8 @@ gpg keys
 ```bash
 # usually this is enough to update the keys
 sudo pacman-key --init
-sudo pacman -S archlinux-keyring
 # next try this
+sudo pacman -S archlinux-keyring
 sudo pacman-key --populate
 # finally try this
 sudo pacman-key --refresh-keys

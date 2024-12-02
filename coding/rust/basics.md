@@ -1,25 +1,18 @@
 # Docs
 
-[the-book](https://doc.rust-lang.org/book/)
-[rust-by-example](https://doc.rust-lang.org/rust-by-example/index.html)
-[rust-blog](https://github.com/pretzelhammer/rust-blog/tree/master)
+[The Book](https://doc.rust-lang.org/book/)
+[Rust By Example](https://doc.rust-lang.org/rust-by-example/index.html)
+[Rust Blog](https://github.com/pretzelhammer/rust-blog/tree/master)
+[Learn Rust With Entirely  Too Many Linked Lists](https://rust-unofficial.github.io/too-many-lists/index.html)
 
 # Installation
 
-rustup
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # uninstall via rustup
 rustup self uninstall
 ```
-
-# Guidelines
-
-- by default a variable is immutable
-- try not to use unwraps and clones
-- instead of void, rust uses a unit (),
-- by default the items in a module are private
 
 # Basics
 
@@ -33,7 +26,7 @@ use::sync::{Arc, Mutex};
 use::std::collections::*;
 ```
 
-procedural macros
+macros
 ```rust
 #[derive(Debug)] // derive macro
 #[allow(unused)] // attribute macro
@@ -58,6 +51,35 @@ let heap = String::new();
 let change_owner = heap;
 
 println!("{heap}") // this errors because heap was moved
+```
+
+partial move
+```rust
+fn main() {
+    #[derive(Debug)]
+    struct Person {
+        name: String,
+        age: Box<u8>,
+    }
+
+    let person = Person {
+        name: String::from("Alice"),
+        age: Box::new(20),
+    };
+
+    // `name` is moved out of person, but `age` is referenced
+    let Person { name, ref age } = person;
+
+    println!("The person's age is {}", age);
+
+    println!("The person's name is {}", name);
+
+    // Error! borrow of partially moved value: `person` partial move occurs
+    //println!("The person struct is {:?}", person);
+
+    // `person` cannot be used but `person.age` can be used as it is not moved
+    println!("The person's age from person struct is {}", person.age);
+} 
 ```
 
 [let vs const](https://doc.rust-lang.org/std/keyword.const.html)
@@ -89,7 +111,6 @@ if let Some(opt) = from_option {
 	// ...
 }
 ```
-
 
 pattern matching
 ```rust
@@ -147,25 +168,32 @@ for val: &32 in arr.iter() {
 vectors
 >Vectors are smart pointers
 ```rust
-    let mut foo: Vec<&str> = Vec::new(); // instantiate an empty vector
-    let bar: Vec<u32> = vec![1, 2, 3]; // another way of instantiating a vector
-    let baz = Vec::from([1, 2, 3]); // yet another way to instantiate a vector
-    foo.push("Pushed");
-    foo.pop();
-    let _bar2 = bar[0]; // what if index does not have any value?
-    let bar3 = baz.get(0); // this is a safer way to access value
-    match bar3 {
-        Some(value) => println!("value exists: {}", value),
-        None => println!("value doesn't exist"),
-    };
-    for b in baz.iter() { // looping vectors
-	    println!("{}", b);
-    }
-    // infer from iterator
-	let infer: Vec<_> = vec![1, 2, 3] // the _ is telling rust to infer from map
-		.iter()
-		.map(|x| x + 1) // the || is a closure
-		.collect();
+let mut foo: Vec<&str> = Vec::new(); // instantiate an empty vector
+let bar: Vec<u32> = vec![1, 2, 3]; // another way of instantiating a vector
+let baz = Vec::from([1, 2, 3]); // yet another way to instantiate a vector
+foo.push("Pushed");
+foo.pop();
+let _bar2 = bar[0]; // what if index does not have any value?
+let bar3 = baz.get(0); // this is a safer way to access value
+match bar3 {
+	Some(value) => println!("value exists: {}", value),
+	None => println!("value doesn't exist"),
+};
+for b in baz.iter() { // looping vectors
+	println!("{}", b);
+}
+// infer from iterator
+let infer: Vec<_> = vec![1, 2, 3] // the _ is telling rust to infer from map
+	.iter()
+	.map(|x| x + 1) // the || is a closure
+	.collect();
+```
+
+slices
+```rust
+let arr = vec![1, 2, 3];
+let slice = &arr[0..2];
+println!("{}", slice); // [1, 2]
 ```
 
 tuples
@@ -256,13 +284,13 @@ fn main() {
 
 closures
 ```rust
-    let mut foo = 10;
-    println!("{}", foo); // 10
-    let mut closure = |x: i32| foo += x; // closure mutates foo
-    closure(1);
-    println!("{}", foo); // 11
-    foo = 1; // normal mutation
-    println!("{}", foo); // 1
+let mut foo = 10;
+println!("{}", foo); // 10
+let mut closure = |x: i32| foo += x; // closure mutates foo
+closure(1);
+println!("{}", foo); // 11
+foo = 1; // normal mutation
+println!("{}", foo); // 1
 ```
 
 function
@@ -275,14 +303,15 @@ fn main() {
 }
 
 fn foo(x: u32) -> u32 { 
-    x // will return value if no semicolon
+    x // implicit return
 }
 
 fn bar(x: u32, y: u32) -> (i64, i64) {
-    ((x as i64), (y as i64)) // returning two values 
+    ((x as i64), (y as i64)) // tuple return
 }
 
 fn ref_fn(x: &Vec<u32>) -> &u32 {
+	// return from match branch
     match x.get(0) {
         Some(v) => v,
         None => &0,
@@ -417,7 +446,6 @@ fn main() {
 ```
 
 lifetimes
-[Rust Lifetimes Finally Explained!](https://www.youtube.com/watch?v=juIINGuZyBc&ab_channel=Let%27sGetRusty)
 ```rust
 // &'a str - this is a borrow with an explicit lifetime
 // &'a mut str - this is a mutable borrow with an explicit lifetime
@@ -456,24 +484,25 @@ struct LifeTime<'a, 'b> {
 }
 ```
 
-iter() vs into_iter()
+iter, iter_mut, into_iter
 ```rust
 let arr = vec![1, 2, 3 ];
 
-for each in arr.iter() { // returns a reference to the element
+for each in arr.iter() { // returns a reference of the element
 	println!("{each}");
 }
 
-println!("{:?}", arr)
-
-for each in arr.into_iter() { // consumes the element
-	println!("{each}")
+for each in arr.iter_mut() { // returns a mutable reference of the element
+	println!("{each}");
 }
 
-println!("{:?}", arr) // moved value error here
+// sam as for each in arr
+for each in arr.into_iter() { // consumes the element
+	println!("{each}");
+}
 ```
 
-match vs matches!
+match and matches!
 ```rust
 enum Something {
 	First,
@@ -493,13 +522,12 @@ fn lets_match() {
 }
 ```
 
-ref vs & Rc vs Box vs RefCell vs Cell vs Arc
+ref, &, Box, Rc, Arc, RefCell, Cell, Mutex, RwLock
 ```rust
 let x: i32 = 10; // intialize x value
 let y: &i32 = &x; // idiomatic way of borrowing
-let ref z: &i32 = x; // this is borrowing x same as y
+let ref z: &i32 = x; // same as above with the ref on the left
 
-// ref makes more sense when doing pattern matching
 match x {
 	// this borrows x instead of consuming it
 	Some(ref v) => ...
@@ -521,18 +549,19 @@ struct MutableNode {
 	node: Box<MutableNode>,
 }
 
-// Arc is used instead of Box and Rc when supporting clone, shared ownership, and immutable.
+// Arc is used instead of Rc for shared ownership across multiple threads
 let x = Arc::new(10);
-// cloning an arc will increase the reference count and return a new pointer to the same allocation
-let y = x.clone();
 
 // RefCell creates single ownership for a mutable memory location with dynamically checked borrow rules. Refcell uses the interior mutability pattern where unsafe code is used which means the code can panic during runtime
-// Cell requires the data being wrapped to be copyable while RefCell does not
 let x = RefCell::new(5);
 let x_old = x.replace(4); // replace with new value, returning old one
 let x_another = RefCell::new(6);
 x.swap(&x_another); // swap RefCells
 let z = x.into_inner(); // consumes RefCell, returning wrapped value
+// Cell requires the data being wrapped to be copyable while RefCell does not
+let x = Cell::new(1);
+x.get(); // get value in Cell
+x.set(2); // set value in Cell
 ```
 
 zero cost abstraction
@@ -581,8 +610,6 @@ fn do_walk_impl(animal: &impl CanWalk) {
 }
 ```
 
-interior mutability
->Cell, RefCell, RwLock, Mutex
 ## Modules
 
 >`mod.rs` is the entrypoint for a mod directory, similar to `index.js` or `init.lua`
@@ -712,8 +739,7 @@ fn job(who: &str) {
 
 >If a single piece of data must be accessible from more than one task concurrently, then it must be shared using synchronization primitives such as Arc.
 
-[arc](https://doc.rust-lang.org/std/sync/struct.Arc.html) and [mutex](https://doc.rust-lang.org/std/sync/struct.Mutex.html)
-[Easy Rust 109: Mutex part 2](https://www.youtube.com/watch?v=z3G_7_hNltE&ab_channel=mithradates)
+multi threading
 ```rust
 use std::{sync::{Arc, Mutex}, thread};
 

@@ -8,7 +8,7 @@ blend
 - 1 spoon of cumin powder
 - 1 spoon of fennel powder
 - 1 spoon of chili powder
-cook
+while cooking
 - 2 spoon of brown sugar
 - salt to taste
 
@@ -20,6 +20,16 @@ blend
 - 3-5 stalk of chillies
 - half cup of dried prawns
 - 1 spoon of assam
-cook
+while cooking
 - 2 spoon of sugar
 - salt to taste
+
+***roast chicken***
+
+spice rub
+- 3 spoon of turmeric
+- 3 spoon of smoked paprika
+- 1 spoon of garlic powder
+- salt to taste
+in the oven
+- 180C for the first 20 mins and first off with 200C for 10 mins

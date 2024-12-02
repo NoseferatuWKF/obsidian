@@ -83,7 +83,7 @@
 >[S]ingle [I]nstruction [M]ultiple [D]ata, processing multiple data with a single instruction, ie; processing data in a loop
 
 **TCO**
->[T]ail [C]all [O]ptimization, the last action in a function is a call to another function
+>[T]ail [C]all [O]ptimization, the last action in a function is a call to another function, TCO will replace the function call in the stack with the new parameters instead of adding a new function call to the stack
 
 **raw pointer**
 >A pointer without a lifetime
@@ -139,6 +139,13 @@ LDAP
 nonce
 >In cryptography, a nonce is an arbitrary number that can be used just once in a cryptographic communication. It is often a random or pseudo-random number issued in an authentication protocol to ensure that old communications cannot be reused in replay attacks. They can also be useful as initialization vectors and in cryptographic hash functions.
 
+ABI
+>[A]pplication [B]inary [I]nterface
+
+IPC
+>Hardware: [I]nstruction [P]er [C]lock
+>Software: [I]nter [P]rocess [C]ommunication
+
 TLB
 >[T]ranslation [L]ook-aside [B]uffer, is a unit in CPU to translate virtual address to physical address
 
@@ -156,3 +163,24 @@ interrupt
 
 copyleft
 >legal techniques of granting the same rights to derivative works/copies
+
+ACE framework
+>[A]uthentication and Authorization [C]onstrained [E]nvironment
+
+SMI
+>[S]ystem [M]anagement [I]nterrupt
+
+SMM
+>[S]ystem [M]anagement [M]ode
+
+ECC
+>[E]rror [C]orrecting [C]ode
+
+EDAC
+>[E]rror [D]etection [A]nd [C]orrection
+
+PRM
+>[P]latfrom [R]untime [M]echanism
+
+DRM
+>[D]igital [R]ights [M]anagement

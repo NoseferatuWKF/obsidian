@@ -1,4 +1,4 @@
-# SQS/SNS/MQ
+SQS/SNS/MQ
 
 | Resource type                  | Amazon SNS | Amazon SQS | Amazon MQ |
 | ------------------------------ | ---------- | ---------- | --------- |

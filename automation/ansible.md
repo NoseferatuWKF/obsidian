@@ -27,7 +27,7 @@ nodes: # group of managed nodes/remotes
 ```
 
 create a playbook
->import_tasks and include_tasks have different execution time
+>import_tasks and include_tasks have executes at different time
 ```yaml
 - name: automate something
   hosts: nodes # inventory.hosts or put localhost for well... localhost

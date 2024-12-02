@@ -204,7 +204,7 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /path/to/.key -out /
 # a2enmod enable ssl -- apache
 # /usr/local/share/ca-certificates/.crt && update-ca-certificates -- debian
 # view certificate
-openssl x509 -text -noout -in /path/to/.crtt
+openssl x509 -text -noout -in /path/to/.crt
 # strip key from pfx
 openssl pkcs12 -in myfile.pfx -nocerts -legacy -out priv-key.pem -passin pass:<password>
 # strip cert from pfx

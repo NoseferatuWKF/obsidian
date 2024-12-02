@@ -13,4 +13,6 @@ gateway
 
 ## DNS
 
-dns resolver vs dns forwarding
+dns resolver
+
+dns forwarding

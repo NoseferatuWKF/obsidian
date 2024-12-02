@@ -2,10 +2,12 @@ TCP Header Format
 
 ![[Pasted image 20230722123059.png]]
 
-TCP Connection State
->For TCP Handshake
+TCP Connection State (TCP 3-way Handshake)
 
 ![[Pasted image 20230522002546.png]]
+
+window size
+keep alive packet
 
 RFCs
 

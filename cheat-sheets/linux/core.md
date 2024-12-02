@@ -225,6 +225,7 @@ local CHAR="A-Za-z0-9"
 
 echo $(LC_ALL=C tr -dc $CHAR < /dev/urandom | head -c $LENGTH)
 ```
+
 # Networking
 
 ip
@@ -260,9 +261,6 @@ cat /proc/net/tcp # hex tcp connections
 cat /etc/services # list of port aliases
 ```
 
-# Filesystem
-
-[btrfs](https://btrfs.readthedocs.io/en/latest/Administration.html)
 ## File Structure
 
 /proc
