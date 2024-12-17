@@ -61,7 +61,8 @@ docker push /path/to/registry
 ```
 
 docker build, save and load somewhere else
->can be used to load images in cri for kubernetes when loading images
+>[!tip]
+can be used to load images in cri for kubernetes when loading images
 ```bash
 # build image
 docker build -t image:latest .

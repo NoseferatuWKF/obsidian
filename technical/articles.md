@@ -116,3 +116,68 @@ nodes = pages = disk blocks
 - Use predictable primary keys for fewer I/O requests on insertions
 - Consider using created_at timestamps for tables that does sorting or querying by created_at columnn as it is predictable
 ```
+
+[12 factor app](https://12factor.net)
+```
+Codebase -> One codebase tracked in revision control, many deploys
+- there is always a 1:1 correlation between the codebase and the app
+- multiple apps sharing the same code is a violation
+- shared code should be factored into libraries which can be included through a dependency manager
+
+Dependencies -> Explicitly declare and isolate dependencies
+- dependencies is declared completely and exactly, via a dependency declaration manifest (eg; package-lock.json, Gemfile, etc...)
+- ensure no implicit dependencies leak in from the surrounding system via a dependency isolation tool
+- the app code need to be able to be build using a deterministic build command
+- the app do not rely on system tools
+
+Config -> Store config in the  environment
+- config should be separated from code
+- store config in environment variables
+
+Backing services -> Treat backing services as attached resources
+- local and third party services should be swappable via config
+- resources can be attached and detached from deploys at will
+
+Build, release, run -> Strictly separate build and run stages
+- use strict separation between build, release, and run stages
+- Build
+	- can be more complex as it has less commercial impact
+- Release
+	- should always have a unique release ID
+	- append-only and cannot be mutated
+- Runtime
+	- should be kept to as few moving parts as possible
+
+Processes -> Execute the app as one or more stateless processes
+- processes are stateless and share-nothing
+- persisted data must be stored in a stateful backing services
+
+Port binding -> Export services via port binding
+- app is completely self-contained
+- a routing layer handles routing requests from a public-facing hostname to the port-bound web processes
+
+Concurrency -> Scale out via the process model
+- processes are a first class citizen following the unix process model
+- diverse type of work is assigned to a process type
+- processes should never daemonize, instead should rely on the operating system's process manager
+
+Disposability -> Maximize robustness with fast startup and graceful shutdown
+- processes can be started or stopped at a moment's notice
+- strive to minimize startup time
+- processes need to shut down gracefully
+
+Dev/prod parity -> Keep development, staging and production as similar as possible
+- make the time gap small
+- make the personnel gap small
+- make the tools gap small
+- use the same backing services between development and production
+
+Logs -> Treat logs as event streams
+- each running process writes its event stream, unbuffered, to stdout
+- in staging or production deploys, each process' stream will be captured and managed by the execution environment
+- the log streams are routed to a sink for viewing and long-term archival
+
+Admin processes -> Run admin/management tasks as one-off processes
+- admin processes should be run in an identical environment, with the same codebase, config, and release
+- the same dependency isolation should be used
+```

@@ -108,6 +108,7 @@ grep -P <pattern> # perl regex
 grep -G <pattern> # basic regex
 grep -F "something" # fixed strings
 grep -v "something" # reverse match
+grep -rn "something" # recursive grep in each file
 ```
 
 stdin, stdout, stderr

@@ -23,3 +23,11 @@ data is written directly to database, data read from database is written to cach
 no connection between cache and database, application controlled logic
 ## Pre-caching/Cache Priming
 data is partially filled (warm cache) or fully filled (hot cache) on starting the program
+
+# Common Pitfalls
+
+## Stampede / Thundering Herd
+
+## Saturation
+
+## Stale Cache

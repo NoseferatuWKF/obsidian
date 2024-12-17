@@ -1,16 +1,10 @@
 # Docs
 [official docs](https://go.dev/)
-[managing go versions](https://go.dev/doc/manage-install)
 [effective-go](https://go.dev/doc/effective_go)
 
-# Topics
+# Videos
 [Go concurrency patterns](https://www.youtube.com/watch?v=f6kdp27TYZs)
 [Advanced Go concurrency patterns](https://www.youtube.com/watch?v=QDDwwePbDtw)
-
-# Why go?
-- simplicity over expressiveness
-- fast compilation speed (good for large code bases)
-- concurrency first
 
 # Installation
 
@@ -25,15 +19,9 @@ sudo rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.2.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 # and finally validate installaion
 go version
-```
-
-create a go module
-```bash
+# create a go module
 go mod init <name>
-```
-
-resolve dependencies
-```bash
+# resolve dependencies
 go mod tidy
 ```
 
@@ -53,7 +41,8 @@ func main() {
 ```
 
 := operator
->to declare and initialize, note that this operator cannot infer specific bits ie; int16 / float64
+>[!warning] 
+this operator cannot infer specific bits ie; int16 / float64
 ```go
 // the long way
 var message string
@@ -106,17 +95,20 @@ arr = append(arr, []int{4, 5}...)
 ```
 
 slices
->slice literal is declared just like an array literal, except you leave out the element count
+>[!info]
+slice literal is declared just like an array literal, except you leave out the element count
 ```go
 letters := []string{"a", "b", "c", "d"}
 
 // slice from "slicing" elements
 b := []byte{'g', 'o', 'l', 'a', 'n', 'g'}
-// ranges are [a:b)
-// b[1:4] -> []byte{'o', 'l', 'a'}
-// b[:2] -> []byte{'g', 'o'}
-// b[2:] -> []byte{'l', 'a', 'n', 'g'}
-// b[:] -> b
+/* 
+	ranges are [a:b), eg;
+	b[1:4] -> []byte{'o', 'l', 'a'}
+	b[:2] -> []byte{'g', 'o'}
+	b[2:] -> []byte{'l', 'a', 'n', 'g'}
+	b[:] -> b
+*/ 
 
 // another way to create slices
 x := []string{"Лайка", "Белка", "Стрелка"}
@@ -124,9 +116,6 @@ s := x[:] // a slice referencing the storage of x
 
 // clear slice
 clear(s)
-
-// use slices for dynamically sized arrays
-var dynamic = make([]int32, 1000)
 ```
 
 structs
@@ -142,7 +131,7 @@ type Foo struct {
 	baz      int
 }
 
-// if struct points to same struct
+// self referencing struct
 type Node struct {
 	Value   int32
 	Next    *Node
@@ -195,57 +184,57 @@ func main() {
 	a = Hate {}
 	a.doSomething("Potatoes");
 }
-
 ```
 
 maps
 ```go
-	// instantiate a map
-    messages := make(map[string]string) // or map[string]string{}
+// instantiate a map
+messages := make(map[string]string) // or map[string]string{}
 
-	// setting/updating value in map
-	messages["key"] = "value"
+// setting/updating value in map
+messages["key"] = "value"
 
-	// getting value from map
-	// will return the zero type if doesn't exist, in this case its ""
-	val := messages["key"]
+// getting value from map
+// will return the zero type if doesn't exist, in this case its ""
+val := messages["key"]
 
-	// length of keys in a map
-	length := len(messages)
+// length of keys in a map
+length := len(messages)
 
-	// deleting a key-value pair
-	delete(messages, "key")
+// deleting a key-value pair
+delete(messages, "key")
 
-	// looping key, values in a map
-	for k, v := range messages {
-		fmt.Println(k, v)
-	}
+// looping key, values in a map
+for k, v := range messages {
+	fmt.Println(k, v)
+}
 
-	// check if key exists in map
-	someMap = make(map[string]int)
-	if val, ok := someMap["key"]; ok {
-		fmt.Println("Key exists", val)
-	}
+// check if key exists in map
+someMap = make(map[string]int)
+if val, ok := someMap["key"]; ok {
+	fmt.Println("Key exists", val)
+}
 ```
 
 loops
 ```go
-func hellos(names []string) (map[string]string, error) {
-    // A map to associate names with messages.
-    messages := make(map[string]string)
+a := make([]int, 100)
 
-    // Loop through the received slice of names, calling
-    // the Hello function to get a message for each name.
-    for _, name := range names {
-        message, err := Hello(name)
-        if err != nil {
-            return nil, err // WTF is this trash
-        }
-        // In the map, associate the retrieved message with
-        // the name.
-        messages[name] = message
-    }
-    return messages, nil
+// loop over an array/slice
+for i, e := range a {
+	// ...
+}
+
+// boomer loop
+for i := 0; i < len(a); i++ {
+	// ...
+}
+
+m := make(map[string]string)
+
+// loop over a map
+for k, value := range m {
+	//...
 }
 ```
 
@@ -360,6 +349,7 @@ func main() {
 	fmt.Println("Finally main")
 }
 ```
+
 ## Modules
 
 file structure
@@ -523,7 +513,8 @@ func closeChan(c chan int) {
 
 ## Test
 
->Ending a file's name with _test.go tells the go test command that this file contains test functions.
+>[!info]
+Ending a file's name with _test.go tells the go test command that this file contains test functions.
 
 greetings_test.go
 ```go
@@ -556,7 +547,7 @@ func TestHelloEmpty(t *testing.T) {
 ```
 
 running the test
-```bash
+```
 go test
 PASS
 ok      example.com/greetings   0.364s
@@ -572,9 +563,9 @@ ok      example.com/greetings   0.372s
 
 ## Build and Install
 
->The `go build` command compiles the packages, along with their dependencies, but it doesn't install the results.
-
->The `go install` command compiles and installs the packages.
+>[!info]
+The `go build` command compiles the packages, along with their dependencies, but it doesn't install the results.
+The `go install` command compiles and installs the packages.
 
 changing install target
 ```bash
@@ -689,5 +680,95 @@ func main() {
 	input := []string{"abc", "def", "ghi"}
 	output := strings.Join(input, " ")
 	fmt.Println(output) // abc def ghi
+}
+```
+
+# Advanced
+
+fan-in
+```go
+func fanIn() {
+    c := generatorFanIn(generatorFunc(0), generatorFunc(100))
+    for i := 0; i < 10; i++ {
+        fmt.Printf("%v\n", <-c)
+    }
+}
+
+func generatorFanIn(input1, input2 <-chan int) <-chan int {
+    c := make(chan int)
+    go func() {
+        for {
+            select {
+            case s := <-input1: c <- s
+            case s := <-input2: c <- s
+            }
+        }
+    }()
+    return c
+}
+
+func generatorFunc(input int) <-chan int {
+    c := make(chan int)
+
+    go func() {
+        for i := input; ; i++ {
+            c <- i
+        }
+    }()
+
+    return c
+}
+```
+
+[build constraint / build tag](https://pkg.go.dev/cmd/go#hdr-Build_constraints)
+>[!hint]
+>can be used to target specific platforms and architectures
+```go
+//go:build foo
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello")
+}
+```
+
+```bash
+# build using
+go build -tag foo
+# or run using
+go build -tag foo
+```
+
+[context](https://pkg.go.dev/context)
+```go
+package main
+
+import (
+    "fmt"
+    "net/http" // implements context
+    "time"
+)
+
+func hello(w http.ResponseWriter, req *http.Request) {
+    ctx := req.Context() // WithCancel derived context
+    fmt.Println("server: hello handler started")
+    defer fmt.Println("server: hello handler ended")
+
+    select {
+    case <-time.After(10 * time.Second):
+        fmt.Fprintf(w, "hello\n")
+    case <-ctx.Done(): // client cancels
+        err := ctx.Err()
+        fmt.Println("server:", err)
+        internalError := http.StatusInternalServerError
+        http.Error(w, err.Error(), internalError)
+    }
+}
+
+func main() {
+    http.HandleFunc("/hello", hello)
+    http.ListenAndServe(":8090", nil)
 }
 ```

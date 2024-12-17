@@ -1,6 +1,6 @@
-start venv
+venv
 ```bash
-python -m venv env
-# python automatically install pip in the venv
-env/bin/pip install requests
+python -m venv /path/to/venv
+source ./bin/activate
+# pip is under ./bin directory
 ```
